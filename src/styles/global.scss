@@ -1,0 +1,23 @@
+@use './reset';
+@use './variables';
+@use './mixins';
+
+body {
+  font-family: variables.$font-main;
+  color: variables.$color-main;
+  background: #fff;
+}
+
+section {
+  min-height: 100vh;
+  padding: 100px 0;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+ul,li,ol{list-style: none;}
+a{text-decoration: none;}

@@ -1,0 +1,120 @@
+@use "./variables.scss" as *;
+@use './global.scss' as *;
+
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 80px;
+
+  background: transparent;
+  z-index: 1000;
+}
+
+.header-inner {
+  height: 100%;
+
+  padding: 0 200px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* logo */
+
+.logo {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-family: $font-en;
+}
+
+/* navigation */
+
+.nav ul {
+  display: flex;
+  gap: 40px;
+}
+
+.nav button {
+  background: none;
+  border: none;
+
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-family: $font-en;
+
+  cursor: pointer;
+  color: $color-sub;
+
+  transition: 0.3s;
+}
+
+.nav button:hover {
+  color: $color-sub;
+}
+
+.nav button.active {
+  font-weight: 600;
+}
+.nav button.active::after {
+  transform: scaleX(1);
+}
+
+/* nav underline 애니메이션 */
+
+.nav button {
+  position: relative;
+
+  transition: color 0.3s;
+}
+
+/* underline */
+.nav button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+
+  width: 100%;
+  height: 2px;
+  background: #555;
+
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.nav button:hover::after {
+  transform: scaleX(1);
+}
+
+
+/* icons */
+
+.header-icons {
+  display: flex;
+  gap: 16px;
+}
+
+.header-icons .icon-box {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+
+  img{
+    width: 100%;
+    height: 100%;
+    transition: 0.3s ease;
+  }
+}
+.header-icons .icon-box:hover img {
+    transform: translateY(-3px);
+  }
