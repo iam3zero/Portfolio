@@ -91,6 +91,9 @@
 
   z-index: 2;
 
+  transform:translateX(-60px);
+  opacity:0;
+
 }
 /* 스크롤 애니메이션 */
 .screen img {
@@ -119,7 +122,7 @@
   border: none;
 
   background: rgba(71, 71, 71, 0.267);
-  color: white;
+  color: transparent;
 
   font-size: 18px;
   font-family: $font-en;
@@ -132,17 +135,45 @@
 
   z-index: 3;
 
-  opacity: 0;
+  opacity: .6;
 }
 
 .project-image:hover .detail-btn {
 
   opacity: 1;
+}
 
+.project-image:hover .detail-btn {
+  transform: translate(-50%, -50%) scale(1.1);
 }
 
 .detail-btn:hover {
-  transform: translate(-50%, -50%) scale(1.5);
+  transform: translate(-50%, -50%) scale(1.5) !important;
+}
+
+.detail-btn::after {
+
+  content: "Click";
+
+  position: absolute;
+  inset: 0;
+
+  color: #fff;
+  font-size: 18px;
+  font-family: $font-en;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all .3s ease;
+
+}
+
+.project-image:hover .detail-btn::after {
+
+  content: "View Details";
+
 }
 
 /* .detail-btn{
@@ -223,7 +254,7 @@
   color: $font-main;
   line-height: 1.5;
   font-size: 20px;
-  width: 600px;
+  max-width: 700px;
   font-weight: 300;
 }
 
@@ -354,8 +385,9 @@
 
 /* 섹션 진입 애니메이션 */
 
-.projects.show .swiper-slide-active .monitor{
-  transform: translateX(0);
+.projects.show .swiper-slide-active .monitor,
+.projects.show .swiper-slide-active .screen{
+  transform:translateX(0);
   opacity:1;
   transition: all .8s ease .2s;
 }

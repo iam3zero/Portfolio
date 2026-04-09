@@ -13,13 +13,13 @@ export const projectsData = [
     members: "4명",
     tools: "Adobe Photoshop | Figma | React | Node.js",
     description:
-      "보이지 않는 빛을 향으로 표현하는 가상의 비건 감성 향수 브랜드 ‘ÉCLAT’를 기획 및 디자인하여 웹사이트로 구현하였습니다.",
+      "보이지 않는 빛을 향으로 표현하는 가상의 국내 니치향수 브랜드 ‘ÉCLAT’를 기획 및 디자인하여 웹사이트로 구현하였습니다. 제품 라인 및 패키지 기획부터 주요 타켓층을 설정하여 감성 중심의 웹사이트로 구현 방향을 정하고 웹 프론트를 REACT로 작업하였습니다.",
 
     monitor: "/images/monitor.png",
     screen: "/images/project1.png",
 
-    website: "#",
-    github: "#",
+    website: "https://eclat-t.vercel.app/",
+    github: "https://github.com/seongeun040624/eclatT",
 
     toolsIcons: [
       notionIcon,
