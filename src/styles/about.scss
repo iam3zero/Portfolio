@@ -23,9 +23,10 @@ body {
 /* section title */
 
 .about-title {
-  font-size: 48px;
+  font-size: 36px;
   margin-bottom: 30px;
   font-weight: 700;
+  font-family: $font-en;
 }
 
 /* top area */
@@ -35,10 +36,10 @@ body {
   align-items: center;
   gap: 100px;
 
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   justify-content: space-between;
-  padding-left: 180px;
-  padding-right: 80px;
+  padding-left: 200px;
+  padding-right: 200px;
 }
 
 /* photo */
@@ -49,27 +50,16 @@ body {
 
 
 .photo-placeholder {
-  width: 322px;
-  height: 325px;
+  width: 280px;
+  height: 283px;
   background: url(../assets/img/about_profile.png) no-repeat;
+  background-size: cover;
+  background-position: center;
   cursor: pointer;
-  position: relative;
-  transition: 1s ease;
+  transition: .6s ease;
 }
-.photo-placeholder:before {
-    background: transparent;
-    transition: 1s ease;
-}
-.photo-placeholder:hover:before{
-  border-radius: 75% 60% 80% 55% / 65% 65% 80% 75%;
-  background: rgba(0, 0, 0, .2);
-  bottom: 0;
-  content: "";
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transition: 1s ease;
+.photo-placeholder:hover{
+  opacity: .4;
 }
 
 .resume-link {
@@ -82,19 +72,19 @@ body {
 /* intro text */
 
 .about-intro {
-  max-width: 750px;
+  max-width: 700px;
 }
 
 .about-role {
-  font-size: 16px;
+  font-size: 14px;
   letter-spacing: 1px;
   color: #31769F;
   font-family: $font-en;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .about-headline {
-  font-size: 38px;
+  font-size: 34px;
   margin: 10px 0px 20px;
   display: flex;
 }
@@ -120,7 +110,7 @@ body {
 .about-desc {
   line-height: 1.7;
   color: $color-sub;
-  font-size: 24px;
+  font-size: 20px;
 }
 
 /* bottom */
@@ -147,7 +137,7 @@ body {
 .info-title {
   width: 30%;
   font-weight: 700;
-  font-size: 26px;
+  font-size: 24px;
   font-family: $font-en;
   letter-spacing: 1px;
 }
@@ -156,14 +146,15 @@ body {
 }
 .name-box{
   display: flex;
+  font-family: $font-en;
 }
 .info-content p{
-  font-size: 22px;
+  font-size: 20px;
   color: $color-main;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 .license-box li{
-  font-size: 22px;
+  font-size: 18px;
   font-family: $font-en;
   line-height: 1.5;
 }
@@ -175,15 +166,15 @@ body {
 }
 .name-box .name-en{
   margin-left: 5px;
-  margin-top: 5px;
-  font-size: 16px;
+  margin-top: 9px;
+  font-size: 14px;
   font-weight: 400;
   font-family: $font-en;
   color: $color-sub;
 }
 .info-content span {
   color: $color-sub2;
-  font-size: 18px;
+  font-size: 16px;
   font-family: $font-en;
 }
 
@@ -197,7 +188,7 @@ body {
 }
 
 .skill-title {
-  font-size: 34px;
+  font-size: 28px;
   margin-bottom: 20px;
   font-family: $font-en;
   letter-spacing: 1px;
@@ -206,7 +197,7 @@ body {
 .skill-list {
   margin-bottom: 30px;
   line-height: 1.6;
-  font-size: 24px;
+  font-size: 20px;
   font-family: $font-en;
 }
 
@@ -215,13 +206,13 @@ body {
 .skill-icons {
   display: grid;
   grid-template-columns: repeat(6, 40px);
-  gap: 40px;
+  gap: 30px;
   padding-top: 10px;
 }
 
 .skill-icons .icon-box {
-  width: 55px;
-  height: 55px;
+  width: 45px;
+  height: 45px;
   background: #ddd;
   border-radius: 6px;
 }

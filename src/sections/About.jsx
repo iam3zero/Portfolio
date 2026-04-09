@@ -7,7 +7,7 @@ function About() {
       <div className="about-inner">
 
         {/* section title */}
-        <h2 className="about-title">About Me</h2>
+        <h2 className="about-title">ABOUT ME</h2>
 
         {/* top profile area */}
         <div className="about-top">
@@ -78,12 +78,11 @@ function About() {
               <div className="info-content">
                 <ul className="license-box">
                   <li>웹디자인개발기능사<span> 2026</span></li>
-                  
-                  <li>운전면허자격증 2종보통<span> 2026</span></li>
-                  <li>조주기능사<span> 2026</span></li>
-                  <li>ITQ 한글/파워포인트<span> 2026</span></li>
-                  <li>워드프로세서 2,3급<span> 2026</span></li>
-                  <li>문서실무사<span> 2026</span></li>
+                  <li>운전면허자격증 2종보통<span> 2020</span></li>
+                  <li>조주기능사<span> 2017</span></li>
+                  <li>ITQ 한글/파워포인트<span> 2017</span></li>
+                  <li>워드프로세서 2,3급<span> 2017</span></li>
+                  <li>문서실무사<span> 2017</span></li>
                 </ul>
               </div>
             </div>
