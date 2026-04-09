@@ -1,10 +1,12 @@
 import notionIcon from "../assets/icons/notion.png";
 import githubIcon from "../assets/icons/github.png";
+import eclatImg from "../assets/img/eclat_fullpage.png";
 
 export const projectsData = [
   {
     id: 1,
     title: "향수 브랜드 ÉCLAT",
+    image: eclatImg,
     category: "01 PROJECT",
     contribution: "100%",
     duration: "2주",

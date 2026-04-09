@@ -101,28 +101,21 @@ function Projects() {
 
                 <div className="project-image">
 
-                    {/* monitor frame */}
                     <img
                         className="monitor"
                         src={monitor}
                         alt="Mock-up"
                     />
 
-                    {/* website screen */}
-                    {/* <img
-                        className="screen"
-                        src={screen}
-                        alt={`${project.title} 사이트 화면`}
-                    /> */}
+                    <div className="screen">
+                        <img src={project.image} alt={project.title} />
+                    </div>
 
-                    <button
-                        className="detail-btn"
-                        aria-label="프로젝트 상세 페이지 이동"
-                    >
+                    <button className="detail-btn">
                         Click
                     </button>
 
-                    </div>
+                </div>
 
                 {/* project info */}
 
