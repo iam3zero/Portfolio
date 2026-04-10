@@ -129,7 +129,7 @@ body {
 .info-row {
   display: flex;
   gap: 0px;
-  padding: 20px 0;
+  padding: 17px 0;
   padding-left: 50px;
   border-bottom: 1px solid #e5e5e5;
 }
@@ -154,12 +154,12 @@ body {
   margin-bottom: 5px;
 }
 .license-box li{
-  font-size: 18px;
+  font-size: 16px;
   font-family: $font-en;
   line-height: 1.5;
 }
-.license-box span{
-  
+.license-box li span{
+  font-size: 14px;
 }
 .contact-box{
   font-family: $font-en;

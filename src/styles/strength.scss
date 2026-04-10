@@ -2,155 +2,270 @@
 @use './global.scss' as *;
 
 .strength {
+  height: 100vh;
   padding: 120px 0;
-  background: #fff;
+  overflow: hidden;
+  background: #FFFDF6;
+  font-family: $font-main;
+
+  .strength-inner {
+    
+    margin: 0 auto;
+  }
+
+  .strength-title {
+    text-align: center;
+    font-size: 48px;
+    font-family: $font-en;
+    font-weight: 700;
+    margin-bottom: 80px;
+    letter-spacing: 1px;
+  }
 }
 
-.strength-inner {
-  padding: 0 200px;
+
+/* 카드 트랙 */
+.strength-track {
+  position: relative;
+  overflow: hidden;
 }
 
-/* section title */
+.strength-list {
+  display: flex;
+  justify-content: center;
+  /* gap: 0px; */
 
-.strength-header {
-  text-align: center;
-  margin-bottom: 80px;
+  width: 100%;
 }
 
-.strength-title {
-  font-size: 36px;
-  font-weight: 700;
-  font-family: $font-en;
-  letter-spacing: 2px;
+@keyframes strength-slide {
+
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+
 }
 
-.strength-line {
-  display: block;
-  width: 80px;
-  height: 1px;
-  background: #ddd;
-  margin: 18px auto 0;
-}
-
-/* grid */
-
-.strength-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-  gap: 80px ;
-}
-
-/* card */
-
+/* 카드 기본 스타일 */
 .strength-card {
-  background: white;
-  padding: 60px 40px;
-  border-radius: 12px;
-  text-align: center;
+  width: 384px;
+  height: 500px;
+  transition: transform .4s ease;
+  position: relative;
+  padding-bottom: 0px;
 
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  .card-wrap {
+    border: none;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
 
-  opacity: 0;
-  transform: translateY(40px);
-  perspective: 1000px;
+    border-radius: 24px;
+    background: #fff;
+
+    box-shadow:
+      -10px 0px 7px rgba(0, 0, 0, 0.08);
+
+    overflow: hidden;
+    cursor: pointer;
+  }
 }
 
-.strength-card.show {
-  opacity: 1 ;
-  transform: translateY(0) ;
-  transition: all 0.7s ease;
-}
-.strength-card:hover {
-  transform: translateY(-10px) rotateX(2deg);
-  box-shadow: 0 20px 30px #2674a14b;
-  transition: all 0.5s ease;
-}
+/* 카드 COVER (북커버) */
+.card-cover {
 
-
-
-/* box-shadow: 0 20px 30px #2674a14b !important; */
-/* icon */
-
-.card-icon {
-  width: 100px;
-  height: 100px;
-  /* background: #7ea7bf; */
-  margin: 0 auto 20px;
-}
-
-.card-icon img{
-  width: 100px;
-  height: auto;
-  transition: transform .5s ease;
-}
-
-.strength-card:hover .card-icon img{
-  transform: translateY(-6px) scale(1.05) rotate(-4deg);
-}
-
-/* number */
-
-.card-number {
-  display: block;
-  font-size: 26px;
-  margin-bottom: 10px;
-  font-family: $font-en;
-  color: $color-sub2;
-  font-weight: 600;
-  opacity: .7;
-}
-
-/* title */
-
-.card-title {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 14px;
-  font-family: $font-en;
-  color: $color-sub;
-}
-
-/* desc */
-
-.card-desc {
-  font-size: 18px;
-  color: $color-sub2;
-  margin-bottom: 20px;
-  font-weight: 400;
-}
-
-.card-list {
-  list-style: none;
-  padding: 0;
-  margin-top: 20px;
+  position: absolute;
+  inset: 0;
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
 
-  color: $color-sub;
-  font-size: 16px;
+  padding: 40px;
+
+  background: #fff;
+
+  transition: transform .6s cubic-bezier(.65,.05,.36,1);
+
+  z-index: 2;
+
+  gap: 20px;
 }
 
-/* 리스트 한 줄 */
+/* 카드 내용 */
+.card-content {
 
-.card-list li {
+  position: absolute;
+  inset: 0;
+
+  padding: 50px 30px;
+
+  opacity: 0;
+  transform: translateY(20px);
+
+  transition: all .5s ease;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  li {
+    font-size: 15px;
+  }
+}
+
+/* hover → 북커버 오픈 */
+.strength-card:hover {
+
+  .card-cover {
+    transform: translateX(-100%);
+    
+  }
+
+  .card-content {
+    opacity: 1;
+    transform: translateY(0);
+    background: #E6F0F2;
+    
+  }
+}
+
+
+/* 왼쪽 카드들 */
+
+.strength-card:nth-child(1
+
+
+) {
+  transform: rotate(3deg) translateY(10px);
+}
+
+.strength-card:nth-child(2) {
+  transform: rotate(-3deg) translateY(10px);
+}
+
+/* 가운데 카드 */
+
+.strength-card:nth-child(3) {
+  transform: rotate(0deg) translateY(-10px);
+  
+}
+
+/* 오른쪽 카드들 */
+
+.strength-card:nth-child(4) {
+  transform: rotate(3deg) translateY(10px);
+}
+
+.strength-card:nth-child(5) {
+  transform: rotate(-3deg) translateY(10px);
+}
+
+
+
+/* 아이콘 / 이미지 자리 */
+.card-icon {
+
+  width: 120px;
+  height: 120px;
+
+  margin-bottom: 10px;
+
+  img{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.card-title{
+  font-size: 32px;
+  font-family: $font-en;
+  color: $color-main;
+}
+.card-desc{
+  font-size: 20px;
+  color: $color-sub;
+  font-weight: 500;
+  margin-bottom: 60px;
+
+}
+
+/* hover 시 카드 정렬 */
+.strength-card:hover {
+  transform: rotate(0deg) translateY(0) scale(1.03);
+  z-index: 10;
+}
+
+/* card open content */
+
+.card-content{
   display: flex;
-  align-items: flex-start;
-  gap: 8px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  
+  .content-title{
+    font-size: 26px;
+    font-family: $font-en;
+    color: $color-main;
+  }
 
-  text-align: left;
-  line-height: 1.8;
+  .content-sub{
+    font-size: 22px;
+    font-weight: 500;
+    color: $color-sub;
+    font-family: $font-main;
+  }
+
+  .content-icon {
+
+    width: 80px;
+    height: 80px;
+
+    margin-bottom: 0px;
+
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .txt-list{
+
+    li{
+      font-size: 18px;
+      color: $color-main;
+      font-weight: 400;
+      font-family: $font-main;
+
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+
+      text-align: left;
+      line-height: 1.3;
+    }
+  }
+
 }
 
 /* ■ 아이콘 */
 
-.card-list li::before {
+.txt-list li::before {
   content: "■";
-  font-size: 12px;
+  font-size: 16px;
   color: #2674A1;
   margin-top: 3px;
 
   flex-shrink: 0;
 }
+
