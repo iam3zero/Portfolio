@@ -21,7 +21,10 @@ body {
 
 .intro-inner {
   width: 100%;
-  padding: 0 200px; // figma margin 기준
+  padding: 0 20px; // 모바일 기본값
+  @media (min-width: 1024px) {
+    padding: 0 200px; // 데스크탑에서만 넓게
+  }
   text-align: center;
 }
 
@@ -46,7 +49,7 @@ body {
 }
 
 .intro-title {
-  font-size: 120px;
+  font-size: clamp(48px, 10vw, 120px);
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 20px;

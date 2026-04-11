@@ -10,7 +10,7 @@ body {
 
 
 .about {
-  background: #fff;
+  background: #ffffff;
   width: 100%;
   min-height: 100vh;
   
@@ -38,20 +38,21 @@ body {
 
   margin-bottom: 30px;
   justify-content: space-between;
-  padding-left: 200px;
-  padding-right: 200px;
+  padding-left: 220px;
+  padding-right: 180px;
 }
 
 /* photo */
 
 .about-photo {
   text-align: center;
+  position: relative;
 }
 
 
 .photo-placeholder {
-  width: 280px;
-  height: 283px;
+  width: 250px;
+  height: 253px;
   background: url(../assets/img/about_profile.png) no-repeat;
   background-size: cover;
   background-position: center;
@@ -61,12 +62,19 @@ body {
 .photo-placeholder:hover{
   opacity: .4;
 }
-
+.resume-icon{
+  position: absolute;
+  bottom: 5px;
+  right: -40px;
+}
 .resume-link {
   display: block;
   margin-top: 5px;
   font-size: 14px;
   color: #31769F;
+  position: absolute;
+  bottom: 0;
+  right: -50px;
 }
 
 /* intro text */

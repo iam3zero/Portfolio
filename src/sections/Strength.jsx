@@ -8,38 +8,41 @@ import UI from "../assets/icons/strength_UI.png";
 
 
 function Strength() {
-  const [spread, setSpread] = useState(false);
   const sectionRef = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
+    const section = sectionRef.current;
+    const cards = section.querySelectorAll(".strength-card");
 
-          setTimeout(() => {
-            setSpread(true);
-          }, 500);
-
-        }
-      },
-      {
-        threshold: 0.4
+    // --- 1. 데스크탑용: 섹션 전체가 보이면 'spread' 클래스 추가 ---
+    const sectionObserver = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        // 섹션이 화면에 보이면 부모(.strength)에게 spread 클래스 부여
+        section.classList.add("spread");
       }
-    );
+    }, { threshold: 0.2 }); // 20%만 보여도 실행되게 낮춤 (1920px 대응)
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+    // --- 2. 모바일용: 각 카드가 보이면 'is-visible' 클래스 추가 ---
+    const cardObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+        }
+      });
+    }, { threshold: 0.2 });
 
-    return () => observer.disconnect();
+    // 관찰 시작
+    if (section) sectionObserver.observe(section);
+    cards.forEach((card) => cardObserver.observe(card));
+
+    return () => {
+      sectionObserver.disconnect();
+      cardObserver.disconnect();
+    };
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      className={`strength ${spread ? "spread" : ""}`}
-      aria-labelledby="strength-title"
-      id="strength">
+    <section ref={sectionRef} className="strength" id="strength">
 
       <h2 id="strength-title" className="strength-title">
         WHAT I DO

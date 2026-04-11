@@ -1,0 +1,93 @@
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+/* strength.scss 적용 */
+.strength {
+  // ... 기존 데스크탑 스타일 ...
+
+  @include mobile {
+    height: auto !important; // 1. 섹션 전체 높이를 자동 조절로 강제 전환
+    min-height: 100vh;      // 최소한 화면 꽉 차게는 유지
+    padding: 100px 0;       // 2. 타이틀이 잘리지 않도록 상단 여백 충분히 확보
+
+    .strength-inner {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .strength-title {
+      position: relative;    // 3. 혹시 모를 absolute 배치 방지
+      top: auto;
+      margin-bottom: 60px;   // 타이틀과 카드 사이 간격
+      font-size: 36px;       // 모바일에 맞는 크기
+      opacity: 1;            // 타이틀이 혹시 숨겨져 있다면 노출
+      z-index: 10;
+    }
+
+    .strength-container {
+      height: auto !important; // 4. 카드가 담긴 컨테이너도 높이 제한 해제
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      overflow: visible;      // 자식 요소(카드)가 넘쳐도 보이게 설정
+    }
+
+    .strength-list {
+      width: 100%;
+      height: auto !important; // 5. 카드 리스트 높이 해제 (가장 중요)
+      display: flex;
+      flex-direction: column;
+      gap: 50px; // 카드 사이 간격
+      align-items: center;
+      padding-bottom: 50px;
+    }
+
+    .strength-card {
+      position: relative;
+      top: auto;
+      left: auto;
+      width: 100%;
+      max-width: 340px;
+      opacity: 0; // 초기 상태 숨김 (스크롤 애니메이션용)
+      transform: none; // 살짝 아래에서 대기
+      transition: all 0.8s ease-out;
+      margin: 0 auto;
+
+      /* 스크롤 시 활성화될 클래스 */
+      &.is-visible {
+        opacity: 1;
+        transform: translateY(0) !important;;
+      }
+
+      .card-wrap {
+        transform: none !important; // 기울기 강제 해제
+        height: auto;
+        min-height: 380px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      }
+
+      .card-cover {
+        display: none; // 모바일은 바로 내용 노출
+      }
+
+      .card-content {
+        position: relative; // absolute 해제
+        opacity: 1;
+        transform: none;
+        padding: 40px 20px;
+        background: #FFFDF6;
+      }
+    }
+  }
+}
+
+@mixin mobile {
+    @media screen and (max-width: 768px) {
+      @content;
+    }
+  }

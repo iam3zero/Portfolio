@@ -1,4 +1,5 @@
 import "../styles/about.scss";
+import arrow from "../assets/icons/about_arrow.png";
 
 function About() {
   return (
@@ -17,10 +18,10 @@ function About() {
             <div className="photo-placeholder">
                 {/* <a href="#"><img src={profile} alt="Notion" /></a> */}
             </div>
-
-            <a href="#" className="resume-link">
+            <span className="resume-icon"><img src={arrow} alt="arrow" /></span>
+            <p className="resume-link">
               입사지원서 바로가기
-            </a>
+            </p>
           </div>
 
           {/* introduction text */}
