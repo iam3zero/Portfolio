@@ -40,7 +40,7 @@
   /* description */
 
   .contact-desc {
-    font-size: 28px;
+    font-size: 30px;
     font-weight: 500;
     color: $color-sub;
     z-index: 99999;
@@ -95,7 +95,7 @@
   top: -150px;
   left: -30px;
 
-  animation: floatLeft 18s ease-in-out infinite;
+  animation: floatLeft 5s ease-in-out infinite;
 }
 
 
@@ -110,10 +110,10 @@
     transparent 70%
   );
 
-  top: 40px;
-  right: -30px;
+  top: -20px;
+  right: -20px;
 
-  animation: floatRight 22s ease-in-out infinite;
+  animation: floatRight 5s ease-in-out infinite;
 }
 
 /* contact-blur → slow floating 애니메이션 */

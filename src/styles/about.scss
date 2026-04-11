@@ -216,3 +216,88 @@ body {
   background: #ddd;
   border-radius: 6px;
 }
+
+
+
+/* blur background */
+.strength-blur {
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  border-radius: 50%;
+
+  filter: blur(100px);
+  opacity: 1;
+
+  will-change: transform;
+}
+
+/* 왼쪽 원 */
+
+.strength-blur.blur1 {
+  //background: #8FC7E8;
+  background: radial-gradient(
+    circle,
+    rgba(143,199,232,0.9) 0%,
+    rgba(143,199,232,0.4) 40%,
+    transparent 70%
+  );
+
+  top: -100px;
+  left: 100px;
+
+  animation: floatLeft 10s ease-in-out infinite;
+}
+
+
+/* 오른쪽 원 */
+
+.strength-blur.blur2 {
+  //background: #CCE2EE;
+  background: radial-gradient(
+    circle,
+    rgba(204,226,238,0.9) 0%,
+    rgba(204,226,238,0.5) 40%,
+    transparent 70%
+  );
+
+  top: 130px;
+  right: 100px;
+
+  animation: floatRight 10s ease-in-out infinite;
+}
+
+/* contact-blur → slow floating 애니메이션 */
+@keyframes floatLeft {
+
+  0% {
+    transform: translate(0,0);
+  }
+
+  50% {
+    transform: translate(120px,-80px);
+  }
+
+  100% {
+    transform: translate(0,0);
+  }
+
+}
+
+@keyframes floatRight {
+
+  0% {
+    transform: translate(0,0);
+  }
+
+  50% {
+    transform: translate(-150px,100px);
+  }
+
+  100% {
+    transform: translate(0,0);
+  }
+
+}
