@@ -2,6 +2,11 @@ import notionIcon from "../assets/icons/notion.png";
 import githubIcon from "../assets/icons/github.png";
 import eclatImg from "../assets/img/eclat_fullpage.png";
 
+import Photoshop from "../assets/icons/project_Photoshop.png";
+import Figma from "../assets/icons/project_Figma.png";
+import React from "../assets/icons/project_React.png";
+import Vercel from "../assets/icons/Project_Vercel.png";
+
 export const projectsData = [
   {
     id: 1,
@@ -11,7 +16,7 @@ export const projectsData = [
     contribution: "100%",
     duration: "2주",
     members: "4명",
-    tools: "Adobe Photoshop | Figma | React | Node.js",
+    tools: "Adobe Photoshop | Figma | React | Vercel",
     description:
       "보이지 않는 빛을 향으로 표현하는 가상의 국내 니치향수 브랜드 ‘ÉCLAT’를 기획 및 디자인하여 웹사이트로 구현하였습니다. 제품 라인 및 패키지 기획부터 주요 타켓층을 설정하여 감성 중심의 웹사이트로 구현 방향을 정하고 웹 프론트를 REACT로 작업하였습니다.",
 
@@ -22,10 +27,10 @@ export const projectsData = [
     github: "https://github.com/seongeun040624/eclatT",
 
     toolsIcons: [
-      notionIcon,
-      githubIcon,
-      notionIcon,
-      githubIcon,
+      Photoshop,
+      Figma,
+      React,
+      Vercel,
     ]
   },
 

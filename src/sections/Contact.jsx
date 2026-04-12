@@ -1,15 +1,46 @@
+import { useState, useEffect, useRef } from "react";
 import "../styles/contact.scss";
+
 import mail from "../assets/icons/contact_mail.png";
 import github from "../assets/icons/contact_github.png";
 import phone from "../assets/icons/contact_phone.png";
 
 import { FiChevronDown } from "react-icons/fi";
 
-import { useEffect, useRef } from "react";
 
 export default function Contact() {
+  const [toast, setToast] = useState(false);
+  const sectionRef = useRef(null);
+  const text = "Let’s Work Together!";
+
+  /* toast */
+  const handleCopyEmail = async () => {
+  await navigator.clipboard.writeText("3ze-ro2@naver.com");
+  setToast(true);
+
+  setTimeout(() => {
+    setToast(false);
+  }, 2000);
+};
+  /* 스크롤 등장 애니메이션 */
+  useEffect(() => {
+    const el = sectionRef.current;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.classList.add("show");
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(el);
+
+    return () => observer.disconnect();
+  }, []);
   return (
-    <section className="contact" id="contact">
+    <section className="contact" id="contact" ref={sectionRef}>
       <div className="contact-container">
 
         {/* background blur */}
@@ -17,10 +48,15 @@ export default function Contact() {
         <div className="contact-blur blur2"></div>
 
         <div className="contact-content">
+          {toast && <div className="toast">이메일이 복사되었습니다!</div>}
 
           {/* title */}
-          <h2 className="contact-title intro-title-ani">
-            Let’s Work Together!
+          <h2 className="contact-title wave-text">
+            {text.split("").map((char, i) => (
+              <span key={i} style={{ animationDelay: `${i * 0.05}s` }}>
+                {char === " " ? "\u00A0" : char}
+              </span>
+            ))}
           </h2>
 
           {/* description */}
@@ -38,8 +74,11 @@ export default function Contact() {
 
             <a
               href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                handleCopyEmail();
+              }}
               className="contact-btn"
-              aria-label="Send Email"
             >
               <img src={mail} alt="mail" />
               <span>Email</span>

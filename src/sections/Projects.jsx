@@ -6,9 +6,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Mousewheel, EffectCreative} from "swiper/modules";
 
 import monitor from "../assets/img/projects_monitor.png";
-import screen from "../assets/img/projects_screen1.png";
-import website from "../assets/icons/website_btn.png";
-import github from "../assets/icons/github_btn.png";
+import github_btn from "../assets/icons/github_btn.png";
+import website_btn from "../assets/icons/website_btn.png";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -172,7 +171,7 @@ function Projects() {
                       className="project-btn website"
                     >
                       <span className="btn-icon">
-                        <img src={website} alt="website" />
+                        <img src={website_btn} alt="website_btn" />
                       </span>
                       WEBSITE
                     </a>
@@ -182,7 +181,7 @@ function Projects() {
                       className="project-btn github"
                     >
                       <span className="btn-icon">
-                        <img src={github} alt="Github" />
+                        <img src={github_btn} alt="github_btn" />
                       </span>
                       GITHUB
                     </a>
