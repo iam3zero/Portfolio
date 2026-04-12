@@ -1,20 +1,57 @@
 import "../styles/about.scss";
+import { useEffect } from "react";
+
 import arrow from "../assets/icons/about_arrow.png";
 
+import Photoshop from "../assets/icons/about_Photoshop.png";
+import Illustrator from "../assets/icons/about_Illustrator.png";
+import Premiere from "../assets/icons/about_Premiere.png";
+import Effects from "../assets/icons/about_Effects.png";
+import HTML from "../assets/icons/about_HTML.png";
+import CSS from "../assets/icons/about_CSS.png";
+import SCSS from "../assets/icons/about_SCSS.png";
+import JavaScript from "../assets/icons/about_JavaScript.png";
+import jQuery from "../assets/icons/about_jQuery.png";
+import React from "../assets/icons/about_React.png";
+import Vue from "../assets/icons/about_Vue.png";
+import GitHub from "../assets/icons/about_GitHub.png";
+import Studio from "../assets/icons/about_Studio.png";
+import CapCut from "../assets/icons/about_CapCut.png";
+import Grok from "../assets/icons/about_Grok.png";
+import Labs from "../assets/icons/about_Labs.png";
+
 function About() {
+  useEffect(() => {
+    const elements = document.querySelectorAll(
+      ".fade-up, .fade-down, .fade-left, .fade-right, .fade-scale, .line-animate, .skill-icons"
+    );
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="about" id="about">
 
       <div className="about-inner">
 
         {/* section title */}
-        <h2 className="about-title">ABOUT ME</h2>
+        <h2 className="about-title fade-down">ABOUT ME</h2>
 
         {/* top profile area */}
         <div className="about-top">
 
           {/* profile image */}
-          <div className="about-photo">
+          <div className="about-photo fade-scale">
             <div className="photo-placeholder">
                 {/* <a href="#"><img src={profile} alt="Notion" /></a> */}
             </div>
@@ -25,18 +62,20 @@ function About() {
           </div>
 
           {/* introduction text */}
-          <div className="about-intro">
+          <div className="about-intro fade-right">
 
             <span className="about-role">
               PUBLISHER DESIGNER
             </span>
 
             <h3 className="about-headline">
-              <p>듣고,</p><p>다듬고,</p> <p>조율하다.</p>
+              <p className="fade-up delay-1">듣고,</p>
+              <p className="fade-up delay-2">다듬고,</p>
+              <p className="fade-up delay-3">조율하다.</p>
             </h3>
-            <div className="line"></div>
+            <div className="line line-animate"></div>
 
-            <p className="about-desc">
+            <p className="about-desc fade-up delay-2">
               웹 퍼블리싱은 작은 차이가 사용자 경험을 바꾼다고 생각합니다.<br />
               레이아웃 구조와 인터랙션, 반응형 환경까지 디테일을 고민하며<br />
               더 나은 UI를 구현하기 위해 끊임없이 배우고 성장하고 있습니다.<br />
@@ -53,7 +92,7 @@ function About() {
           {/* left info */}
           <div className="about-info">
 
-            <div className="info-row">
+            <div className="info-row fade-left delay-1">
               <span className="info-title">NAME</span>
               <div className="info-content">
                 <div className="name-box">
@@ -64,7 +103,7 @@ function About() {
               </div>
             </div>
 
-            <div className="info-row">
+            <div className="info-row fade-left delay-2">
               <span className="info-title">CONTACT</span>
               <div className="info-content">
                 <div className="contact-box">
@@ -74,7 +113,7 @@ function About() {
               </div>
             </div>
 
-            <div className="info-row">
+            <div className="info-row fade-left delay-3">
               <span className="info-title">LICENSE</span>
               <div className="info-content">
                 <ul className="license-box">
@@ -93,28 +132,63 @@ function About() {
           {/* right skill */}
           <div className="about-skill">
 
-            <h4 className="skill-title">SKILL</h4>
+            <h4 className="skill-title fade-up">SKILL</h4>
 
-            <p className="skill-list">
-              Adobe Photoshop | Adobe Illustrator | Premiere Pro | After Effects |
-              HTML | CSS | JavaScript | jQuery | React | Vue | GitHub
+            <p className="skill-list fade-up delay-1">
+              Adobe Photoshop | Adobe Illustrator | Premiere Pro | After Effects | HTML | CSS | SCSS | JavaScript | jQuery | React | Vue | GitHub |  Google Labs | Grok | Google AI Studio | CapCut |
             </p>
 
             {/* skill icons */}
-            <div className="skill-icons">
+            <div className="skill-icons fade-up">
 
-              <div className="icon-box"></div>
-              <div className="icon-box"></div>
-              <div className="icon-box"></div>
-              <div className="icon-box"></div>
-              <div className="icon-box"></div>
-              <div className="icon-box"></div>
-              <div className="icon-box"></div>
-              <div className="icon-box"></div>
-              <div className="icon-box"></div>
-              <div className="icon-box"></div>
-              <div className="icon-box"></div>
-              <div className="icon-box"></div>
+              <div className="icon-box">
+                <img src={Photoshop} alt="Photoshop" />
+              </div>
+              <div className="icon-box">
+                <img src={Illustrator} alt="Illustrator" />
+              </div>
+              <div className="icon-box">
+                <img src={Premiere} alt="Premiere" />
+              </div>
+              <div className="icon-box">
+                <img src={Effects} alt="Effects" />
+              </div>
+              <div className="icon-box">
+                <img src={HTML} alt="HTML" />
+              </div>
+              <div className="icon-box">
+                <img src={CSS} alt="CSS" />
+              </div>
+              <div className="icon-box">
+                <img src={SCSS} alt="SCSS" />
+              </div>
+              <div className="icon-box">
+                <img src={JavaScript} alt="JavaScript" />
+              </div>
+              <div className="icon-box">
+                <img src={jQuery} alt="jQuery" />
+              </div>
+              <div className="icon-box">
+                <img src={React} alt="React" />
+              </div>
+              <div className="icon-box">
+                <img src={Vue} alt="Vue" />
+              </div>
+              <div className="icon-box">
+                <img src={GitHub} alt="GitHub" />
+              </div>
+              <div className="icon-box">
+                <img src={Labs} alt="Labs" />
+              </div>
+              <div className="icon-box">
+                <img src={Grok} alt="Grok" />
+              </div>
+              <div className="icon-box">
+                <img src={Studio} alt="Studio" />
+              </div>
+              <div className="icon-box">
+                <img src={CapCut} alt="CapCut" />
+              </div>
 
             </div>
 

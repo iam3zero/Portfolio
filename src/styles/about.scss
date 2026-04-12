@@ -190,7 +190,7 @@ body {
 
 .about-skill {
   width: 60%;
-  padding: 40px;
+  padding: 20px 30px;
   border-left: 1px solid #e5e5e5;
   border-bottom: 1px solid #ddd;
 }
@@ -213,16 +213,14 @@ body {
 
 .skill-icons {
   display: grid;
-  grid-template-columns: repeat(6, 40px);
+  grid-template-columns: repeat(8, 40px);
   gap: 30px;
-  padding-top: 10px;
 }
 
 .skill-icons .icon-box {
   width: 45px;
   height: 45px;
-  background: #ddd;
-  border-radius: 6px;
+  border-radius: 10px;
 }
 
 
@@ -308,4 +306,95 @@ body {
     transform: translate(0,0);
   }
 
+}
+
+/* SCSS 애니메이션 코드 */
+/* 기본 상태 */
+.fade-up,
+.fade-down,
+.fade-left,
+.fade-right,
+.fade-scale,
+.line-animate {
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+/* 방향별 */
+.fade-up {
+  transform: translateY(30px);
+}
+.fade-down {
+  transform: translateY(-30px);
+}
+.fade-left {
+  transform: translateX(-40px);
+}
+.fade-right {
+  transform: translateX(40px);
+}
+.fade-scale {
+  transform: scale(0.8);
+}
+
+/* 활성화 */
+.show {
+  opacity: 1;
+  transform: translate(0,0) scale(1);
+}
+
+/* line 애니메이션 */
+.line-animate {
+  width: 0;
+  border-bottom: 1px solid #ddd;
+  transition: width 0.8s ease;
+}
+
+.line-animate.show {
+  width: 100px;
+}
+
+/* delay 클래스 */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.3s; }
+.delay-3 { transition-delay: 0.5s; }
+.delay-4 { transition-delay: 0.7s; }
+.delay-5 { transition-delay: 0.9s; }
+
+/* skill 아이콘 자동 stagger */
+.skill-icons .icon-box {
+  opacity: 0;
+  transform: scale(0.6);
+  transition: all 0.5s ease;
+}
+
+.skill-icons.show .icon-box {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* 자동 딜레이 */
+.skill-icons .icon-box:nth-child(1) { transition-delay: 0.05s; }
+.skill-icons .icon-box:nth-child(2) { transition-delay: 0.1s; }
+.skill-icons .icon-box:nth-child(3) { transition-delay: 0.15s; }
+.skill-icons .icon-box:nth-child(4) { transition-delay: 0.2s; }
+.skill-icons .icon-box:nth-child(5) { transition-delay: 0.25s; }
+.skill-icons .icon-box:nth-child(6) { transition-delay: 0.3s; }
+.skill-icons .icon-box:nth-child(7) { transition-delay: 0.35s; }
+.skill-icons .icon-box:nth-child(8) { transition-delay: 0.4s; }
+.skill-icons .icon-box:nth-child(9) { transition-delay: 0.45s; }
+.skill-icons .icon-box:nth-child(10){ transition-delay: 0.5s; }
+.skill-icons .icon-box:nth-child(11){ transition-delay: 0.55s; }
+.skill-icons .icon-box:nth-child(12){ transition-delay: 0.6s; }
+.skill-icons .icon-box:nth-child(13){ transition-delay: 0.65s; }
+.skill-icons .icon-box:nth-child(14){ transition-delay: 0.7s; }
+.skill-icons .icon-box:nth-child(15){ transition-delay: 0.75s; }
+.skill-icons .icon-box:nth-child(16){ transition-delay: 0.8s; }
+
+/* 반응형 768px */
+@media (max-width: 768px) {
+  .fade-left,
+  .fade-right {
+    transform: translateY(20px); // 좌우 대신 위아래로
+  }
 }
