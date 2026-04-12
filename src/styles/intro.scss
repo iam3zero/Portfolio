@@ -75,20 +75,25 @@ body {
 
 .intro-btn {
   padding: 12px 28px;
-  border-radius: 20px;
+  border-radius: 15px;
   border: none;
 
   background: #e5e5e5;
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 400;
+  opacity: .7;
 
   cursor: pointer;
-  color: $color-sub;
+  /* color: $color-sub; */
   font-family: $font-en;
 
-  background: linear-gradient(45deg, rgb(169,210,232) 0%,rgb(204,226,238) 53%,rgb(255,255,255) 100%);
+  /* background: linear-gradient(45deg, rgb(169,210,232) 0%,rgb(204,226,238) 53%,rgb(255,255,255) 100%); */
 
-  box-shadow: 0 8px 12px #0047819a;
+  /* box-shadow: 0 4px 12px #0047819a; */
+
+  background: linear-gradient(30deg, rgb(49, 49, 49) 0%,rgb(83, 83, 83) 53%,rgb(155, 155, 155) 100%);
+  color: #fff;
+  box-shadow: 0 4px 12px #5252529a;
   
   
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -96,7 +101,9 @@ body {
 
 .intro-btn:hover {
   transform: translateY(-5px);
-  box-shadow: 0 14px 22px #00478180;
+  /* box-shadow: 0 14px 22px #0047816e; */
+  box-shadow: 0 14px 20px #5252529a;
+  opacity: 1;
 }
 
 .intro-bottom {

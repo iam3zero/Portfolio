@@ -68,7 +68,7 @@ function Strength() {
                   <h3 className="card-title">
                     Web Accessibility
                   </h3>
-    
+
                   <p className="card-desc">
                     모두를 위한 웹 환경 고려
                   </p>
@@ -85,12 +85,18 @@ function Strength() {
                   <p className="content-sub">
                     모두를 위한 웹 환경 고려
                   </p>
+
+                  <div className="content-line"></div>
+
                   <div className="content-wrap">
                     <ul className="txt-list">
                       <li>접근성을 고려한 HTML 구조 설계</li>
                       <li>표준과 접근성 가이드라인 기반 마크업</li>
                       <li>사용자 환경을 고려한 UI 구현</li>
                     </ul>
+                  </div>
+                  <div className="content-ftline">
+                    <p className="content-fttext">01 STRENGTH CARD</p>
                   </div>
                 </div>
               </button>
@@ -125,12 +131,16 @@ function Strength() {
                   <p className="content-sub">
                     사용자 경험을 높이는 인터랙션 구현
                   </p>
+                  <div className="content-line"></div>
                   <div className="content-wrap">
                     <ul className="txt-list">
                       <li>스크롤 기반 인터랙션 구현</li>
                       <li>CSS 애니메이션 및 트랜지션 활용</li>
                       <li>사용자 흐름을 고려한 UI 모션 설계</li>
                     </ul>
+                  </div>
+                  <div className="content-ftline">
+                    <p className="content-fttext">02 STRENGTH CARD</p>
                   </div>
                 </div>
               </button>
@@ -169,12 +179,18 @@ function Strength() {
                   <p className="content-sub">
                     웹 표준을 고려한 마크업 구조 설계
                   </p>
+
+                  <div className="content-line"></div>
+
                   <div className="content-wrap">
                     <ul className="txt-list">
                       <li>HTML5 시맨틱 태그 기반 구조 작성</li>
                       <li>접근성을 고려한 마크업 설계</li>
                       <li>유지보수를 고려한 구조화 코드</li>
                     </ul>
+                  </div>
+                  <div className="content-ftline">
+                    <p className="content-fttext">03 STRENGTH CARD</p>
                   </div>
                 </div>
               </button>
@@ -210,6 +226,9 @@ function Strength() {
                   <p className="content-sub">
                     다양한 디바이스 대응 UI
                   </p>
+
+                  <div className="content-line"></div>
+
                   <div className="content-wrap">
                     <ul className="txt-list">
                       <li>Flex / Grid 기반 레이아웃</li>
@@ -217,6 +236,11 @@ function Strength() {
                       <li>다양한 해상도 대응 UI</li>
                     </ul>
                   </div>
+
+                  <div className="content-ftline">
+                    <p className="content-fttext">04 STRENGTH CARD</p>
+                  </div>
+
                 </div>
               </button>
             </li>
@@ -251,6 +275,9 @@ function Strength() {
                   <p className="content-sub">
                     디자인을 웹 인터페이스로 구현
                   </p>
+
+                  <div className="content-line"></div>
+
                   <div className="content-wrap">
                     <ul className="txt-list">
                       <li>Figma 기반 UI 퍼블리싱</li>
@@ -258,6 +285,11 @@ function Strength() {
                       <li>컴포넌트 단위 UI 구현</li>
                     </ul>
                   </div>
+
+                  <div className="content-ftline">
+                    <p className="content-fttext">05 STRENGTH CARD</p>
+                  </div>
+
                 </div>
               </button>
             </li>

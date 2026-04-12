@@ -10,17 +10,18 @@ import Effects from "../assets/icons/about_Effects.png";
 import HTML from "../assets/icons/about_HTML.png";
 import CSS from "../assets/icons/about_CSS.png";
 import SCSS from "../assets/icons/about_SCSS.png";
-import JavaScript from "../assets/icons/about_JavaScript.png";
+import Javascript from "../assets/icons/about_Javascript.png";
 import jQuery from "../assets/icons/about_jQuery.png";
 import React from "../assets/icons/about_React.png";
 import Vue from "../assets/icons/about_Vue.png";
 import GitHub from "../assets/icons/about_GitHub.png";
 import Studio from "../assets/icons/about_Studio.png";
 import CapCut from "../assets/icons/about_CapCut.png";
-import Grok from "../assets/icons/about_Grok.png";
-import Labs from "../assets/icons/about_Labs.png";
+import Figma from "../assets/icons/about_Figma.png";
+import Cursor from "../assets/icons/about_Cursor.png";
 
 function About() {
+  /* IntersectionObserver */
   useEffect(() => {
     const elements = document.querySelectorAll(
       ".fade-up, .fade-down, .fade-left, .fade-right, .fade-scale, .line-animate, .skill-icons"
@@ -38,6 +39,48 @@ function About() {
 
     return () => observer.disconnect();
   }, []);
+  
+  /* 아이콘 ↔ 텍스트 연결 */
+  useEffect(() => {
+  const wrap = document.querySelector(".skill-wrap");
+  const icons = document.querySelectorAll(".icon-box");
+  const skills = document.querySelectorAll(".skill-list span");
+
+  // 아이콘 → 텍스트
+  icons.forEach((icon) => {
+  icon.addEventListener("mouseenter", () => {
+    const skill = icon.dataset.skill;
+
+    icons.forEach(i => i.classList.remove("active"));
+    icon.classList.add("active");
+
+    skills.forEach((el) => {
+      el.classList.toggle("active", el.dataset.skill === skill);
+    });
+  });
+});
+
+  // 텍스트 → 아이콘
+  skills.forEach((text) => {
+  text.addEventListener("mouseenter", () => {
+    const skill = text.dataset.skill;
+
+    skills.forEach(t => t.classList.remove("active"));
+    text.classList.add("active");
+
+    icons.forEach((icon) => {
+      icon.classList.toggle("active", icon.dataset.skill === skill);
+    });
+  });
+});
+
+// 영역 벗어나면 초기화
+  wrap.addEventListener("mouseleave", () => {
+    icons.forEach(i => i.classList.remove("active"));
+    skills.forEach(t => t.classList.remove("active"));
+  });
+
+}, []);
 
   return (
     <section className="about" id="about">
@@ -51,7 +94,7 @@ function About() {
         <div className="about-top">
 
           {/* profile image */}
-          <div className="about-photo fade-scale">
+          <div className="about-photo fade-scale" data-speed="0.2">
             <div className="photo-placeholder">
                 {/* <a href="#"><img src={profile} alt="Notion" /></a> */}
             </div>
@@ -62,7 +105,7 @@ function About() {
           </div>
 
           {/* introduction text */}
-          <div className="about-intro fade-right">
+          <div className="about-intro fade-right" data-speed="0.1">
 
             <span className="about-role">
               PUBLISHER DESIGNER
@@ -130,63 +173,114 @@ function About() {
           </div>
 
           {/* right skill */}
-          <div className="about-skill">
+          <div className="about-skill skill-wrap">
 
             <h4 className="skill-title fade-up">SKILL</h4>
 
-            <p className="skill-list fade-up delay-1">
-              Adobe Photoshop | Adobe Illustrator | Premiere Pro | After Effects | HTML | CSS | SCSS | JavaScript | jQuery | React | Vue | GitHub |  Google Labs | Grok | Google AI Studio | CapCut |
-            </p>
+            <div className="skill-list fade-up delay-1">
+
+              {/* DESIGN */}
+              <div className="skill-group">
+                <span className="group-title">Design</span>
+                <div className="group-items">
+                  <span data-skill="photoshop">Photoshop</span>
+                  <span data-skill="illustrator">Illustrator</span>
+                  <span data-skill="figma">Figma</span>
+                </div>
+              </div>
+
+              {/* PUBLISHING */}
+              <div className="skill-group">
+                <span className="group-title">Publishing</span>
+                <div className="group-items">
+                  <span data-skill="html">HTML</span>
+                  <span data-skill="css">CSS</span>
+                  <span data-skill="scss">SCSS</span>
+                  <span data-skill="javascript">JavaScript</span>
+                  <span data-skill="jquery">jQuery</span>
+                </div>
+              </div>
+
+              {/* FRAMEWORK */}
+              <div className="skill-group">
+                <span className="group-title">Framework</span>
+                <div className="group-items">
+                  <span data-skill="react">React</span>
+                  <span data-skill="vue">Vue</span>
+                </div>
+              </div>
+
+              {/* TOOL */}
+              <div className="skill-group">
+                <span className="group-title">Tools</span>
+                <div className="group-items">
+                  <span data-skill="github">GitHub</span>
+                  <span data-skill="cursor">Cursor</span>
+                  <span data-skill="studio">AI Studio</span>
+                </div>
+              </div>
+
+              {/* VIDEO */}
+              <div className="skill-group">
+                <span className="group-title">Video</span>
+                <div className="group-items">
+                  <span data-skill="premiere">Premiere</span>
+                  <span data-skill="effects">After Effects</span>
+                  <span data-skill="capcut">CapCut</span>
+                </div>
+              </div>
+
+            </div>
 
             {/* skill icons */}
             <div className="skill-icons fade-up">
 
-              <div className="icon-box">
+              <div className="icon-box" data-skill="photoshop">
                 <img src={Photoshop} alt="Photoshop" />
               </div>
-              <div className="icon-box">
+              <div className="icon-box" data-skill="illustrator">
                 <img src={Illustrator} alt="Illustrator" />
               </div>
-              <div className="icon-box">
+              <div className="icon-box" data-skill="premiere">
                 <img src={Premiere} alt="Premiere" />
               </div>
-              <div className="icon-box">
+              <div className="icon-box" data-skill="effects">
                 <img src={Effects} alt="Effects" />
               </div>
-              <div className="icon-box">
+              <div className="icon-box" data-skill="html">
                 <img src={HTML} alt="HTML" />
               </div>
-              <div className="icon-box">
+              <div className="icon-box" data-skill="css">
                 <img src={CSS} alt="CSS" />
               </div>
-              <div className="icon-box">
+              <div className="icon-box" data-skill="scss">
                 <img src={SCSS} alt="SCSS" />
               </div>
-              <div className="icon-box">
-                <img src={JavaScript} alt="JavaScript" />
+              <div className="icon-box" data-skill="javascript">
+                <img src={Javascript} alt="Javascript" />
               </div>
-              <div className="icon-box">
+              <div className="icon-box" data-skill="jquery">
                 <img src={jQuery} alt="jQuery" />
               </div>
-              <div className="icon-box">
+              <div className="icon-box" data-skill="react">
                 <img src={React} alt="React" />
               </div>
-              <div className="icon-box">
+              <div className="icon-box" data-skill="vue">
                 <img src={Vue} alt="Vue" />
               </div>
-              <div className="icon-box">
+              <div className="icon-box" data-skill="github">
                 <img src={GitHub} alt="GitHub" />
               </div>
-              <div className="icon-box">
-                <img src={Labs} alt="Labs" />
+              <div className="icon-box" data-skill="cursor">
+                <img src={Cursor} alt="Labs" />
               </div>
-              <div className="icon-box">
-                <img src={Grok} alt="Grok" />
+              <div className="icon-box" data-skill="figma">
+                <img src={Figma} alt="Grok" />
               </div>
-              <div className="icon-box">
+              <div className="icon-box" data-skill="studio">
                 <img src={Studio} alt="Studio" />
               </div>
-              <div className="icon-box">
+              <div className="icon-box" data-skill="capcut">
                 <img src={CapCut} alt="CapCut" />
               </div>
 

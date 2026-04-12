@@ -57,15 +57,18 @@ body {
   background-size: cover;
   background-position: center;
   cursor: pointer;
-  transition: .6s ease;
+  transition: all 0.4s ease;
 }
 .photo-placeholder:hover{
-  opacity: .4;
+  transform: scale(1.05);
+  filter: brightness(0.7);
 }
 .resume-icon{
   position: absolute;
   bottom: 5px;
   right: -40px;
+  transition: all 0.3s ease;
+  opacity: .5;
 }
 .resume-link {
   display: block;
@@ -75,6 +78,18 @@ body {
   position: absolute;
   bottom: 0;
   right: -50px;
+  transition: all 0.3s ease;
+  opacity: .5;
+}
+
+.about-photo:hover .resume-icon {
+  transform: translate(5px, -5px);
+  opacity: 1;
+}
+
+.about-photo:hover .resume-link {
+  transform: translateX(5px);
+  opacity: 1;
 }
 
 /* intro text */
@@ -98,6 +113,8 @@ body {
 }
 .about-headline p{
   margin-right: 7px;
+  transition: all 0.3s ease;
+  cursor: default;
 }
 .about-headline p:first-child{
   color: #8FC7E8;
@@ -108,6 +125,12 @@ body {
 .about-headline p:last-child{
   color: #236D98;
 }
+.about-headline p:hover {
+  transform: translateY(-5px);
+  letter-spacing: 2px;
+}
+
+
 .about-intro .line{
   border-bottom: 1px solid #ddd;
   width: 100px;
@@ -132,6 +155,7 @@ body {
 
 .about-info {
   width: 50%;
+
 }
 
 .info-row {
@@ -140,6 +164,12 @@ body {
   padding: 17px 0;
   padding-left: 50px;
   border-bottom: 1px solid #e5e5e5;
+  transition: all 0.3s ease;
+  
+}
+.info-row:hover {
+  background: rgba(143,199,232,0.1);
+  transform: translateX(8px);
 }
 
 .info-title {
@@ -202,11 +232,68 @@ body {
   letter-spacing: 1px;
 }
 
-.skill-list {
+/* .skill-list {
   margin-bottom: 30px;
   line-height: 1.6;
   font-size: 20px;
   font-family: $font-en;
+}
+
+.skill-list span {
+  transition: all 0.3s ease;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.skill-list span.active {
+  opacity: 1;
+  color: #31769F;
+  font-weight: 600;
+  letter-spacing: 1px;
+} */
+
+ .skill-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* 그룹 */
+.skill-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+/* 타이틀 */
+.group-title {
+  min-width: 110px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  font-family: $font-en;
+}
+
+/* 아이템 */
+.group-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+}
+
+.group-items span {
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  font-family: $font-en;
+  color: #333;
+}
+
+/* active 상태 */
+.group-items span.active {
+  color: #31769F;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 /* icons */
@@ -215,12 +302,37 @@ body {
   display: grid;
   grid-template-columns: repeat(8, 40px);
   gap: 30px;
+  margin-top: 25px;
 }
 
 .skill-icons .icon-box {
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.skill-icons .icon-box img {
+  opacity: .8;
+  transition: all 0.3s ease;
   width: 45px;
   height: 45px;
-  border-radius: 10px;
+}
+
+.skill-icons .icon-box.active img {
+  opacity: 1;
+  transform: translateY(-8px) scale(1.1);
+  filter: drop-shadow(0 3px 10px rgba(0,0,0,0.25));
+}
+
+.icon-box.active img {
+  filter: drop-shadow(0 3px 10px rgba(0,0,0,0.25));
+}
+
+.icon-box:hover img{
+  transform: translateY(-8px) scale(1.1);
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 3px 10px rgba(0,0,0,0.25));
 }
 
 
@@ -396,5 +508,19 @@ body {
   .fade-left,
   .fade-right {
     transform: translateY(20px); // 좌우 대신 위아래로
+  }
+
+
+  .skill-group {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .group-title {
+    min-width: auto;
+  }
+
+  .group-items{
+    margin-left: 10px;
   }
 }
