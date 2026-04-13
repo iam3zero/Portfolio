@@ -41,6 +41,24 @@ function Projects() {
         return () => observer.disconnect();
 
         }, []);
+        
+        /* 스크린 속 이미지 자동 높이 지정 */
+        useEffect(() => {
+          const screens = document.querySelectorAll(".screen");
+
+          screens.forEach((screen) => {
+            const img = screen.querySelector("img");
+
+            img.onload = () => {
+              const screenHeight = screen.offsetHeight;
+              const imgHeight = img.offsetHeight;
+
+              const move = imgHeight - screenHeight;
+
+              img.style.setProperty("--scroll-distance", `${move}px`);
+            };
+          });
+        }, []);
             
   return (
     <section
@@ -105,14 +123,22 @@ function Projects() {
                         src={monitor}
                         alt="Mock-up"
                     />
-
                     <div className="screen">
-                        <img src={project.image} alt={project.title} />
-                    </div>
-
-                    <button className="detail-btn">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="screen-img"
+                      />
+                      <button className="detail-btn">
                         Click
-                    </button>
+                      </button>
+                    </div>
+                    {/* <div className="screen">
+                        <img src={project.image} alt={project.title} />
+                        <button className="detail-btn">
+                        Click
+                      </button>
+                    </div> */}
 
                 </div>
 

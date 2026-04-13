@@ -35,9 +35,6 @@
 
   display: flex;
   justify-content: center;
-
-  transform: translateX(-60px);
-  opacity:0;
 }
 
 .projects.show .swiper-slide-active .project-image{
@@ -56,13 +53,13 @@
   display: block;
 }
 
-.project-image:hover .screen {
-  animation-play-state: paused;
-}
 .project-image:hover .screen img {
 
-  transform: translateY(calc(-100% + 64%));
-
+  transform: translateY(calc(-100% + 55.6%));
+  
+}
+.screen:hover img{
+  animation-play-state: paused;
 }
 
 /* monitor frame */
@@ -90,8 +87,6 @@
   border-radius: 3px;
 
   z-index: 2;
-
-  transform:translateX(-60px);
   opacity:0;
 
 }
@@ -129,7 +124,7 @@
   width: 100%;
   display: block;
   
-  animation: siteScroll 12s linear infinite alternate;
+  animation: siteScroll 10s ease-in-out infinite alternate;
 }
 
 /* click button */
@@ -137,7 +132,7 @@
 .detail-btn {
 
   position: absolute;
-  top: 40%;
+  top: 55%;
   left: 50%;
 
   transform: translate(-50%, -50%);
@@ -166,11 +161,7 @@
 }
 
 .project-image:hover .detail-btn {
-
   opacity: 1;
-}
-
-.project-image:hover .detail-btn {
   transform: translate(-50%, -50%) scale(1.1);
 }
 
@@ -351,7 +342,6 @@
   background: transparent;
 }
 .projects-arrow{
-  transition:.3s ease;
   opacity: .3;
 }
 
@@ -442,13 +432,11 @@
 
 /* screen 자동 스크롤 애니메이션 */
 @keyframes siteScroll {
-
   0% {
     transform: translateY(0);
   }
 
   100% {
-    transform: translateY(calc(-100% + 20%));
+    transform: translateY(calc(-1 * var(--scroll-distance)));
   }
-
 }
