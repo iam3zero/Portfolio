@@ -5,6 +5,7 @@ import Moodscape from "../assets/img/Moodscape_fullpage.png";
 import DesignHotels from "../assets/img/DesignHotels_fullpage.png";
 import passport from "../assets/img/passport_fullpage.png";
 import bluebottle from "../assets/img/bluebottle_fullpage.png";
+import shootingGame from "../assets/img/shootingGame_fullpage.png";
 
 import Photoshop from "../assets/icons/project_Photoshop.png";
 import Figma from "../assets/icons/project_Figma.png";
@@ -138,18 +139,23 @@ export const projectsData = [
 
   {
     id: 6,
-    title: "Project Title",
+    title: "2D MARIO 슈팅게임",
+    image: shootingGame,
     category: "06 PROJECT",
     contribution: "100%",
-    duration: "2주",
-    members: "3명",
-    tools: "React",
-    description: "프로젝트 설명",
+    duration: "2시간",
+    members: "1명",
+    tools: "HTML CANVERS | JAVASCRIPT | CSS",
+    description: "HTML5 <canvas> 태그와 JavaScript를 활용하여 브라우저에서 실행되는 2D 슈팅게임을 제작하였습니다.",
     monitor: "/images/monitor.png",
     screen: "/images/project1.png",
-    website: "#",
-    github: "#",
-    toolsIcons: []
+    website: "https://iam3zero.github.io/shooting-game/",
+    github: "https://github.com/iam3zero/shooting-game",
+    toolsIcons: [
+      HTML,
+      CSS,
+      Javascript,
+    ]
   },
 
   {
