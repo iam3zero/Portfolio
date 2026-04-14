@@ -29,6 +29,24 @@ function ProjectDetail() {
     window.scrollTo(0, 0);
     }, [id]);
 
+  /* 스크린 속 이미지 자동 높이 지정 */
+  useEffect(() => {
+    const screens = document.querySelectorAll(".detail-screen");
+
+    screens.forEach((screen) => {
+      const img = screen.querySelector("img");
+
+      img.onload = () => {
+        const screenHeight = screen.offsetHeight;
+        const imgHeight = img.offsetHeight;
+
+        const move = imgHeight - screenHeight;
+
+        img.style.setProperty("--scroll-distance", `${move}px`);
+      };
+    });
+  }, []);
+
   return (
     <section className="project-detail">
       <div className="project-detail-inner">
@@ -107,23 +125,14 @@ function ProjectDetail() {
                 src={monitor}
                 alt="Mock-up"
               />
-              <div className="screen">
+              <div className="detail-screen">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="screen-img"
+                  className="detail-screen-img"
                 />
-                <button
-                  className="detail-btn"
-                  onClick={() => navigate(`/projects/${project.id}`)}
-                >
-                  Click
-                </button>
               </div>
             </div>
-          </div>
-          <div className="thumb">
-            <img src={project.image} alt={project.title} />
           </div>
         </div>
        

@@ -20,14 +20,16 @@ const projects = [
   {
     id: 1,
     title: "향수 브랜드 ÉCLAT",
+    image: eclatImg,
     subtitle: "PROJECT 01",
     contribution: "100%",
     duration: "2주",
     members: "4명 (TeamProject)",
     tools: "Adobe Photoshop | Figma | SCSS | React | Vercel",
-    image: "../assets/img/projects_monitor.png",
     designImage: "/images/project1-design.png",
     description: "보이지 않는 빛을 향으로 표현하는 가상의 비건 감성 향수 브랜드 ‘ÉCLAT’를 기획 및 디자인하여 웹사이트로 구현하였습니다. 보이지 않는 빛을 향으로 표현하는 가상의 비건 감성 향수 브랜드 ‘ÉCLAT’를 기획 및 디자인하여 웹사이트로 구현하였습니다.",
+
+    monitor: "../assets/img/projects_monitor.png",
 
     website: "https://eclat-t.vercel.app/",
     github: "https://github.com/seongeun040624/eclatT",
