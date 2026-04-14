@@ -1,6 +1,9 @@
-import "../styles/projects.scss";
-import projectsData from "../data/projectsData";
 import { useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+
+import "../styles/projects.scss";
+import projects from "../data/projects";
+import projectsData from "../data/projectsData";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Mousewheel, EffectCreative} from "swiper/modules";
@@ -15,6 +18,7 @@ import "swiper/css/pagination";
 
 function Projects() {
     const projectRef = useRef(null);
+    const navigate = useNavigate();
 
     /* 스크롤 감지 코드 */
     useEffect(() => {
@@ -129,7 +133,10 @@ function Projects() {
                         alt={project.title}
                         className="screen-img"
                       />
-                      <button className="detail-btn">
+                      <button
+                        className="detail-btn"
+                        onClick={() => navigate(`/projects/${project.id}`)}
+                      >
                         Click
                       </button>
                     </div>
@@ -182,7 +189,7 @@ function Projects() {
                     {project.toolsIcons.map((icon, i) => (
                         <img key={i} src={icon} alt="project-tools" />
                     ))}
-                    </div>
+                  </div>
 
                   <p className="project-desc">
                     {project.description}
