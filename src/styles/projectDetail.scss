@@ -133,7 +133,7 @@ section{
         font-size: 20px;
         color: $color-sub;
         line-height: 1.8;
-        max-width: 600px;
+        width: 100%;
 
         .project-buttons{
           padding-top: 30px;
@@ -234,13 +234,12 @@ section{
     .img_bg{
         display: block;
         position: absolute;
-        top: 0px;
-        left: 0px;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 450px;
         filter: brightness(60%);
         z-index: 0;
-        background: url(../assets/img/eclat_bg.png) center center / cover no-repeat scroll;
     }
   }
 
@@ -311,6 +310,7 @@ section{
     .use-text{
     font-size: 58px;
     display: block;
+    font-weight: 600;
   }
 }
 
@@ -342,13 +342,13 @@ section{
 
   .concept-wrap {
     gap: 60px;
-    width: 800px;
+    width: 65%;
 
     .concept-box{
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 30px;
+      gap: 20px;
       margin-bottom: 70px;
     }
     
@@ -426,8 +426,33 @@ section{
       line-height: 2;
       font-size: 22px;
       width: 65%;
+      margin-bottom: 60px;
     }
   }
+
+  .result-box .label{
+    color: #fff;
+    background: #236D98;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-family: $font-en;
+    justify-content: center;
+    text-align: center;
+    display: inline-block;
+    text-transform: uppercase;
+  }
+   .result-list{
+    margin-top: 20px;
+    margin-left: 30px;
+      li{
+        font-size: 22px;
+        line-height: 2;
+        list-style: disc;
+
+      }
+   }
 
   /* 🔹 하단 */
   .detail-nav {

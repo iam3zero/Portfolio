@@ -145,7 +145,7 @@ export const projectsData = [
     contribution: "100%",
     duration: "2시간",
     members: "1명",
-    tools: "HTML CANVERS | JAVASCRIPT | CSS",
+    tools: "HTML CANVAS | JAVASCRIPT | CSS",
     description: "HTML5 <canvas> 태그와 JavaScript를 활용하여 브라우저에서 실행되는 2D 슈팅게임을 제작하였습니다.",
     monitor: monitorImg,
     screen: "/images/project1.png",

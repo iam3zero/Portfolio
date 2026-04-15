@@ -107,7 +107,12 @@ function ProjectDetail() {
           </div>
         </div>
         <div className="top_bg">
-            <div className="img_bg"/>
+            <div 
+              className="img_bg"
+              style={{
+                background: `url(${project.bg}) center / cover no-repeat`
+              }}
+            ></div>
         </div>
         <div className="container">
           <div className="title fade-up delay-3">{project.title}</div>
@@ -234,9 +239,9 @@ function ProjectDetail() {
   
               <div className="concept-box">
                 <p className="label fade-up delay-3">DEVELOPMENT</p>
-                <p className="concept-text">
-                  {project.concept.developmentText}
-                </p>
+                <p className="concept-text fade-up delay-1">{project.concept.developmentText1}</p>
+                <p className="concept-text fade-up delay-2">{project.concept.developmentText2}</p>
+                <p className="concept-text fade-up delay-3">{project.concept.developmentText3}</p>
               </div>
             </div>
           </div>
@@ -248,11 +253,11 @@ function ProjectDetail() {
             <h3>PROCESS</h3>
             <div className="line"></div>
             <div className="problem-text">
-              <p className="process-text">{project.process.problem}</p>
+              <p className="process-text fade-up delay-1">{project.process.problem}</p>
             </div>
             <div className="solve-text">
-              <img src={process_arrow} alt="process_arrow" />
-              <p className="process-text">{project.process.solution}</p>
+              <img className="fade-up delay-2" src={process_arrow} alt="process_arrow" />
+              <p className="process-text fade-up delay-3">{project.process.solution}</p>
             </div>
             </div>
         </section>
@@ -263,6 +268,14 @@ function ProjectDetail() {
             <h3>RESULT</h3>
             <div className="line"></div>
             <p className="result-text">{project.result}</p>
+            <div className="result-box">
+              <p className="label fade-up delay-2">Future Improvements</p>
+              <ul className="result-list">
+                <li className="list fade-up delay-1">{project.Improvements1}</li>
+                <li className="list fade-up delay-2">{project.Improvements2}</li>
+                <li className="list fade-up delay-3">{project.Improvements3}</li>
+              </ul>
+            </div>
           </div>
         </section>
 
