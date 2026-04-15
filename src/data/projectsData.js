@@ -1,7 +1,7 @@
 /* import notionIcon from "../assets/icons/notion.png";
 import githubIcon from "../assets/icons/github.png"; */
 import eclatImg from "../assets/img/eclat_fullpage.png";
-import Moodscape from "../assets/img/Moodscape_fullpage.png";
+import Moodscape from "../assets/img/moodscape_fullpage.png";
 import DesignHotels from "../assets/img/DesignHotels_fullpage.png";
 import passport from "../assets/img/passport_fullpage.png";
 import bluebottle from "../assets/img/bluebottle_fullpage.png";
@@ -12,8 +12,8 @@ import monitorImg from "../assets/img/projects_monitor.png";
 import Photoshop from "../assets/icons/project_Photoshop.png";
 import Figma from "../assets/icons/project_Figma.png";
 import React from "../assets/icons/project_React.png";
-import Vercel from "../assets/icons/Project_Vercel.png";
-import SCSS from "../assets/icons/Project_SCSS.png";
+import Vercel from "../assets/icons/project_Vercel.png";
+import SCSS from "../assets/icons/project_SCSS.png";
 import HTML from "../assets/icons/project_HTML.png";
 import CSS from "../assets/icons/project_CSS.png";
 import Javascript from "../assets/icons/project_Javascript.png";

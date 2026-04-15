@@ -1,7 +1,7 @@
 /* import notionIcon from "../assets/icons/notion.png";
 import githubIcon from "../assets/icons/github.png"; */
 import eclatImg from "../assets/img/eclat_fullpage.png";
-import Moodscape from "../assets/img/Moodscape_fullpage.png";
+import Moodscape from "../assets/img/moodscape_fullpage.png";
 /* import DesignHotels from "../assets/img/DesignHotels_fullpage.png";
 import passport from "../assets/img/passport_fullpage.png";
 import bluebottle from "../assets/img/bluebottle_fullpage.png";
