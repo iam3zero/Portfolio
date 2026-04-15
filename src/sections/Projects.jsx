@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 import "../styles/projects.scss";
-import projects from "../data/projects";
+/* import projects from "../data/projects"; */
 import projectsData from "../data/projectsData";
 
 import { Swiper, SwiperSlide } from "swiper/react";

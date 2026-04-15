@@ -13,7 +13,7 @@ import monitor from "../assets/img/projects_monitor.png";
 import eclat_Detail from "../assets/img/eclat_projectDetail.png";
 import process_arrow from "../assets/img/process_arrow.png";
 
-import eclat_bg from "../assets/img/eclat_bg.png";
+/* import eclat_bg from "../assets/img/eclat_bg.png"; */
 
 function ProjectDetail() {
   const { id } = useParams();
