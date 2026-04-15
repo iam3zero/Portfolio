@@ -3,10 +3,15 @@ import { useEffect } from "react";
 import projects from "../data/projects";
 import "../styles/projectDetail.scss";
 
+import { FiChevronDown } from "react-icons/fi";
+
 import github_btn from "../assets/icons/github_btn.png";
 import website_btn from "../assets/icons/website_btn.png";
 
 import monitor from "../assets/img/projects_monitor.png";
+
+import eclat_Detail from "../assets/img/eclat_projectDetail.png";
+import process_arrow from "../assets/img/process_arrow.png";
 
 import eclat_bg from "../assets/img/eclat_bg.png";
 
@@ -36,7 +41,7 @@ function ProjectDetail() {
     screens.forEach((screen) => {
       const img = screen.querySelector("img");
 
-      img.onload = () => {
+      const setScroll = () => {
         const screenHeight = screen.offsetHeight;
         const imgHeight = img.offsetHeight;
 
@@ -44,31 +49,70 @@ function ProjectDetail() {
 
         img.style.setProperty("--scroll-distance", `${move}px`);
       };
+
+      // 🔥 이미 로드된 경우
+      if (img.complete) {
+        setScroll();
+      } else {
+        img.onload = setScroll;
+      }
     });
-  }, []);
+  }, [id]);
+
+  useEffect(() => {
+    const elements = document.querySelectorAll(".fade-up");
+
+    // 🔥 기존 show 제거 (핵심)
+    elements.forEach((el) => el.classList.remove("show"));
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, [id]); // ⭐ 중요
+
+  useEffect(() => {
+    const section = document.querySelector(".project-detail");
+
+    section?.classList.remove("show"); // 🔥 초기화
+
+    setTimeout(() => {
+      section?.classList.add("show");
+    }, 50);
+  }, [id]);
 
   return (
     <section className="project-detail">
       <div className="project-detail-inner">
         <div className="container">
-          <div className="project-detail-name">PROJECT DETAIL PAGE</div>
-          <div className="project-detail-line"></div>
+          <div className="project-detail-name fade-up">PROJECT DETAIL PAGE</div>
+          <div className="project-detail-line fade-up delay-1"></div>
         </div>
 
         {/* 🔹 상단 */}
         <div className="container">
           <div className="project-num">
-            <p className="subtitle">{project.subtitle}</p>
+            <p className="subtitle fade-up delay-2">{project.subtitle}</p>
           </div>
         </div>
         <div className="top_bg">
             <div className="img_bg"/>
         </div>
         <div className="container">
-          <div className="title">{project.title}</div>
+          <div className="title fade-up delay-3">{project.title}</div>
           <div className="top-area">
             <div className="text">
-              <ul className="project-text">
+              <ul className="project-text fade-up delay-1">
                 <li>
                   <span>작업 기여도</span>
                   <p>{project.contribution}</p>
@@ -89,12 +133,12 @@ function ProjectDetail() {
                   <p>{project.tools}</p>
                 </li>
               </ul>
-              <div className="project-tools">
+              <div className="project-tools fade-up delay-2">
                     {project.toolsIcons.map((icon, i) => (
                         <img key={i} src={icon} alt="project-tools" />
                     ))}
               </div>
-              <div className="info-btn">
+              <div className="info-btn fade-up delay-3">
                 <p>{project.description}</p>
                 {/* buttons */}
                   <div className="project-buttons">
@@ -119,7 +163,7 @@ function ProjectDetail() {
                   </div>
               </div>
             </div>
-            <div className="img-area">
+            <div className="img-area fade-up delay-4">
               <img
                 className="detail-monitor"
                 src={monitor}
@@ -134,63 +178,94 @@ function ProjectDetail() {
               </div>
             </div>
           </div>
+          <div className="detail_arrow">
+            <FiChevronDown size={40} className="arrow first" />
+            <FiChevronDown size={40} className="arrow second" />
+          </div>
         </div>
        
 
         {/* 🔹 DESIGN */}
         <section className="design">
-          <h3>DESIGN</h3>
-          <div className="design-img">
-            <img src={project.designImage} alt="design" />
+          <div className="container">
+            <h3>DESIGN</h3>
+            <div className="design-img">
+              <img src={eclat_Detail} alt="eclat_Detail" />
+            </div>
           </div>
         </section>
 
-        {/* 🔹 CONCEPT */}
-        <section className="concept">
-          <h3>CONCEPT</h3>
-
-          <div className="concept-top">
-            <div>
-              <p className="label">TYPOGRAPHY</p>
-              <h4>Pretendard</h4>
-            </div>
-
-            <div>
-              <p className="label">COLOR</p>
-              <div className="color-box">
-                <span></span>
-                <span></span>
-                <span></span>
+        {/* CONCEPT */}
+        <section className="concept fade-up">
+          <div className="container">
+            <h3>CONCEPT</h3>
+            <div className="line"></div>
+  
+            <div className="concept-top">
+              <div className="typography">
+                <p className="label fade-up delay-1">TYPOGRAPHY</p>
+                <span className="use-text">
+                  {project.concept.typography}
+                </span>
+              </div>
+              <div className="color-wrap">
+                <p className="label fade-up delay-1">COLOR</p>
+                <div className="color-box">
+                  {project.concept.colors.map((color, i) => (
+                    <span key={i} style={{ background: color }}>
+                      {color}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="concept-text">
-            <div>
-              <p className="label">DESIGN CONCEPT</p>
-              <p>디자인 컨셉 내용 들어가는 자리입니다.</p>
-            </div>
-
-            <div>
-              <p className="label">DEVELOPMENT</p>
-              <p>개발 설명 내용 들어가는 자리입니다.</p>
+          {/* CONCEPT text */}
+          <div className="container">
+            <div className="concept-wrap">
+              <div className="concept-box">
+                <p className="label fade-up delay-2">DESIGN CONCEPT</p>
+                <p className="concept-text">
+                  {project.concept.conceptText}
+                </p>
+              </div>
+  
+              <div className="concept-box">
+                <p className="label fade-up delay-3">DEVELOPMENT</p>
+                <p className="concept-text">
+                  {project.concept.developmentText}
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* 🔹 PROCESS */}
-        <section className="process">
-          <h3>PROCESS</h3>
-          <p>프로세스 설명 영역입니다.</p>
+        {/* PROCESS */}
+        <section className="process fade-up">
+          <div className="container">
+            <h3>PROCESS</h3>
+            <div className="line"></div>
+            <div className="problem-text">
+              <p className="process-text">{project.process.problem}</p>
+            </div>
+            <div className="solve-text">
+              <img src={process_arrow} alt="process_arrow" />
+              <p className="process-text">{project.process.solution}</p>
+            </div>
+            </div>
         </section>
 
-        {/* 🔹 RESULT */}
-        <section className="result">
-          <h3>RESULT</h3>
-          <p>결과 설명 영역입니다.</p>
+        {/* RESULT */}
+        <section className="result fade-up">
+          <div className="container">
+            <h3>RESULT</h3>
+            <div className="line"></div>
+            <p className="result-text">{project.result}</p>
+          </div>
         </section>
 
-        {/* 🔹 하단 네비 */}
+        {/* 하단 네비 */}
         <div className="detail-nav">
           <button
             disabled={!prevProject}
@@ -199,8 +274,16 @@ function ProjectDetail() {
             ← PREV PROJECT
           </button>
 
-          <button onClick={() => navigate("/")}>
-            HOME
+          <button
+            onClick={() => {
+              navigate("/");
+              setTimeout(() => {
+                const section = document.getElementById("projects");
+                section?.scrollIntoView({ behavior: "smooth" });
+              }, 100);
+            }}
+          >
+            BACK TO PROJECT
           </button>
 
           <button

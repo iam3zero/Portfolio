@@ -2,14 +2,51 @@
 @use './global.scss' as *;
 @use './_mixins.scss' as *;
 
+.detail-nav {
+  position: relative;
+  z-index: 9999;
+}
 
+/* 기본 숨김 상태 */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* 보여질 때 */
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.8s cubic-bezier(.22,.61,.36,1);
+}
+
+/* 딜레이 옵션 */
+.delay-1 { transition-delay: 0.2s; }
+.delay-2 { transition-delay: 0.4s; }
+.delay-3 { transition-delay: 0.6s; }
+.delay-4 { transition-delay: 0.8s; }
+
+.project-detail {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(.22,.61,.36,1);
+}
+
+.project-detail.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*  */
+/*  */
+/*  */
 .container{
     padding: 0 200px;
     height: inherit;
     margin: 0 auto;
 }
 section{
-  padding: 100px 0;
+  padding: 50px 0;
 }
 
 .project-detail {
@@ -22,19 +59,20 @@ section{
   }
 
   .project-detail-name{
-    color: #BBBBBB;
+    color: #aaa;
     font-size: 18px;
     line-height: 2;
     font-family: $font-en;
     font-weight: 400;
     opacity: .5;
     display: none;
+    margin-bottom: 10px;
   }
   .project-detail-line{
-    width: 100%;
+    width: 10%;
     height: 2px;
     background: #ccc;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     opacity: .4;
     display: none;
   }
@@ -138,9 +176,9 @@ section{
   
 
   top: 23.3%;
-  left: 8.5%;
+  left: 8.3%;
 
-  width: 82%;
+  width: 82.3%;
   height: 46.4%;
 
   overflow: hidden;
@@ -168,6 +206,27 @@ section{
 }
 
 
+.detail_arrow {
+  transform: translateX(-50%, -50%); 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  &.hidden {
+    opacity: 0;
+    pointer-events: none;
+
+  }
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.6));
+  .arrow { 
+    color: white; 
+    stroke-width: 1.5; 
+    margin-top: -30px; 
+    animation: bounce 2s infinite; 
+  }
+}
+
+
 
   .top_bg{ 
     width: 100%;
@@ -186,83 +245,215 @@ section{
   }
 
   /* 🔹 DESIGN */
+  .design .container{
+    padding-top: 200px;
+  }
   .design {
-    .design-img img {
+    h3{
+      font-family: "Montserrat";
+      margin-bottom: 30px;
+      font-size: 48px;
+      font-weight: 600;
+      color: $color-sub;
+      letter-spacing: 2px;
+    }
+
+    img{
       width: 100%;
     }
   }
 
+
+
   /* 🔹 CONCEPT */
+  .concept .container{
+    padding-top: 50px;
+  }
   .concept {
+    h3{
+      font-family: "Montserrat";
+      font-size: 48px;
+      font-weight: 600;
+      color: $color-sub;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+    }
+    .line{
+      width: 100%;
+      height: 1px;
+      background: #b2b2b2;
+      margin-bottom: 50px;
+    }
     .concept-top {
       display: flex;
-      justify-content: space-between;
-      margin-bottom: 40px;
+      gap: 300px;
 
       .label {
-        font-size: 12px;
-        color: #888;
-      }
-
-      .color-box {
-        display: flex;
-        gap: 10px;
-
-        span {
-          width: 40px;
-          height: 40px;
-          display: block;
-
-          &:nth-child(1) { background: #6d6a66; }
-          &:nth-child(2) { background: #b5a89c; }
-          &:nth-child(3) { background: #ddd; }
-        }
+        color: #fff;
+        background: #236D98;
+        font-size: 24px;
+        font-weight: 500;
+        padding: 8px 20px;
+        border-radius: 30px;
+        font-family: $font-en;
+        justify-content: center;
+        text-align: center;
+        display: inline-block;
       }
     }
 
-    .concept-text {
+.typography {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+
+    .use-text{
+    font-size: 58px;
+    display: block;
+  }
+}
+
+.color-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+}
+.color-box {
+  display: flex;
+
+  span {
+    display: block;
+    padding: 30px 25px;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    /* width: 120px;
+    height: 80px; */
+
+
+    &:nth-child(1) { background: #8E8882; color: #fff; }
+    &:nth-child(2) { background: #B5ABA0; }
+    &:nth-child(3) { background: #F7F4F0; }
+  }
+}
+
+  .concept-wrap {
+    gap: 60px;
+    width: 800px;
+
+    .concept-box{
       display: flex;
-      gap: 60px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 30px;
+      margin-bottom: 70px;
+    }
+    
 
-      .label {
-        font-size: 12px;
-        color: #888;
-        margin-bottom: 10px;
-      }
+    .label {
+      color: #fff;
+      background: #236D98;
+      font-size: 24px;
+      font-weight: 500;
+      padding: 8px 20px;
+      border-radius: 30px;
+      font-family: $font-en;
+      justify-content: center;
+      text-align: center;
+      display: inline-block;
+    }
 
-      p {
-        color: #555;
-        line-height: 1.6;
-      }
+    .concept-text{
+      color: #333;
+      line-height: 2;
+      font-size: 22px;
+      font-family: $font-main;
     }
   }
+}
+  
 
   /* 🔹 PROCESS / RESULT */
+  .process{
+    margin-bottom: -300px;
+  }
   .process,
   .result {
-    p {
-      color: #555;
-      line-height: 1.6;
+
+    h3{
+      font-family: "Montserrat";
+      margin-bottom: 30px;
+      font-size: 48px;
+      font-weight: 600;
+      color: $color-sub;
+      letter-spacing: 2px;
+    }
+    .line{
+      width: 100%;
+      height: 1px;
+      background: #b2b2b2;
+      margin-bottom: 50px;
+    }
+    .problem-text{
+      width: 65%;
+      .process-text{
+        line-height: 2;
+        font-size: 22px;
+      }
+
+    }
+    .solve-text{
+      width: 65%;
+      margin-top: 50px;
+      margin-left: 500px;
+      display: flex;
+      position: relative;
+      img{
+        position: absolute;
+        top: -20px;
+        left: -200px;
+      }
+      .process-text{
+        line-height: 2;
+        font-size: 22px;
+      }
+    }
+  
+    .result-text{
+      line-height: 2;
+      font-size: 22px;
+      width: 65%;
     }
   }
 
   /* 🔹 하단 */
   .detail-nav {
-    margin: 150px 0;
+    margin-top: -100px;
+    height: 50px;
+    padding-top: 50px;
+    border-top: 1px solid #bbb;
     display: flex;
+    align-items: center;
     justify-content: center;
     gap: 40px;
 
     button {
       background: none;
       border: none;
-      font-family: "Montserrat";
+      font-family: $font-en;
+      letter-spacing: 2px;
+      font-weight: 500;
       cursor: pointer;
-      color: #666;
+      color: $color-sub;
       transition: 0.3s;
+      font-size: 24px;
 
       &:hover {
-        color: #111;
+        color: #236D98;
+        font-weight: 700;
       }
 
       &:disabled {
