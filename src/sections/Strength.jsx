@@ -1,10 +1,10 @@
 import { useEffect, useState, useRef } from "react";
 import "../styles/strength.scss";
-import Accessibillity from "../assets/icons/strength_Accessibillity.png";
-import Motion from "../assets/icons/strength_Motion.png";
-import Markup from "../assets/icons/strength_Markup.png";
+import Accessibillity from "../assets/icons/strength_accessibillity.png";
+import Motion from "../assets/icons/strength_motion.png";
+import Markup from "../assets/icons/strength_markup.png";
 import Responsive from "../assets/icons/strength_responsive.png";
-import UI from "../assets/icons/strength_UI.png";
+import UI from "../assets/icons/strength_uI.png";
 
 
 function Strength() {

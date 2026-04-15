@@ -3,22 +3,22 @@ import { useEffect } from "react";
 
 import arrow from "../assets/icons/about_arrow.png";
 
-import Photoshop from "../assets/icons/about_Photoshop.png";
-import Illustrator from "../assets/icons/about_Illustrator.png";
-import Premiere from "../assets/icons/about_Premiere.png";
-import Effects from "../assets/icons/about_Effects.png";
-import HTML from "../assets/icons/about_HTML.png";
-import CSS from "../assets/icons/about_CSS.png";
-import SCSS from "../assets/icons/about_SCSS.png";
-import Javascript from "../assets/icons/about_JavaScript.png";
-import jQuery from "../assets/icons/about_jQuery.png";
-import React from "../assets/icons/about_React.png";
-import Vue from "../assets/icons/about_Vue.png";
-import GitHub from "../assets/icons/about_GitHub.png";
-import Studio from "../assets/icons/about_Studio.png";
-import CapCut from "../assets/icons/about_CapCut.png";
-import Figma from "../assets/icons/about_Figma.png";
-import Cursor from "../assets/icons/about_Cursor.png";
+import Photoshop from "../assets/icons/about_photoshop.png";
+import Illustrator from "../assets/icons/about_illustrator.png";
+import Premiere from "../assets/icons/about_premiere.png";
+import Effects from "../assets/icons/about_effects.png";
+import HTML from "../assets/icons/about_html.png";
+import CSS from "../assets/icons/about_css.png";
+import SCSS from "../assets/icons/about_scss.png";
+import Javascript from "../assets/icons/about_javascript.png";
+import jQuery from "../assets/icons/about_jquery.png";
+import React from "../assets/icons/about_react.png";
+import Vue from "../assets/icons/about_vue.png";
+import GitHub from "../assets/icons/about_github.png";
+import Studio from "../assets/icons/about_studio.png";
+import CapCut from "../assets/icons/about_capcut.png";
+import Figma from "../assets/icons/about_figma.png";
+import Cursor from "../assets/icons/about_cursor.png";
 
 function About() {
   /* IntersectionObserver */

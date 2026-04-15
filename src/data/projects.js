@@ -2,22 +2,22 @@
 import githubIcon from "../assets/icons/github.png"; */
 import eclatImg from "../assets/img/eclat_fullpage.png";
 import Moodscape from "../assets/img/moodscape_fullpage.png";
-/* import DesignHotels from "../assets/img/DesignHotels_fullpage.png";
+/* import DesignHotels from "../assets/img/designhotels_fullpage.png";
 import passport from "../assets/img/passport_fullpage.png";
 import bluebottle from "../assets/img/bluebottle_fullpage.png";
-import shootingGame from "../assets/img/shootingGame_fullpage.png"; */
+import shootingGame from "../assets/img/shootinggame_fullpage.png"; */
 
-import eclat_projectDetail from "../assets/img/eclat_projectDetail.png";
+import eclat_projectDetail from "../assets/img/eclat_projectdetail.png";
 import monitorImg from "../assets/img/projects_monitor.png";
 
-import Photoshop from "../assets/icons/project_Photoshop.png";
-import Figma from "../assets/icons/project_Figma.png";
-import React from "../assets/icons/project_React.png";
-import Vercel from "../assets/icons/Project_Vercel.png";
+import Photoshop from "../assets/icons/project_photoshop.png";
+import Figma from "../assets/icons/project_figma.png";
+import React from "../assets/icons/project_react.png";
+import Vercel from "../assets/icons/Project_vercel.png";
 import SCSS from "../assets/icons/project_scss.png";
-/* import HTML from "../assets/icons/project_HTML.png";
-import CSS from "../assets/icons/project_CSS.png";
-import Javascript from "../assets/icons/project_Javascript.png"; */
+/* import HTML from "../assets/icons/project_hTML.png";
+import CSS from "../assets/icons/project_css.png";
+import Javascript from "../assets/icons/project_javascript.png"; */
 
 
 

@@ -10,7 +10,7 @@ import website_btn from "../assets/icons/website_btn.png";
 
 import monitor from "../assets/img/projects_monitor.png";
 
-import eclat_Detail from "../assets/img/eclat_projectDetail.png";
+import eclat_Detail from "../assets/img/eclat_projectdetail.png";
 import process_arrow from "../assets/img/process_arrow.png";
 
 /* import eclat_bg from "../assets/img/eclat_bg.png"; */
