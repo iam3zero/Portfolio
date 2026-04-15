@@ -158,7 +158,7 @@ export const projectsData = [
     ]
   },
 
-  {
+  /* {
     id: 7,
     title: "Project Title",
     category: "07 PROJECT",
@@ -172,9 +172,9 @@ export const projectsData = [
     website: "#",
     github: "#",
     toolsIcons: []
-  },
+  }, */
 
-  {
+  /* {
     id: 8,
     title: "Project Title",
     category: "08 PROJECT",
@@ -188,7 +188,7 @@ export const projectsData = [
     website: "#",
     github: "#",
     toolsIcons: []
-  }
+  } */
 ];
 
 export default projectsData;
