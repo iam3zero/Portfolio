@@ -13,7 +13,7 @@ import monitorImg from "../assets/img/projects_monitor.png";
 import Photoshop from "../assets/icons/project_photoshop.png";
 import Figma from "../assets/icons/project_figma.png";
 import React from "../assets/icons/project_react.png";
-import Vercel from "../assets/icons/Project_vercel.png";
+import Vercel from "../assets/icons/project_vercel.png";
 import SCSS from "../assets/icons/project_scss.png";
 /* import HTML from "../assets/icons/project_hTML.png";
 import CSS from "../assets/icons/project_css.png";
