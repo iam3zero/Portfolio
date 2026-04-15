@@ -10,7 +10,7 @@ import Effects from "../assets/icons/about_Effects.png";
 import HTML from "../assets/icons/about_HTML.png";
 import CSS from "../assets/icons/about_CSS.png";
 import SCSS from "../assets/icons/about_SCSS.png";
-import Javascript from "../assets/icons/about_Javascript.png";
+import Javascript from "../assets/icons/about_JavaScript.png";
 import jQuery from "../assets/icons/about_jQuery.png";
 import React from "../assets/icons/about_React.png";
 import Vue from "../assets/icons/about_Vue.png";

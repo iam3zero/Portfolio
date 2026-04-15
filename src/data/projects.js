@@ -14,7 +14,7 @@ import Photoshop from "../assets/icons/project_Photoshop.png";
 import Figma from "../assets/icons/project_Figma.png";
 import React from "../assets/icons/project_React.png";
 import Vercel from "../assets/icons/Project_Vercel.png";
-import SCSS from "../assets/icons/Project_SCSS.png";
+import SCSS from "../assets/icons/project_scss.png";
 /* import HTML from "../assets/icons/project_HTML.png";
 import CSS from "../assets/icons/project_CSS.png";
 import Javascript from "../assets/icons/project_Javascript.png"; */
