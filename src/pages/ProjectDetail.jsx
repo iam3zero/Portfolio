@@ -91,7 +91,8 @@ function ProjectDetail() {
     }, 50);
   }, [id]);
 
-  return (
+ return (
+  <div key={id}>
     <section className="project-detail">
       <div className="project-detail-inner">
         <div className="container">
@@ -296,7 +297,7 @@ function ProjectDetail() {
 
       </div>
     </section>
-  );
-}
+  </div>
+)};
 
 export default ProjectDetail;
