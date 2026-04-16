@@ -85,7 +85,7 @@ export default function Contact() {
             </a>
 
             <a
-              href="#"
+              href="https://github.com/iam3zero"
               target="_blank"
               rel="noopener noreferrer"
               className="contact-btn"

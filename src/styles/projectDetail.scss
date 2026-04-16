@@ -46,7 +46,7 @@
     margin: 0 auto;
 }
 section{
-  padding: 50px 0;
+  padding: 40px 0;
 }
 
 .project-detail {
@@ -65,7 +65,7 @@ section{
     font-family: $font-en;
     font-weight: 400;
     opacity: .5;
-    display: none;
+    display: block;
     margin-bottom: 10px;
   }
   .project-detail-line{
@@ -74,7 +74,7 @@ section{
     background: #ccc;
     margin-bottom: 10px;
     opacity: .4;
-    display: none;
+    display: block;
   }
 
   .project-num {
@@ -307,10 +307,16 @@ section{
   align-items: flex-start;
   gap: 30px;
 
-    .use-text{
-    font-size: 58px;
+    .use-text1{
+    font-size: 54px;
     display: block;
     font-weight: 600;
+  }
+    .use-text2{
+    font-size: 54px;
+    display: block;
+    font-weight: 600;
+    font-family: $font-en;
   }
 }
 

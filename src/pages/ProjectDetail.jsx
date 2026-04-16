@@ -210,8 +210,11 @@ function ProjectDetail() {
             <div className="concept-top">
               <div className="typography">
                 <p className="label fade-up delay-1">TYPOGRAPHY</p>
-                <span className="use-text">
-                  {project.concept.typography}
+                <span className="use-text1">
+                  {project.concept.typography1}
+                </span>
+                <span className="use-text2">
+                  {project.concept.typography2}
                 </span>
               </div>
               <div className="color-wrap">

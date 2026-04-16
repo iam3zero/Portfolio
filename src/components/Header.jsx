@@ -161,7 +161,7 @@ function Header() {
             </a>
           </div>
           <div className="icon-box">
-            <a href="#">
+            <a href="https://github.com/iam3zero" target="_blank">
                 <img src={github} alt="Github" />
             </a>
           </div>

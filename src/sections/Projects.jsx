@@ -200,7 +200,7 @@ function Projects() {
                   <div className="project-buttons">
 
                     <a
-                      href={project.website}
+                      href={project.website} target="_blank"
                       className="project-btn website"
                     >
                       <span className="btn-icon">
@@ -210,7 +210,7 @@ function Projects() {
                     </a>
 
                     <a
-                      href={project.github}
+                      href={project.github} target="_blank"
                       className="project-btn github"
                     >
                       <span className="btn-icon">
