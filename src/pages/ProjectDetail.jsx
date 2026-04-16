@@ -259,7 +259,7 @@ function ProjectDetail() {
               <p className="process-text fade-up delay-1">{project.process.problem}</p>
             </div>
             <div className="solve-text">
-              <img className="fade-up delay-2" src={process_arrow} alt="process_arrow" />
+              <img className="process-arrow fade-up delay-2" src={process_arrow} alt="process_arrow" />
               <p className="process-text fade-up delay-3">{project.process.solution}</p>
             </div>
             </div>

@@ -64,7 +64,7 @@ body {
 
 section {
   min-height: 100vh;
-  padding: 120px 0;
+  padding: clamp(80px, 10vw, 120px) 0;
 }
 
 .inner {
@@ -75,3 +75,9 @@ section {
 
 ul,li,ol{list-style: none;}
 a{text-decoration: none;}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}

@@ -196,6 +196,26 @@
 
 }
 
+.pj-resume-icon{
+  position: absolute;
+  bottom: 35px;
+  right: 100px;
+  transition: all 0.3s ease;
+  
+}
+.pj-resume-link {
+  display: block;
+  margin-top: 5px;
+  font-size: 14px;
+  color: #31769F;
+  position: absolute;
+  bottom: 35px;
+  right: 20px;
+  transition: all 0.3s ease;
+  font-family: $font-en;
+  font-weight: 500;
+}
+
 /* .detail-btn{
   opacity:0;
 }

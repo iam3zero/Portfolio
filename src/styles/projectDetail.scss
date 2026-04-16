@@ -417,10 +417,13 @@ section{
       margin-left: 500px;
       display: flex;
       position: relative;
-      img{
+      
+      .process-arrow{
         position: absolute;
         top: -20px;
         left: -200px;
+        width: 138px;
+        height: 88px;
       }
       .process-text{
         line-height: 2;

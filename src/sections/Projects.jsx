@@ -11,6 +11,7 @@ import { Navigation, Pagination, Mousewheel, EffectCreative} from "swiper/module
 import monitor from "../assets/img/projects_monitor.png";
 import github_btn from "../assets/icons/github_btn.png";
 import website_btn from "../assets/icons/website_btn.png";
+import project_arrow from "../assets/icons/project_arrow.png";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -146,6 +147,10 @@ function Projects() {
                         Click
                       </button>
                     </div> */}
+                    <span className="pj-resume-icon"><img src={project_arrow} alt="arrow" /></span>
+                      <p className="pj-resume-link">
+                        PROJECT DETAIL PAGE
+                      </p>
 
                 </div>
 

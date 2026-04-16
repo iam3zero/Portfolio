@@ -9,8 +9,8 @@ body {
 
 .intro {
   width: 100%;
-  height: 100vh;
-  min-height: 800px;
+  min-height: 100vh;
+  padding: clamp(120px, 15vh, 180px) 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,9 +22,6 @@ body {
 .intro-inner {
   width: 100%;
   padding: 0 20px; // 모바일 기본값
-  @media (min-width: 1024px) {
-    padding: 0 200px; // 데스크탑에서만 넓게
-  }
   text-align: center;
 }
 
@@ -37,7 +34,7 @@ body {
 
 .intro-subtitle {
   display: block;
-  font-size: 24px;
+  font-size: clamp(14px, 1.5vw, 24px);
   opacity: .8;
   letter-spacing: 1px;
   color: $color-sub;
@@ -58,7 +55,7 @@ body {
 }
 
 .intro-desc {
-  font-size: 28px;
+  font-size: clamp(12px, 2.2vw, 28px);
   color: $color-sub;
   margin-bottom: 40px;
 
@@ -74,12 +71,12 @@ body {
 }
 
 .intro-btn {
-  padding: 12px 28px;
+  padding: clamp(8px, 1.2vw, 10px) clamp(20px, 2vw, 28px);
   border-radius: 15px;
   border: none;
 
   background: #e5e5e5;
-  font-size: 16px;
+  font-size: clamp(12px, 1.2vw, 16px);
   font-weight: 400;
   opacity: .7;
 
@@ -114,7 +111,7 @@ body {
   font-family: $font-en;
   font-weight: 500;
 
-  font-size: 16px;
+  font-size: clamp(12px, 1vw, 16px);
   color: $color-sub2;
   letter-spacing: 1px;
 }
@@ -179,7 +176,7 @@ body {
   );
 
   top: 100px;
-  left: 200px;
+  left: clamp(-100px, 10vw, 200px);
 
   animation: floatLeft 18s ease-in-out infinite;
 }
@@ -197,7 +194,7 @@ body {
   );
 
   top: 300px;
-  right: 200px;
+  right: clamp(-100px, 10vw, 200px);
 
   animation: floatRight 22s ease-in-out infinite;
 }
@@ -233,4 +230,21 @@ body {
     transform: translate(0,0);
   }
 
+}
+
+
+@media (max-width: 768px) {
+  .intro-title {
+    font-size: clamp(36px, 12vw, 80px);
+  }
+
+  .intro-content {
+    max-width: 100%;
+  }
+
+  .blur-circle {
+    width: 300px;
+    height: 300px;
+    filter: blur(80px);
+  }
 }

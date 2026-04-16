@@ -42,60 +42,36 @@ function Header() {
     return () => observer.disconnect();
   }, []);
 
-  /* glassmorphism header */
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  /* scroll 감지 useEffect */
   useEffect(() => {
     let lastScrollY = window.scrollY;
 
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
+      // glass 효과
+      setScrolled(currentScrollY > 50);
+
+      // header hide/show
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setShowHeader(false); // 아래 스크롤 → 숨김
+        setShowHeader(false);
       } else {
-        setShowHeader(true); // 위 스크롤 → 표시
+        setShowHeader(true);
       }
 
       lastScrollY = currentScrollY;
-    };
 
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  /* scroll progress 계산 useEffect */
-  /* useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
+      // scroll progress (쓸거면 같이)
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = (scrollTop / docHeight) * 100;
-
+      const progress = (currentScrollY / docHeight) * 100;
       setScrollProgress(progress);
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []); */
+  }, []);
 
   return (
     <header className={`header ${scrolled ? "scrolled" : ""} ${showHeader ? "show" : "hide"}`}>
-
       <div className="header-inner">
         
         {/* logo */}
@@ -105,7 +81,7 @@ function Header() {
 
         {/* navigation */}
         <nav className="nav">
-          <ul>
+          <ul className="nav-list">
             <li>
               <button
                 className={active === "home" ? "active" : ""}
@@ -155,25 +131,14 @@ function Header() {
 
         {/* right icons */}
         <div className="header-icons">
-          <div className="icon-box">
-            <a href="#">
-                <img src={notion} alt="Notion" />
-            </a>
-          </div>
-          <div className="icon-box">
-            <a href="https://github.com/iam3zero" target="_blank">
-                <img src={github} alt="Github" />
-            </a>
-          </div>
+          <a href="#" className="icon">
+            <img src={notion} alt="Notion" />
+          </a>
+          <a href="https://github.com/iam3zero" target="_blank" className="icon">
+            <img src={github} alt="Github" />
+          </a>
         </div>
-
       </div>
-      {/* <div className="scroll-progress">
-        <div
-          className="scroll-progress-bar"
-          style={{ width: `${scrollProgress}%` }}
-        ></div>
-      </div> */}
     </header>
   );
 }

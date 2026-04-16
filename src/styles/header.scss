@@ -13,7 +13,7 @@
   background: transparent;
 
   transition: all 0.3s ease;
-  z-index: 1000;
+  z-index: 100;
 }
 
 /* 기본 상태 */
@@ -37,14 +37,17 @@
 }
 
 .header-inner {
-  height: 100%;
-
-  padding: 0 200px;
+  width: 100%;
+  height: 80px;
+  max-width: 1520px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 40px);
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 
 /* logo */
 
@@ -57,9 +60,10 @@
 
 /* navigation */
 
-.nav ul {
+.nav-list {
   display: flex;
-  gap: 40px;
+  gap: 32px;
+  align-items: center;
 }
 
 .nav button {
@@ -122,9 +126,10 @@
 .header-icons {
   display: flex;
   gap: 16px;
+  align-items: center;
 }
 
-.header-icons .icon-box {
+.header-icons .icon {
   width: 24px;
   height: 24px;
   display: flex;
@@ -139,30 +144,61 @@
     border-radius: 5px;
   }
 }
-.header-icons .icon-box:hover img {
+.header-icons .icon:hover img {
     transform: translateY(-3px);
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.075);
   }
 
 
-  /* scroll progress */
 
-/* .scroll-progress {
-  position: absolute;
-  bottom: 0;
-  left: 0;
+/* -------------------- */
+/* 🔻 1440 이하 */
+@media (max-width: 1440px) {
+  .header-inner {
+    max-width: 1300px;
+  }
 
-  width: 100%;
-  height: 2px;
-
-  background: transparent;
+  .nav-list {
+    gap: 24px;
+  }
 }
 
-.scroll-progress-bar {
-  height: 100%;
-  width: 0;
+/* -------------------- */
+/* 🔻 1024 이하 */
+@media (max-width: 1024px) {
+  .header-inner {
+    max-width: 100%;
+  }
 
-  background: $color-main;
+  .nav-list {
+    gap: 16px;
+  }
 
-  transition: width 0.1s linear;
-} */
+  .nav-list button {
+    font-size: 14px;
+  }
+}
+
+/* -------------------- */
+/* 🔻 768 이하 */
+@media (max-width: 768px) {
+  .nav-list {
+    gap: 12px;
+  }
+
+  .header-icons img {
+    width: 20px;
+  }
+}
+
+/* -------------------- */
+/* 🔻 480 이하 */
+@media (max-width: 480px) {
+  .nav {
+    display: none;
+  }
+
+  .header-inner {
+    padding: 0 20px;
+  }
+}

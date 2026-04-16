@@ -26,8 +26,8 @@ export const projectsData = [
     title: "향수 브랜드 ÉCLAT",
     image: eclatImg,
     category: "01 PROJECT",
-    contribution: "100%",
-    duration: "2주",
+    contribution: "기획 및 디자인 주도 · 퍼블리싱 섹션별 협업",
+    duration: "약 2주간 작업",
     members: "4명 (TeamProject)",
     tools: "Adobe Photoshop | Figma | SCSS | React | Vercel",
     description:
