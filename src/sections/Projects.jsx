@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import "../styles/projects.scss";
@@ -20,6 +20,7 @@ import "swiper/css/pagination";
 function Projects() {
     const projectRef = useRef(null);
     const navigate = useNavigate();
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 480);
 
     /* 스크롤 감지 코드 */
     useEffect(() => {
@@ -64,6 +65,16 @@ function Projects() {
             };
           });
         }, []);
+
+        /* 화면 크기 감지 */
+        useEffect(() => {
+          const handleResize = () => {
+            setIsMobile(window.innerWidth <= 480);
+          };
+
+          window.addEventListener("resize", handleResize);
+          return () => window.removeEventListener("resize", handleResize);
+        }, []);
             
   return (
     <section
@@ -102,15 +113,18 @@ function Projects() {
                 loop={true}
                 speed={800}
                 grabCursor={true}
-                mousewheel={true}
-                navigation={{
-                    prevEl: ".projects-arrow.prev",
-                    nextEl: ".projects-arrow.next"
-                    }}
-                pagination={{
-                    type: "progressbar",
-                    clickable: true
-                    }}
+                mousewheel={!isMobile}
+                pagination={
+                  isMobile
+                    ? {
+                        clickable: true,
+                        type: "bullets"
+                      }
+                    : {
+                        type: "progressbar",
+                        clickable: true
+                      }
+                }
             className="projects-swiper"
             >
 
@@ -141,17 +155,10 @@ function Projects() {
                         Click
                       </button>
                     </div>
-                    {/* <div className="screen">
-                        <img src={project.image} alt={project.title} />
-                        <button className="detail-btn">
-                        Click
-                      </button>
-                    </div> */}
                     <span className="pj-resume-icon"><img src={project_arrow} alt="arrow" /></span>
                       <p className="pj-resume-link">
                         PROJECT DETAIL PAGE
                       </p>
-
                 </div>
 
                 {/* project info */}

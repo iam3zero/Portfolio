@@ -4,11 +4,14 @@
 .projects {
   padding: 120px 0;
   background: #ffffff;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .projects-inner {
-  padding: 0 200px;
+  width: 100%;
+  max-width: 1580px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 40px);
 }
 
 /* layout */
@@ -25,16 +28,19 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 80px;
+  gap: clamp(40px, 6vw, 60px);
 }
 
 /* image */
 
 .project-image {
   position: relative;
-
   display: flex;
   justify-content: center;
+
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .projects.show .swiper-slide-active .project-image{
@@ -216,14 +222,6 @@
   font-weight: 500;
 }
 
-/* .detail-btn{
-  opacity:0;
-}
-.swiper-slide-active .detail-btn{
-  opacity:1;
-}
- */
-
 /* info */
 
 .project-info{
@@ -371,7 +369,7 @@
 /* left */
 
 .projects-arrow.prev{
-  left: -80px;
+  left: -40px;
   transition: .3s ease;
 }
 .projects-arrow.prev:hover::after{
@@ -382,7 +380,7 @@
 /* right */
 
 .projects-arrow.next{
-  right: -80px;
+  right: -40px;
   transition: .3s ease;
 }
 .projects-arrow.next:hover::after{
@@ -434,6 +432,21 @@
   box-shadow: 10px 0 10px #5555558f !important;
 }
 
+/* 모바일 도트 */
+.projects-swiper .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: #ccc;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.projects-swiper .swiper-pagination-bullet-active {
+  width: 20px;
+  border-radius: 10px;
+  background: #333;
+}
+
 /* 섹션 진입 애니메이션 */
 
 .projects.show .swiper-slide-active .monitor,
@@ -458,4 +471,204 @@
   100% {
     transform: translateY(calc(-1 * var(--scroll-distance)));
   }
+}
+
+
+/* 반응형 시작 */
+
+@media (max-width: 1024px) {
+
+  .pj-resume-icon{
+    z-index: 1;
+  }
+  .pj-resume-link{
+    z-index: 1;
+    font-size: 12px;
+  }
+
+  .project-info{
+    min-height: 440px;
+
+    transform: translateY(60px);
+    opacity: 0;
+  }
+
+  .projects-arrow {
+    display: none;
+  }
+  .project-content {
+    gap: 40px;
+  }
+  .project-category{
+    font-size: 18px;
+  }
+  .project-title {
+    font-size: 38px;
+    margin: 15px 0 20px;
+  }
+  .project-meta li{
+    align-items: center;
+  }
+  .project-meta span {
+    width: 120px;
+    font-size: 16px;
+  }
+
+  .project-meta p {
+    font-size: 14px;
+  }
+  .project-tools{
+    
+    margin: -10px 0 0 120px;
+  }
+  .project-tools img {
+    width: 30px;
+  }
+  .project-desc{
+    font-size: 14px;
+    margin: 20px 0 20px;
+  }
+  .project-btn {
+    font-size: 12px;
+    padding: 10px 16px;
+  }
+  .btn-icon img{
+    width: 14px;
+    height: 14px;
+    margin-bottom: 3px;
+  }
+}
+
+
+
+
+@media (max-width: 768px) {
+  .project-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: left;
+  }
+
+  /* 이미지 먼저 */
+  .project-image {
+    order: 1;
+  }
+
+  .project-info {
+    order: 2;
+  }
+  .project-meta{
+    /* width: 80%; */
+    margin: 0 auto;
+  }
+  .project-meta span{
+    width: 20%;
+    font-size: 16px;
+  }
+  .project-meta p{
+    width: 80%;
+    font-size: 16px;
+  }
+  .project-tools{
+    margin: 0px 0 0 140px;
+  }
+  .project-desc{
+    margin: 20px auto;
+    line-height: 1.6;
+    color: $color-main;
+    font-size: 16px;
+  }
+
+  .projects-swiper .swiper-pagination-progressbar {
+    margin: 20px auto 0;
+  }
+}
+
+
+
+@media (max-width: 480px) {
+
+  .projects-title{
+    text-align: center;
+    font-size: 32px;
+  }
+  .project-content{
+    gap: 20px;
+  }
+  .detail-btn:hover {
+    transform: translate(-50%, -50%) scale(1.3) !important;
+  }
+  .project-info{
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  .project-title {
+    font-size: 32px;
+  }
+
+  /* meta 세로 정리 */
+  .project-meta li {
+    flex-direction: column;
+    align-items: center;
+    margin: 5px 0;
+    line-height: 1.8;
+    
+    border-bottom: 1px solid #eee;
+  }
+  .project-meta li:last-child{
+    border-bottom:none;
+  }
+  .project-tools{
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+  }
+
+  .project-meta span {
+    width: auto;
+    font-size: 18px;
+    font-weight: 500;
+    
+    color: $color-main;
+  }
+  .project-meta p {
+    width: auto;
+    font-size: 16px;
+    color: $color-sub;
+    margin-bottom: 5px;
+    font-weight: 400;
+  }
+
+  .project-tools {
+    margin-left: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .project-tools img {
+    width: 28px;
+  }
+
+  .project-desc {
+    font-size: 16px;
+    margin: 10px 0 20px 0;
+  }
+  .project-buttons {
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .project-btn {
+    padding: 10px 16px;
+    font-size: 12px;
+  }
+  .swiper-pagination-progressbar{
+    display: none;
+  }
+
+  .projects-swiper .swiper-pagination {
+    bottom: 10px !important;
+  }
+
+  .projects {
+    padding-bottom: 80px;
+  }
+
 }

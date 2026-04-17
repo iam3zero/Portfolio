@@ -194,6 +194,19 @@
 /* -------------------- */
 /* 🔻 480 이하 */
 @media (max-width: 480px) {
+  .header-inner{
+    height: 40px;
+  }
+  .logo{
+    font-size: 12px;
+  }
+  .header-icons{
+    gap: 10px;
+  }
+  .header-icons .icon img{
+    width: 18px;
+    height: 18px;
+  }
   .nav {
     display: none;
   }

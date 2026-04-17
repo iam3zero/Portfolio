@@ -50,7 +50,7 @@ export const projectsData = [
 
   {
     id: 2,
-    title: "날씨기반 플리 웹사이트 'MOODSCAPE'",
+    title: "날씨기반 플리 'MoodScape'",
     image: Moodscape,
     category: "02 PROJECT",
     contribution: "100%",

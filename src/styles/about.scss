@@ -304,8 +304,8 @@ body {
 
 .skill-icons {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  gap: 30px;
   margin-top: 20px;
 }
 
@@ -533,25 +533,72 @@ body {
 @media (max-width: 1024px) {
   .about-top {
     gap: 40px;
+    width: 100%;
+  }
+  .about-photo{
+    width: 40%;
+  }
+  .photo-placeholder{
+    width: 200px;
+    height: 203px;
+    margin: 0 auto;
+  }
+  .contact-box p{
+    font-size: 16px;
+  }
+  .resume-icon{
+    right: 40px;
+  }
+  .resume-link{
+    right: 0;
   }
 
   .about-intro {
-    max-width: 100%;
+    max-width: 60%;
   }
-
+  .about-role{
+    font-size: 12px;
+  }
   .about-headline {
-    font-size: 28px;
+    font-size: 26px;
   }
 
   .about-desc {
-    font-size: 18px;
+    font-size: 16px;
+  }
+
+  .info-title{
+    width: 40%;
+    font-size: 20px;
+  }
+  .skill-title{
+    font-size: 22px;
+  }
+  .group-items span.active{
+    letter-spacing: 0.2px;
+  }
+  .skill-icons{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+    gap: 15px;
+  }
+  .skill-icons .icon-box img{
+    width: 38px;
+    height: 38px;
+  }
+  .skill-icons .icon-box.active img {
+    transform: translateY(-2px) scale(1.1);
+    filter: drop-shadow(0 3px 10px rgba(0,0,0,0.25));
   }
 }
 
 
 @media (max-width: 768px) {
+  .about-title{
+    text-align: center;
+  }
 
-  /* 🔥 top → 세로로 */
+  /* top */
   .about-top {
     flex-direction: column;
     align-items: center;
@@ -566,11 +613,21 @@ body {
     justify-content: center;
     flex-wrap: wrap;
   }
+  .resume-icon{
+    right: 0;
+  }
+  .resume-link{
+    right: -30px;
+  }
   .about-intro .line{
     margin: 20px auto;
   }
+  
+  .contact-box p{
+    font-size: 16px;
+  }
 
-  /* 🔥 bottom도 세로 */
+  /* bottom */
   .about-bottom {
     flex-direction: column;
   }
@@ -586,7 +643,7 @@ body {
     padding: 20px 0;
   }
   .skill-icons {
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
   }
 
   .skill-icons .icon-box img {
@@ -617,11 +674,27 @@ body {
   .about-title {
     font-size: 28px;
   }
+  .about-top{
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+  .about-photo{
+    width: 100%;
+  }
   .resume-icon{
     bottom: 0;
-    right: -20px;
+    right: 50px;
+    width: 48px;
+    height: 49px;
   }
-  .resume-link{font-size: 12px; bottom: -10px; right: -20px;}
+  .resume-link{
+    font-size: 10px;
+    bottom: -5px;
+    right: 50px;}
+
+  .about-intro{
+    max-width: 100%;
+  }
 
   .about-headline {
     font-size: 24px;
@@ -629,14 +702,18 @@ body {
 
   .about-desc {
     font-size: 12px;
+    
   }
 
   .photo-placeholder {
     width: 180px;
-    height: 180px;
+    height: 183px;
   }
   .about-info{
     padding-left: 10px;
+  }
+  .about-skill{
+    margin-left: 10px;
   }
 
 
