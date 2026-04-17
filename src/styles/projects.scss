@@ -543,6 +543,9 @@
 
 
 @media (max-width: 768px) {
+  .projects-title{
+    text-align: center;
+  }
   .project-content {
     grid-template-columns: 1fr;
     gap: 40px;
