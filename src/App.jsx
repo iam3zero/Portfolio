@@ -15,7 +15,7 @@ function Main() {
       <Header />
       <Intro />
       <About />
-      <Strength />
+      {/* <Strength /> */}
       <Projects />
       <Contact />
     </>

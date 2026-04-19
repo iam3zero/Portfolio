@@ -6,7 +6,7 @@ import "../styles/projects.scss";
 import projectsData from "../data/projectsData";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Mousewheel, EffectCreative} from "swiper/modules";
+import { Navigation, Pagination, Mousewheel, EffectCreative, EffectFade } from "swiper/modules";
 
 import monitor from "../assets/img/projects_monitor.png";
 import github_btn from "../assets/icons/github_btn.png";
@@ -20,7 +20,7 @@ import "swiper/css/pagination";
 function Projects() {
     const projectRef = useRef(null);
     const navigate = useNavigate();
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= 480);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
     /* 스크롤 감지 코드 */
     useEffect(() => {
@@ -69,7 +69,7 @@ function Projects() {
         /* 화면 크기 감지 */
         useEffect(() => {
           const handleResize = () => {
-            setIsMobile(window.innerWidth <= 480);
+            setIsMobile(window.innerWidth <= 768);
           };
 
           window.addEventListener("resize", handleResize);
@@ -97,16 +97,19 @@ function Projects() {
             <button className="projects-arrow next" aria-label="다음 프로젝트"></button>
 
             <Swiper
-                modules={[Navigation, Pagination, Mousewheel, EffectCreative  ]}
-                effect="creative"
+                modules={[Navigation, Pagination, Mousewheel, EffectCreative, EffectFade ]}
+                effect={isMobile ? "fade" : "creative"}
+                fadeEffect={{
+                  crossFade: true
+                }}
                 creativeEffect={{
                     prev: {
-                    translate: ["-100%", 0, -500],
-                    opacity: 0
+                      translate: ["-100%", 0, -500],
+                      opacity: 0
                     },
                     next: {
-                    translate: ["100%", 0, -500],
-                    opacity: 0
+                      translate: ["100%", 0, -500],
+                      opacity: 0
                     }
                 }}
                 slidesPerView={1}
@@ -114,6 +117,7 @@ function Projects() {
                 speed={800}
                 grabCursor={true}
                 mousewheel={!isMobile}
+
                 pagination={
                   isMobile
                     ? {
