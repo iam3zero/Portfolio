@@ -98,7 +98,7 @@ function Projects() {
 
             <Swiper
                 modules={[Navigation, Pagination, Mousewheel, EffectCreative, EffectFade ]}
-                effect={isMobile ? "fade" : "creative"}
+                effect={isMobile ? "slide" : "creative"}
 
                 navigation={{
                   prevEl: ".projects-arrow.prev",
