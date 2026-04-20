@@ -472,6 +472,23 @@
   transition: all .8s ease .4s;
 }
 
+.projects-swiper .swiper-slide {
+  pointer-events: none;
+}
+
+.projects-swiper .swiper-slide-active {
+  pointer-events: auto;
+}
+
+.projects-swiper .swiper-pagination {
+  z-index: 1;
+  pointer-events: none;
+}
+
+.projects-swiper .swiper-pagination-bullet {
+  pointer-events: auto;
+}
+
 /* screen 자동 스크롤 애니메이션 */
 @keyframes siteScroll {
   0% {
@@ -671,6 +688,8 @@
   .project-buttons {
     justify-content: center;
     margin: 0 auto;
+    position: relative;
+    z-index: 10;
   }
   .project-btn {
     padding: 10px 16px;

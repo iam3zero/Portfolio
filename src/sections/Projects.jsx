@@ -99,6 +99,11 @@ function Projects() {
             <Swiper
                 modules={[Navigation, Pagination, Mousewheel, EffectCreative, EffectFade ]}
                 effect={isMobile ? "fade" : "creative"}
+
+                navigation={{
+                  prevEl: ".projects-arrow.prev",
+                  nextEl: ".projects-arrow.next",
+                }}
                 fadeEffect={{
                   crossFade: true
                 }}
@@ -114,9 +119,13 @@ function Projects() {
                 }}
                 slidesPerView={1}
                 loop={true}
+                loopAdditionalSlides={1}
                 speed={800}
                 grabCursor={true}
                 mousewheel={!isMobile}
+                preventClicks={false}
+                preventClicksPropagation={false}
+                touchStartPreventDefault={false}
 
                 pagination={
                   isMobile
@@ -154,7 +163,10 @@ function Projects() {
                       />
                       <button
                         className="detail-btn"
-                        onClick={() => navigate(`/projects/${project.id}`)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          navigate(`/projects/${project.id}`);
+                        }}
                       >
                         Click
                       </button>
@@ -216,7 +228,10 @@ function Projects() {
                   <div className="project-buttons">
 
                     <a
-                      href={project.website} target="_blank"
+                      href={project.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
                       className="project-btn website"
                     >
                       <span className="btn-icon">
@@ -226,7 +241,9 @@ function Projects() {
                     </a>
 
                     <a
-                      href={project.github} target="_blank"
+                      href={project.github}
+                      target="_blank"
+                      onClick={(e) => e.stopPropagation()}
                       className="project-btn github"
                     >
                       <span className="btn-icon">
