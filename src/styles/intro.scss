@@ -251,3 +251,11 @@ body {
     filter: blur(80px);
   }
 }
+
+@media (max-width: 480px) {
+  .intro-desc{
+    font-size: 18px;
+  }
+
+  
+}
