@@ -5,6 +5,7 @@
   padding: 120px 0;
   background: #ffffff;
   min-height: 100vh;
+  overflow: hidden
 }
 
 .projects-inner {
@@ -622,7 +623,7 @@
 
 @media (max-width: 480px) {
   .projects{
-    padding: 50px 0;
+    padding: 30px 0;
   }
 
   .projects-title{

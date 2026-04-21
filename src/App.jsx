@@ -7,6 +7,8 @@ import Strength from "./sections/Strength";
 import Projects from "./sections/Projects";
 import Contact from "./sections/Contact";
 import ProjectDetail from "./pages/ProjectDetail";
+import ScrollButtons from "./components/ScrollButtons";
+
 
 // 👉 메인 페이지 묶기
 function Main() {
@@ -18,6 +20,7 @@ function Main() {
       {/* <Strength /> */}
       <Projects />
       <Contact />
+      <ScrollButtons />
     </>
   );
 }
