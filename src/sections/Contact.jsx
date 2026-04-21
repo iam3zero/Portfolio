@@ -65,8 +65,8 @@ export default function Contact() {
           </p>
 
           <div className="contact_arrow">
-          <FiChevronDown size={40} className="arrow first" />
-          <FiChevronDown size={40} className="arrow second" />
+          <FiChevronDown className="arrow first" />
+          <FiChevronDown className="arrow second" />
           </div>
 
           {/* buttons */}

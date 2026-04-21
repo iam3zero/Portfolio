@@ -716,23 +716,31 @@ body {
   .about-info{
     padding-left: 10px;
   }
-  .about-skill{
-    margin-left: 10px;
-  }
 
 
   .group-items span{
     font-size: 12px;
   }
-
+  .skill-title{
+    margin-left: 10px;
+  }
+  .skill-list{
+    margin-left: 10px;
+  }
   .skill-icons {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(8, 1fr);
     gap: 10px;
     justify-items: center;
   }
 
   .skill-icons .icon-box img {
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 380px) {
+  .about-desc{
+    font-size: 12px;
   }
 }

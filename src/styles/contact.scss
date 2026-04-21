@@ -13,7 +13,7 @@
   .contact-container {
     width: 100%;
     max-width: 1200px;
-    padding: 0 24px;
+    padding: clamp(80px, 10vw, 140px) 20px;
     text-align: center;
     position: relative;
   }
@@ -28,7 +28,8 @@
   /* title */
 
   .contact-title {
-    font-size: 82px;
+    font-size: clamp(26px, 6vw, 82px);
+    text-align: center;
     font-weight: 800;
     letter-spacing: 2px;
     font-family: $font-en;
@@ -61,7 +62,8 @@
   /* description */
 
   .contact-desc {
-    font-size: 28px;
+    font-size: clamp(16px, 2vw, 28px);
+    text-align: center;
     color: $color-sub;
     z-index: 99999;
     font-weight: 500;
@@ -93,9 +95,12 @@
   /* buttons */
 .contact-btn {
   margin-top: -40px;
-  padding: 10px 18px;
+  /* padding: 10px 18px; */
   border-radius: 15px;
   border: none;
+
+  font-size: clamp(10px, 1.5vw, 16px);
+  padding: clamp(8px, 1.5vw, 14px) clamp(14px, 2vw, 24px);
 
   cursor: pointer;
   color: $color-sub;
@@ -103,7 +108,7 @@
 
   background: linear-gradient(45deg, rgb(169,210,232) 0%,rgb(204,226,238) 53%,rgb(255,255,255) 100%);
 
-  box-shadow: 0 4px 12px #0047819a;
+  /* box-shadow: 0 4px 12px #0047819a; */
 
   /* background: linear-gradient(30deg, rgb(49, 49, 49) 0%,rgb(83, 83, 83) 53%,rgb(155, 155, 155) 100%);
   color: #fff; */
@@ -118,7 +123,10 @@
   gap: 8px;
 
   img{
-    max-width: 24px;
+    /* max-width: 24px; */
+    width: clamp(16px, 2vw, 22px);
+    height: clamp(16px, 2vw, 22px);
+    
     transition: transform 0.3s ease;
   }
 
@@ -156,7 +164,7 @@
   .contact-buttons {
     display: flex;
     gap: 20px;
-    margin-top: 16px;
+    margin-top: 10px;
     flex-wrap: wrap;
     justify-content: center;
     z-index: 99999;
@@ -183,6 +191,11 @@
 .contact_arrow{
   opacity: 0;
   transform: translateY(0) !important;
+  margin-top: 10px;
+}
+.contact_arrow .arrow {
+  font-size: clamp(24px, 4vw, 40px) !important;
+  
 }
 
 /* 등장 */
@@ -234,12 +247,12 @@
 .contact-blur {
   position: absolute;
 
-  width: 500px;
-  height: 500px;
+  width: clamp(200px, 40vw, 500px);
+  height: clamp(200px, 40vw, 500px);
+  filter: blur(100px);
 
   border-radius: 50%;
 
-  filter: blur(100px);
   opacity: 1;
 
   will-change: transform;
@@ -256,8 +269,8 @@
     transparent 100%
   );
 
-  top: -150px;
-  left: -30px;
+  top: -10%;
+  left: -10%;
 
   animation: floatLeft 5s ease-in-out infinite;
 }
@@ -274,8 +287,8 @@
     transparent 70%
   );
 
-  top: -20px;
-  right: -20px;
+  bottom: -10%;
+  right: -10%;
 
   animation: floatRight 5s ease-in-out infinite;
 }
@@ -339,5 +352,34 @@
   to {
     opacity: 1;
     transform: translate(-50%, 0);
+  }
+}
+
+
+@media (max-width: 768px) {
+  .contact-blur {
+    filter: blur(60px);
+    opacity: 0.7;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-buttons .contact-btn{
+    padding: 4px 12px;
+
+    img{
+      width: 12px;
+      height: 12px;
+    }
+
+    span{
+      font-size: 14px !important;
+    }
+  }
+}
+@media (max-width: 370px) {
+
+  .contact-title{
+    font-size: 24px !important;
   }
 }
