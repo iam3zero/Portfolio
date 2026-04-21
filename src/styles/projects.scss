@@ -164,7 +164,27 @@
 
   z-index: 3;
 
-  opacity: .6;
+  opacity: .8;
+
+  animation: pulse 2.2s ease-in-out infinite;
+
+  @keyframes pulse {
+    0%, 100% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.2);
+    }
+  }
+}
+
+.detail-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  animation: ripple 2.5s infinite;
 }
 
 .project-image:hover .detail-btn {
@@ -174,6 +194,10 @@
 
 .detail-btn:hover {
   transform: translate(-50%, -50%) scale(1.5) !important;
+  animation: none;
+}
+.detail-btn:hover::before {
+  animation: none;
 }
 
 .detail-btn::after {
@@ -203,26 +227,64 @@
 
 }
 
+.pj-resume-wrap {
+  cursor: pointer;
+}
+
 .pj-resume-icon{
   position: absolute;
-  bottom: 35px;
-  right: 100px;
+  bottom: 97px;
+  right: 150px;
   transition: all 0.3s ease;
+  z-index: 99999;
+  animation: arrowMove 1.8s ease-in-out infinite;
+
+  @keyframes arrowMove {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
   
 }
 .pj-resume-link {
   display: block;
   margin-top: 5px;
   font-size: 14px;
+  /* background: #31769F;
+  color: #fff; */
   color: #31769F;
   position: absolute;
-  bottom: 35px;
-  right: 20px;
+  bottom: 60px;
+  right: 40px;
   transition: all 0.3s ease;
   font-family: $font-en;
   font-weight: 500;
+  z-index: 99999;
+  border: 1px solid #31779f;
+  padding: 5px 10px;
+  border-radius: 20px;
+
+  background: linear-gradient(90deg, #31769F, #6aaed6, #31769F);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: shine 3s linear infinite;
+
+    @keyframes shine {
+    0% { background-position: 200% }
+    100% { background-position: -200% }
+  }
 }
 
+.pj-resume-wrap:hover .pj-resume-icon,
+.pj-resume-wrap:hover .pj-resume-link {
+  animation: none;
+  opacity: .5;
+}
 /* info */
 
 .project-info{
@@ -460,6 +522,8 @@
 
 /* 섹션 진입 애니메이션 */
 
+
+
 .projects.show .swiper-slide-active .monitor,
 .projects.show .swiper-slide-active .screen{
   transform:translateX(0);
@@ -501,6 +565,16 @@
   }
 }
 
+/* prefers-reduced-motion 대응 */
+@media (prefers-reduced-motion: reduce) {
+  .detail-btn {
+    animation: none;
+  }
+  .detail-btn::before {
+    animation: none;
+  }
+}
+
 
 /* 반응형 시작 */
 
@@ -508,10 +582,14 @@
 
   .pj-resume-icon{
     z-index: 1;
+    bottom: 75px;
+    right: 100px;
   }
   .pj-resume-link{
     z-index: 1;
-    font-size: 12px;
+    font-size: 10px;
+    bottom: 40px;
+    right: 25px;
   }
 
   .project-info{
@@ -617,6 +695,18 @@
   .projects-swiper .swiper-pagination-progressbar {
     margin: 20px auto 0;
   }
+
+  .pj-resume-icon{
+    z-index: 1;
+    bottom: 100px;
+    right: 140px;
+  }
+  .pj-resume-link{
+    z-index: 1;
+    font-size: 12px;
+    bottom: 60px;
+    right: 40px;
+  }
 }
 
 
@@ -711,4 +801,32 @@
     padding-bottom: 80px;
   }
 
+  .pj-resume-icon{
+    z-index: 9999;
+    bottom: 65px;
+    right: 110px;
+    scale: calc(0.8);
+  }
+  .pj-resume-link{
+    z-index: 9999;
+    bottom: 40px;
+    right: 30px;
+    font-size: 10px;
+  }
+
+}
+
+@media (max-width: 400px) {
+  .pj-resume-icon{
+    z-index: 9999;
+    bottom: 47px;
+    right: 100px;
+    scale: calc(0.7);
+  }
+  .pj-resume-link{
+    z-index: 9999;
+    bottom: 25px;
+    right: 10px;
+    font-size: 9px;
+  }
 }
