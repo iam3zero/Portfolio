@@ -41,7 +41,7 @@
 /*  */
 /*  */
 .container{
-    padding: 0 200px;
+    padding: 0 clamp(20px, 6vw, 200px);
     height: inherit;
     margin: 0 auto;
 }
@@ -80,7 +80,7 @@ section{
   .project-num {
     font-family: "Montserrat";
     margin-bottom: 10px;
-    font-size: 42px;
+    font-size: clamp(24px, 4vw, 42px);
     font-weight: 600;
     color: $color-sub;
   }
@@ -380,6 +380,11 @@ section{
     }
   }
 }
+.concept h3,
+.process h3,
+.result h3 {
+  font-size: clamp(28px, 4vw, 48px);
+}
   
 
   /* 🔹 PROCESS / RESULT */
@@ -513,3 +518,103 @@ section{
           padding-top: 0;
       }
   } */
+
+
+@media (max-width: 1024px) {
+
+  /* 🔥 전체 레이아웃 세로 전환 */
+  .top-area {
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+  }
+
+  /* 🔥 monitor 위로 */
+  .img-area {
+    order: -1;
+    width: 100%;
+    max-width: 500px;
+    margin-left: 0;
+  }
+  .detail-screen {
+    position: absolute;
+    
+
+    top: 25%;
+    left: 8.3%;
+
+  }
+
+  /* 🔥 텍스트 영역 */
+  .top-area .text {
+    width: 100%;
+    text-align: left;
+    color: #333 !important;
+    margin: 0 !important;
+  }
+
+  /* 🔥 info-btn absolute 제거 (이거 중요) */
+  .top-area .text .info-btn {
+    position: relative !important;
+    margin-top: 30px;
+  }
+
+  /* 🔥 타이틀 자연스럽게 */
+  .title {
+    font-size: clamp(28px, 5vw, 50px);
+    text-shadow: 13px 10px 5px #29292975;
+  }
+
+  /* 🔥 프로젝트 정보 */
+  .project-text li span {
+    width: 120px;
+    font-size: 16px;
+  }
+
+  .project-text li p {
+    font-size: 15px;
+  }
+
+  /* 🔥 설명 */
+  .info-btn p {
+    font-size: 16px;
+  }
+
+  /* 🔥 버튼 */
+  .project-btn {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+
+  .concept-top {
+    flex-direction: column;
+    gap:60px !important;
+  }
+
+  .concept-wrap {
+    width: 100% !important;
+    margin-top: 30px;
+  }
+
+  .concept .concept-text {
+    font-size: 18px;
+  }
+
+  .process .problem-text,
+  .process .solve-text,
+  .result .result-text {
+    width: 100%;
+  }
+
+  .process .solve-text {
+    margin-left: 0;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .process-arrow {
+    position: static;
+    width: 80px;
+  }
+
+}
