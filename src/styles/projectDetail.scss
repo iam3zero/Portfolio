@@ -526,7 +526,7 @@ section{
   .top-area {
     flex-direction: column;
     align-items: center;
-    gap: 60px;
+    gap: 30px;
   }
 
   /* 🔥 monitor 위로 */
@@ -536,6 +536,7 @@ section{
     max-width: 500px;
     margin-left: 0;
   }
+  
   .detail-screen {
     position: absolute;
     
@@ -567,17 +568,22 @@ section{
 
   /* 🔥 프로젝트 정보 */
   .project-text li span {
-    width: 120px;
+    width: 20%;
     font-size: 16px;
   }
 
   .project-text li p {
     font-size: 15px;
+    width: 80%;
+  }
+  .project-tools{
+    margin: -10px 0 0 130px;
   }
 
   /* 🔥 설명 */
   .info-btn p {
     font-size: 16px;
+    line-height: 2;
   }
 
   /* 🔥 버튼 */
@@ -585,10 +591,23 @@ section{
     font-size: 14px;
     padding: 8px 14px;
   }
+  .project-buttons{
+    margin-left: 0;
+    justify-content: center;
+  }
+  .detail_arrow{
+    margin-top: 50px;
+  }
+  .design .container{
+    padding-top: 50px;
+  }
 
   .concept-top {
     flex-direction: column;
     gap:60px !important;
+  }
+  .concept .concept-wrap .concept-box:nth-child(2) {
+    margin-bottom: 0px;
   }
 
   .concept-wrap {
@@ -598,6 +617,10 @@ section{
 
   .concept .concept-text {
     font-size: 18px;
+  }
+  
+  .process{
+    margin-bottom: -250px;
   }
 
   .process .problem-text,
@@ -615,6 +638,10 @@ section{
   .process-arrow {
     position: static;
     width: 80px;
+  }
+
+  .detail-nav{
+    margin-top: -50px;
   }
 
 }
