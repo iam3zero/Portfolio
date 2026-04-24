@@ -380,6 +380,7 @@ section{
     }
   }
 }
+.design h3,
 .concept h3,
 .process h3,
 .result h3 {
@@ -397,7 +398,6 @@ section{
     h3{
       font-family: "Montserrat";
       margin-bottom: 30px;
-      font-size: 48px;
       font-weight: 600;
       color: $color-sub;
       letter-spacing: 2px;
@@ -539,11 +539,8 @@ section{
   
   .detail-screen {
     position: absolute;
-    
-
     top: 25%;
     left: 8.3%;
-
   }
 
   /* 🔥 텍스트 영역 */
@@ -648,7 +645,232 @@ section{
 
 
 @media (max-width: 768px) {
-  .info-btn p{
+
+  /* 🔥 전체 여백 조금 더 줄이기 */
+  .container {
+    padding: 0 20px;
+  }
+
+  /* 🔥 타이틀 */
+  .project-detail .title {
+    font-size: clamp(24px, 6vw, 36px);
+    margin-top: 30px;
+  }
+  .top_bg .img_bg {
+    height: 225px;
+  }
+
+  .top-area{
+    gap: 20px;
+  }
+
+  .detail-screen {
+    position: absolute;
+    top: 21.5%;
+    left: 8.3%;
+
+    width: 82.3%;
+    height: 47.4%;
+  }
+
+  /* 🔥 텍스트 리스트 */
+  .project-text li {
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .project-detail .top-area .text .project-text li span {
+    width: auto;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .project-detail .top-area .text .project-text li p{
+    width: 100%;
+    font-size: 14px;
+  }
+
+  /* 🔥 tools 위치 깨지는거 방지 */
+  .project-tools {
+    margin: 10px 0 0 0;
+    justify-content: center;
+  }
+
+  /* 🔥 설명 */
+  .info-btn p {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  /* 🔥 버튼 */
+  .project-buttons {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .project-detail .top-area .text .info-btn .project-buttons {
+    padding-top: 20px;
+  }
+  .project-detail .top-area .text .info-btn .project-buttons .project-btn {
     font-size: 12px;
   }
+
+  .detail_arrow{
+    scale: calc(0.8);
+  }
+
+  /* 🔥 monitor */
+  .img-area {
+    max-width: 420px;
+  }
+
+  .detail-monitor {
+    margin-top: 60px;
+  }
+
+
+  /* 🔥 concept typography 너무 큼 */
+  .typography .use-text1,
+  .typography .use-text2 {
+    font-size: clamp(26px, 5vw, 40px);
+  }
+
+  /* 🔥 color box 줄바꿈 */
+  .color-box {
+    flex-wrap: wrap;
+    /* gap: 10px; */
+  }
+
+  .concept .concept-wrap .concept-text {
+    font-size: 18px;
+  }
+
+  /* 🔥 result 리스트 */
+  .process .problem-text .process-text, .result .problem-text .process-text {
+    font-size: 18px;
+  }
+  .process .solve-text .process-text, .result .solve-text .process-text {
+    font-size: 18px;
+  }
+  .process .line, .result .line {
+    margin-bottom: 25px;
+  }
+
+  .result .container{
+    margin-top: 80px;
+  }
+
+  .result-list li {
+    font-size: 16px;
+  }
+  .result .result-text {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+
+  /* 🔥 하단 버튼 */
+  .detail-nav {
+    gap: 20px;
+    margin-top: 0;
+    padding-top: 40px;
+  }
+
+  .detail-nav button {
+    font-size: 16px;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  /* 🔥 타이틀 */
+  .title {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .project-num {
+    text-align: center;
+  }
+
+  /* 🔥 텍스트 중앙 정렬 */
+  .top-area .text {
+    text-align: center;
+  }
+
+  .project-text li {
+    align-items: center;
+    text-align: center;
+  }
+
+  /* 🔥 버튼 중앙 */
+  .project-buttons {
+    justify-content: center;
+  }
+
+  /* 🔥 monitor 더 줄이기 */
+  .img-area {
+    max-width: 320px;
+  }
+
+  .detail-monitor {
+    margin-top: 40px;
+  }
+
+  /* 🔥 concept */
+  .concept-top {
+    gap: 40px !important;
+  }
+
+  .label {
+    font-size: 16px !important;
+    padding: 6px 14px !important;
+  }
+
+  /* 🔥 typography */
+  .typography .use-text1,
+  .typography .use-text2 {
+    font-size: 22px;
+  }
+
+  /* 🔥 color */
+  .color-box span {
+    padding: 16px 14px;
+    font-size: 12px;
+  }
+
+  /* 🔥 텍스트 */
+  .concept .concept-text,
+  .process .process-text,
+  .result .result-text {
+    font-size: 14px;
+  }
+
+  /* 🔥 result list */
+  .result-list {
+    margin-left: 10px;
+  }
+
+  .result-list li {
+    font-size: 14px;
+  }
+
+  /* 🔥 화살표 숨김 (과함 방지) */
+  .detail_arrow {
+    display: none;
+  }
+
+  /* 🔥 하단 네비 */
+  .detail-nav {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 0;
+  }
+
+  .detail-nav button {
+    font-size: 14px;
+  }
+
 }
