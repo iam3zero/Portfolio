@@ -798,6 +798,14 @@ section{
 
 @media (max-width: 480px) {
 
+  .project-detail-name{
+    text-align: center;
+  }
+  .project-detail-line{
+    margin: 0 auto;
+    margin-top: -5px;
+  }
+
   /* 🔥 타이틀 */
   .title {
     font-size: 24px;
@@ -806,6 +814,14 @@ section{
 
   .project-num {
     text-align: center;
+  }
+  .detail-screen {
+    position: absolute;
+    top: 20%;
+    left: 8.3%;
+
+    width: 82.5%;
+    height: 48.3%;
   }
 
   /* 🔥 텍스트 중앙 정렬 */
@@ -816,6 +832,9 @@ section{
   .project-text li {
     align-items: center;
     text-align: center;
+  }
+  .info-btn p{
+    font-size: 12px;
   }
 
   /* 🔥 버튼 중앙 */
@@ -853,12 +872,22 @@ section{
     padding: 16px 14px;
     font-size: 12px;
   }
+  .concept .container {
+    padding-top: 30px;
+  }
 
   /* 🔥 텍스트 */
-  .concept .concept-text,
-  .process .process-text,
+  .concept .concept-wrap .concept-text {
+    font-size: 16px;
+  }
+  .process .problem-text .process-text, .result .problem-text .process-text {
+    font-size: 16px;
+  }
+  .process .solve-text .process-text, .result .solve-text .process-text {
+    font-size: 16px;
+  }
   .result .result-text {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   /* 🔥 result list */
@@ -877,7 +906,7 @@ section{
 
   /* 🔥 하단 네비 */
   .detail-nav {
-    flex-direction: column;
+    /* flex-direction: column; */
     gap: 10px;
     margin-top: 0;
   }
