@@ -798,12 +798,15 @@ section{
 
 @media (max-width: 480px) {
 
-  .project-detail-name{
+  .project-detail .project-detail-name{
     text-align: center;
+    font-size: 16px;
   }
-  .project-detail-line{
+  .project-detail .project-detail-line{
     margin: 0 auto;
     margin-top: -5px;
+    margin-bottom: 20px;
+    opacity: .3;
   }
 
   /* 🔥 타이틀 */
@@ -821,7 +824,7 @@ section{
     left: 8.3%;
 
     width: 82.5%;
-    height: 48.3%;
+    height: 48.7%;
   }
 
   /* 🔥 텍스트 중앙 정렬 */
@@ -837,9 +840,22 @@ section{
     font-size: 12px;
   }
 
-  /* 🔥 버튼 중앙 */
+  /* 🔥 버튼 */
   .project-buttons {
+    flex-wrap: wrap;
+    gap: 10px;
     justify-content: center;
+  }
+
+  .project-detail .top-area .text .info-btn .project-buttons {
+    padding-top: 20px;
+  }
+  .project-detail .top-area .text .info-btn .project-buttons .project-btn {
+    font-size: 12px;
+    padding: 7px 13px;
+  }
+  .btn-icon {
+    margin: 0;
   }
 
   /* 🔥 monitor 더 줄이기 */
@@ -862,9 +878,12 @@ section{
   }
 
   /* 🔥 typography */
-  .typography .use-text1,
-  .typography .use-text2 {
-    font-size: 22px;
+  .concept .typography {
+    gap: 15px;
+  }
+  .concept .typography .use-text1,
+  .concept .typography .use-text2 {
+    font-size: 44px;
   }
 
   /* 🔥 color */
@@ -878,16 +897,16 @@ section{
 
   /* 🔥 텍스트 */
   .concept .concept-wrap .concept-text {
-    font-size: 16px;
+    font-size: 14px;
   }
   .process .problem-text .process-text, .result .problem-text .process-text {
-    font-size: 16px;
+    font-size: 14px;
   }
   .process .solve-text .process-text, .result .solve-text .process-text {
-    font-size: 16px;
+    font-size: 14px;
   }
   .result .result-text {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   /* 🔥 result list */
