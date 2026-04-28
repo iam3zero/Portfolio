@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import projects from "../data/projects";
 import "../styles/projectDetail.scss";
 
@@ -12,12 +12,30 @@ import monitor from "../assets/img/projects_monitor.png";
 
 import eclat_Detail from "../assets/img/eclat_projectdetail.png";
 import process_arrow from "../assets/img/process_arrow.png";
+import { TbZoomInArea } from "react-icons/tb";
 
 /* import eclat_bg from "../assets/img/eclat_bg.png"; */
 
 function ProjectDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
+
+  const [zoomed, setZoomed] = useState(false);
+
+  useEffect(() => {
+    setZoomed(false);
+  }, [id]);
+
+  const [isTablet, setIsTablet] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsTablet(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const currentIndex = projects.findIndex(
     (p) => p.id === Number(id)
@@ -195,8 +213,21 @@ function ProjectDetail() {
         <section className="design">
           <div className="container">
             <h3>DESIGN</h3>
-            <div className="design-img">
+            <div
+              className={`design-img ${zoomed && isTablet ? "zoomed" : ""}`}
+              onClick={() => {
+                if (!isTablet) return;
+                setZoomed(!zoomed);
+              }}
+            >
               <img src={eclat_Detail} alt="eclat_Detail" />
+
+              {isTablet && (
+                <div className="zoom-overlay">
+                  <div className="zoom-icon"><TbZoomInArea /></div>
+                  <p>Tap to Zoom</p>
+                </div>
+              )}
             </div>
           </div>
         </section>

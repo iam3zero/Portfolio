@@ -262,6 +262,69 @@ section{
     }
   }
 
+  .design-img {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  img {
+    width: 100%;
+    display: block;
+    transition: transform 0.5s ease;
+    transform-origin: top center;
+  }
+
+  /* 🔥 터치 시 zoom */
+  &.zoomed img {
+    transform: scale(1.6);
+  }
+}
+
+.zoom-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(1px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: #fff;
+  font-family: $font-en;
+
+  transition: opacity 0.4s ease;
+
+  .zoom-icon {
+    font-size: 28px;
+    margin-bottom: 8px;
+
+    /* 🔥 살짝 둥둥 애니메이션 */
+    animation: zoomBounce 1.6s infinite;
+  }
+
+  p {
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+}
+
+/* 🔥 사라질 때 */
+.design-img.zoomed {
+  overflow: auto;
+}
+.design-img.zoomed .zoom-overlay {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* 🔥 애니메이션 */
+@keyframes zoomBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
 
 
   /* 🔹 CONCEPT */
@@ -650,6 +713,16 @@ section{
 
 }
 
+@media (min-width: 769px) {
+  .zoom-overlay {
+    display: none !important;
+  }
+
+  .design-img.zoomed img {
+    transform: none !important;
+  }
+}
+
 
 @media (max-width: 768px) {
   section {
@@ -738,6 +811,12 @@ section{
 
   .detail-monitor {
     margin-top: 60px;
+  }
+  .zoom-overlay .zoom-icon {
+    font-size: 32px;
+  }
+  .zoom-overlay p {
+    font-size: 20px;
   }
 
 
@@ -868,6 +947,13 @@ section{
 
   .detail-monitor {
     margin-top: 40px;
+  }
+
+  .zoom-overlay .zoom-icon {
+    font-size: 28px;
+  }
+  .zoom-overlay p {
+    font-size: 14px;
   }
 
   /* 🔥 concept */
