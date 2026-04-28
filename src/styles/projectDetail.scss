@@ -276,11 +276,15 @@ section{
   /* 🔥 zoom 상태 */
   &.zoomed {
     overflow: auto; /* 핵심 */
+    cursor: grab;
 
     img {
       width: 180%;  /* 👉 실제 크기 키움 */
       max-width: none; /* 이거 중요 */
     }
+  }
+  &.zoomed:active {
+    cursor: grabbing;
   }
 }
 
@@ -322,6 +326,9 @@ section{
 }
 .design-img.zoomed:active {
   cursor: grabbing;
+}
+.zoom-overlay {
+  transition: opacity 0.3s ease;
 }
 .design-img.zoomed .zoom-overlay {
   opacity: 0;
@@ -822,10 +829,10 @@ section{
     margin-top: 60px;
   }
   .zoom-overlay .zoom-icon {
-    font-size: 32px;
+    font-size: 40px;
   }
   .zoom-overlay p {
-    font-size: 20px;
+    font-size: 24px;
   }
 
 

@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import projects from "../data/projects";
 import "../styles/projectDetail.scss";
 
@@ -19,6 +19,8 @@ import { TbZoomInArea } from "react-icons/tb";
 function ProjectDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
+
+  const containerRef = useRef(null);
 
   const [zoomed, setZoomed] = useState(false);
 
@@ -214,10 +216,47 @@ function ProjectDetail() {
           <div className="container">
             <h3>DESIGN</h3>
             <div
+              ref={containerRef}
               className={`design-img ${zoomed && isTablet ? "zoomed" : ""}`}
-              onClick={() => {
+              onClick={(e) => {
                 if (!isTablet) return;
-                setZoomed(!zoomed);
+
+                const container = containerRef.current;
+                const img = container.querySelector("img"); // 🔥 이미지 기준
+
+                const rect = container.getBoundingClientRect();
+
+                const clickX = e.clientX - rect.left;
+                const clickY = e.clientY - rect.top;
+
+                const nextZoom = !zoomed;
+                setZoomed(nextZoom);
+
+                if (!zoomed) {
+                  setTimeout(() => {
+                    const scale = 1.8; // 👉 CSS랑 맞춰 (180%)
+
+                    const scrollX =
+                      (clickX / container.clientWidth) * img.offsetWidth -
+                      container.clientWidth / 2;
+
+                    const scrollY =
+                      (clickY / container.clientHeight) * img.offsetHeight -
+                      container.clientHeight / 2;
+
+                    container.scrollTo({
+                      left: scrollX,
+                      top: scrollY,
+                      behavior: "smooth",
+                    });
+                  }, 80); // 👉 살짝 늘려주는게 안정적
+                } else {
+                  container.scrollTo({
+                    left: 0,
+                    top: 0,
+                    behavior: "smooth",
+                  });
+                }
               }}
             >
               <img src={eclat_Detail} alt="eclat_Detail" />
