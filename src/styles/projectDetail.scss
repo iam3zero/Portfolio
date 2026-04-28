@@ -828,6 +828,9 @@ section{
   }
 
   /* 🔥 텍스트 중앙 정렬 */
+  .project-detail .top-area .text {
+    width: 100%;
+  }
   .top-area .text {
     text-align: center;
   }
@@ -837,7 +840,7 @@ section{
     text-align: center;
   }
   .info-btn p{
-    font-size: 12px;
+    font-size: 14px;
   }
 
   /* 🔥 버튼 */
