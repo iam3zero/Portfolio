@@ -262,7 +262,7 @@ section{
     }
   }
 
-  .design-img {
+.design-img {
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -270,13 +270,17 @@ section{
   img {
     width: 100%;
     display: block;
-    transition: transform 0.5s ease;
-    transform-origin: top center;
+    transition: all 0.4s ease;
   }
 
-  /* 🔥 터치 시 zoom */
-  &.zoomed img {
-    transform: scale(1.6);
+  /* 🔥 zoom 상태 */
+  &.zoomed {
+    overflow: auto; /* 핵심 */
+
+    img {
+      width: 180%;  /* 👉 실제 크기 키움 */
+      max-width: none; /* 이거 중요 */
+    }
   }
 }
 
@@ -313,6 +317,11 @@ section{
 /* 🔥 사라질 때 */
 .design-img.zoomed {
   overflow: auto;
+  cursor: grab;
+  scroll-behavior: smooth;
+}
+.design-img.zoomed:active {
+  cursor: grabbing;
 }
 .design-img.zoomed .zoom-overlay {
   opacity: 0;
