@@ -276,15 +276,11 @@ section{
   /* 🔥 zoom 상태 */
   &.zoomed {
     overflow: auto; /* 핵심 */
-    cursor: grab;
 
     img {
-      width: 180%;  /* 👉 실제 크기 키움 */
+      width: 200%;  /* 👉 실제 크기 키움 */
       max-width: none; /* 이거 중요 */
     }
-  }
-  &.zoomed:active {
-    cursor: grabbing;
   }
 }
 
@@ -326,9 +322,6 @@ section{
 }
 .design-img.zoomed:active {
   cursor: grabbing;
-}
-.zoom-overlay {
-  transition: opacity 0.3s ease;
 }
 .design-img.zoomed .zoom-overlay {
   opacity: 0;
