@@ -738,9 +738,23 @@ body {
     height: 30px;
   }
 }
+@media (max-width: 390px) {
+  .resume-icon{
+    bottom: 0;
+    right: 50px;
+    width: 48px;
+    height: 49px;
+  }
+  .resume-link{
+    font-size: 10px;
+    bottom: -5px;
+    right: 30px;}
+
+}
 
 @media (max-width: 380px) {
   .about-desc{
     font-size: 12px;
   }
+  
 }
