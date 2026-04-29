@@ -85,8 +85,8 @@ const projects = [
     designImage: eclat_projectDetail,
     description: "OpenWeather API 및 위치 데이터 활용하여 접속 즉시 '날씨 + 위치'를 반영해 최적화된 플레이리스트를 추천해주는 웹사이트를 REACT로 작업한 첫번째 팀 프로젝트입니다.",
     concept: {
-      typography: "Pretendard",
-      colors: ["#000000", "#6e6e6e", "#F7F4F0"],
+      typography1: "Noto Sans KR",
+      colors: ["#333333", "#555555", "#888888","#eeeeee"],
 
       conceptText: "브랜드명 ÉCLAT는 ‘빛남’, ‘광채’를 의미합니다. 이러한 ‘빛’의 이미지를 시각적으로 풀어내기 위해 “Light Collection (빛의 순간들)”이라는 컨셉을 설정하고 총 5가지 향수 라인을 기획하였습니다. 각 향수는 하나의 ‘빛’을 상징하며, 프리즘을 통과한 햇살에서 영감을 받아 각 라인별 컬러를 담은 투명한 유리 보틀로 디자인하였습니다. 전체 컬러는 자연에서 추출한 색감을 기반으로 톤 다운된 브라운을 메인으로 설정하여 차분하면서도 깊이 있는 브랜드 이미지를 구축했습니다.",
       developmentText1: "메인 페이지는 One Page Scroll 구조를 적용하여 사용자가 자연스럽게 스크롤을 따라 Brand Story와 Gift 섹션까지 이어지도록 설계하였습니다.",
