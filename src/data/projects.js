@@ -110,7 +110,50 @@ const projects = [
     github: "https://github.com/ksyeon068/MoodScape",
 
     toolsIcons: [
-          Photoshop,
+          Figma,
+          SCSS,
+          React,
+          Vercel,
+        ]
+  },
+  {
+    id: 3,
+    title: "DESIGN HOTELS",
+    image: Moodscape,
+    bg: moodscape_bg,
+    subtitle: "PROJECT 02",
+    contribution: "100%",
+    duration: "3주",
+    members: "4명 (TeamProject)",
+    tools: "Figma | SCSS | React | Vercel",
+    designImage: eclat_projectDetail,
+    description: "OpenWeather API 및 위치 데이터 활용하여 접속 즉시 '날씨 + 위치'를 반영해 최적화된 플레이리스트를 추천해주는 웹사이트를 REACT로 작업한 첫번째 팀 프로젝트입니다.",
+    concept: {
+      typography1: "Noto Sans KR",
+      colors: ["#333333", "#555555", "#888888","#eeeeee"],
+
+      conceptText: "브랜드명 ÉCLAT는 ‘빛남’, ‘광채’를 의미합니다. 이러한 ‘빛’의 이미지를 시각적으로 풀어내기 위해 “Light Collection (빛의 순간들)”이라는 컨셉을 설정하고 총 5가지 향수 라인을 기획하였습니다. 각 향수는 하나의 ‘빛’을 상징하며, 프리즘을 통과한 햇살에서 영감을 받아 각 라인별 컬러를 담은 투명한 유리 보틀로 디자인하였습니다. 전체 컬러는 자연에서 추출한 색감을 기반으로 톤 다운된 브라운을 메인으로 설정하여 차분하면서도 깊이 있는 브랜드 이미지를 구축했습니다.",
+      developmentText1: "메인 페이지는 One Page Scroll 구조를 적용하여 사용자가 자연스럽게 스크롤을 따라 Brand Story와 Gift 섹션까지 이어지도록 설계하였습니다.",
+      developmentText2: "Brand Story 영역에서는 opacity 애니메이션을 활용하여 각 향수 라인 구간에 도달할 때 콘텐츠가 부드럽게 나타나도록 구현하였으며, 이를 통해 브랜드가 가진 ‘빛’의 흐름과 감성을 시각적으로 전달하고자 했습니다.",
+      developmentText3: "브랜드 정체성인 ‘빛’을 효과적으로 표현하기 위해 메인 비주얼에 그림자와 빛이 강조된 이미지, 그리고 향수 보틀 오브제를 함께 배치하여 브랜드의 무드를 직관적으로 전달할 수 있도록 구성했습니다.",
+    },
+
+    process: {
+      problem: "ÉCLAT는 보이지 않는 내면의 빛을 향으로 풀어내는 브랜드입니다. 눈에 보이는 것 너머에는 사람마다 고유한 빛이 존재합니다. 향은 단순한 냄새가 아니라, 기억을 깨우고 감정을 움직이며 한 사람의 분위기를 완성하는 또 하나의 언어입니다. 각각의 향은 하나의 빛이 되어, 당신의 순간에 스며들고 당신을 더욱 빛나게 합니다.",
+      solution: "ÉCLAT는 보이지 않는 내면의 빛을 향으로 풀어내는 브랜드입니다. 눈에 보이는 것 너머에는 사람마다 고유한 빛이 존재합니다. 향은 단순한 냄새가 아니라, 기억을 깨우고 감정을 움직이며 한 사람의 분위기를 완성하는 또 하나의 언어입니다. 각각의 향은 하나의 빛이 되어, 당신의 순간에 스며들고 당신을 더욱 빛나게 합니다."
+    },
+
+    result: "ÉCLAT는 보이지 않는 내면의 빛을 향으로 풀어내는 브랜드입니다. 눈에 보이는 것 너머에는 사람마다 고유한 빛이 존재합니다. 향은 단순한 냄새가 아니라, 기억을 깨우고 감정을 움직이며 한 사람의 분위기를 완성하는 또 하나의 언어입니다. 각각의 향은 하나의 빛이 되어, 당신의 순간에 스며들고 당신을 더욱 빛나게 합니다.",
+    Improvements1: "로그인 및 회원가입 기능 구현",
+    Improvements2: "다양한 디바이스 대응을 위한 반응형 설계",
+    Improvements3: "브랜드 핵심 컨셉인 ‘빛’을 더욱 강조하기 위한 영상 콘텐츠 제작",
+
+    monitor: monitorImg,
+
+    website: "https://mood-scape-umber.vercel.app/",
+    github: "https://github.com/ksyeon068/MoodScape",
+
+    toolsIcons: [
           Figma,
           SCSS,
           React,
