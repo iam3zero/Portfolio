@@ -220,7 +220,7 @@ function ProjectDetail() {
                 setZoomed(!zoomed);
               }}
             >
-              <img src={eclat_Detail} alt="eclat_Detail" />
+              <img src={project.designImage} alt="design" />
 
               {isTablet && (
                 <div className="zoom-overlay">

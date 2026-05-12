@@ -8,6 +8,7 @@ import bluebottle from "../assets/img/bluebottle_fullpage.png";
 import shootingGame from "../assets/img/shootinggame_fullpage.png"; */
 
 import eclat_projectDetail from "../assets/img/eclat_projectdetail.png";
+import moodscape_projectDetail from "../assets/img/moodscape_projectdetail.png";
 import monitorImg from "../assets/img/projects_monitor.png";
 
 import Photoshop from "../assets/icons/project_photoshop.png";
@@ -82,7 +83,7 @@ const projects = [
     duration: "3주",
     members: "4명 (TeamProject)",
     tools: "Figma | SCSS | React | Vercel",
-    designImage: eclat_projectDetail,
+    designImage: moodscape_projectDetail,
     description: "OpenWeather API 및 위치 데이터 활용하여 접속 즉시 '날씨 + 위치'를 반영해 최적화된 플레이리스트를 추천해주는 웹사이트를 REACT로 작업한 첫번째 팀 프로젝트입니다.",
     concept: {
       typography1: "Noto Sans KR",
