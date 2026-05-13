@@ -95,14 +95,26 @@ function About() {
 
           {/* profile image */}
           <div className="about-photo fade-scale" data-speed="0.2">
-            <div className="photo-placeholder">
-                {/* <a href="#"><img src={profile} alt="Notion" /></a> */}
-            </div>
-            <span className="resume-icon"><img src={arrow} alt="arrow" /></span>
-            <p className="resume-link">
-              입사지원서 바로가기
-            </p>
+            <a
+              href="/seyoung-choi-resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="about-photo fade-scale"
+            >
+
+              <div className="photo-placeholder"></div>
+
+              <span className="resume-icon">
+                <img src={arrow} alt="arrow" />
+              </span>
+
+              <p className="resume-link">
+                입사지원서 바로가기
+              </p>
+
+            </a>
           </div>
+          
 
           {/* introduction text */}
           <div className="about-intro fade-right" data-speed="0.1">
@@ -161,11 +173,12 @@ function About() {
               <div className="info-content">
                 <ul className="license-box">
                   <li>웹디자인개발기능사<span> 2026</span></li>
-                  <li>운전면허자격증 2종보통<span> 2020</span></li>
-                  <li>조주기능사<span> 2017</span></li>
-                  <li>ITQ 한글/파워포인트<span> 2017</span></li>
-                  <li>워드프로세서 2,3급<span> 2017</span></li>
-                  <li>문서실무사<span> 2017</span></li>
+                  <li>2종보통 운전면허<span> 2020</span></li>
+                  <li>음악실기교사 교원자격증<span> 2019</span></li>
+                  <li>조주기능사<span> 2016</span></li>
+                  <li>ITQ 한글/파워포인트<span> 2015</span></li>
+                  <li>워드프로세서 1,2,3급<span> 2013</span></li>
+                  <li>문서실무사<span> 2013</span></li>
                 </ul>
               </div>
             </div>
