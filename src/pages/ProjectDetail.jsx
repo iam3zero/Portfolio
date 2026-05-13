@@ -276,6 +276,7 @@ function ProjectDetail() {
                 <p className="concept-text fade-up delay-1">{project.concept.developmentText1}</p>
                 <p className="concept-text fade-up delay-2">{project.concept.developmentText2}</p>
                 <p className="concept-text fade-up delay-3">{project.concept.developmentText3}</p>
+                <p className="concept-text fade-up delay-3">{project.concept.developmentText4}</p>
               </div>
             </div>
           </div>
