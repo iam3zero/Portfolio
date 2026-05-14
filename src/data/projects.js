@@ -2,8 +2,8 @@
 import githubIcon from "../assets/icons/github.png"; */
 import eclatImg from "../assets/img/eclat_fullpage.png";
 import Moodscape from "../assets/img/moodscape_fullpage.png";
-/* import DesignHotels from "../assets/img/designhotels_fullpage.png";
-import passport from "../assets/img/passport_fullpage.png";
+import DesignHotels from "../assets/img/designhotels_fullpage.png";
+/* import passport from "../assets/img/passport_fullpage.png";
 import bluebottle from "../assets/img/bluebottle_fullpage.png";
 import shootingGame from "../assets/img/shootinggame_fullpage.png"; */
 
@@ -16,12 +16,13 @@ import Figma from "../assets/icons/project_figma.png";
 import React from "../assets/icons/project_react.png";
 import Vercel from "../assets/icons/project_vercel.png";
 import SCSS from "../assets/icons/project_scss.png";
-/* import HTML from "../assets/icons/project_hTML.png";
+import HTML from "../assets/icons/project_html.png";
 import CSS from "../assets/icons/project_css.png";
-import Javascript from "../assets/icons/project_javascript.png"; */
+import Javascript from "../assets/icons/project_javascript.png";
 
 import eclat_bg from "../assets/img/eclat_bg.png";
 import moodscape_bg from "../assets/img/moodscape_bg.png";
+import designhotels_bg from "../assets/img/designhotels_bg.png";
 
 
 
@@ -121,13 +122,13 @@ const projects = [
   {
     id: 3,
     title: "DESIGN HOTELS",
-    image: Moodscape,
-    bg: moodscape_bg,
-    subtitle: "PROJECT 02",
+    image: DesignHotels,
+    bg: designhotels_bg,
+    subtitle: "PROJECT 03",
     contribution: "100%",
-    duration: "3주",
-    members: "4명 (TeamProject)",
-    tools: "Figma | SCSS | React | Vercel",
+    duration: "3일",
+    members: "1명",
+    tools: "HTML | CSS | JAVASCRIPT | API",
     designImage: eclat_projectDetail,
     description: "OpenWeather API 및 위치 데이터 활용하여 접속 즉시 '날씨 + 위치'를 반영해 최적화된 플레이리스트를 추천해주는 웹사이트를 REACT로 작업한 첫번째 팀 프로젝트입니다.",
     concept: {
@@ -152,14 +153,13 @@ const projects = [
 
     monitor: monitorImg,
 
-    website: "https://mood-scape-umber.vercel.app/",
+    website: "https://iam3zero.github.io/Designhotels/",
     github: "https://github.com/ksyeon068/MoodScape",
 
     toolsIcons: [
-          Figma,
-          SCSS,
-          React,
-          Vercel,
+          HTML,
+          CSS,
+          Javascript
         ]
   },
   {

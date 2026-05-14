@@ -85,7 +85,7 @@ export const projectsData = [
 
     monitor: monitorImg,
 
-    website: "https://iam3zero.github.io/hote/",
+    website: "https://iam3zero.github.io/Designhotels/",
     github: "https://github.com/iam3zero/hote",
 
     toolsIcons: [
