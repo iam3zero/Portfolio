@@ -233,33 +233,35 @@ function ProjectDetail() {
         </section>
 
         {/* CONCEPT */}
-        <section className="concept fade-up">
-          <div className="container">
-            <h3>CONCEPT</h3>
-            <div className="line"></div>
-  
-            <div className="concept-top">
-              <div className="typography">
-                <p className="label fade-up delay-1">TYPOGRAPHY</p>
-                <span className="use-text1">
-                  {project.concept.typography1}
-                </span>
-                <span className="use-text2">
-                  {project.concept.typography2}
-                </span>
-              </div>
-              <div className="color-wrap">
-                <p className="label fade-up delay-1">COLOR</p>
-                <div className="color-box">
-                  {project.concept.colors.map((color, i) => (
-                    <span key={i} style={{ background: color }}>
-                      {color}
-                    </span>
-                  ))}
+        {project.concept && (
+          <section className="concept fade-up">
+            <div className="container">
+              <h3>CONCEPT</h3>
+              <div className="line"></div>
+
+              <div className="concept-top">
+                <div className="typography">
+                  <p className="label fade-up delay-1">TYPOGRAPHY</p>
+                  <span className="use-text1">
+                    {project.concept.typography1}
+                  </span>
+                  <span className="use-text2">
+                    {project.concept.typography2}
+                  </span>
+                </div>
+
+                <div className="color-wrap">
+                  <p className="label fade-up delay-1">COLOR</p>
+                  <div className="color-box">
+                    {project.concept.colors?.map((color, i) => (
+                      <span key={i} style={{ background: color }}>
+                        {color}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
           {/* CONCEPT text */}
           <div className="container">
@@ -270,49 +272,89 @@ function ProjectDetail() {
                   {project.concept.conceptText}
                 </p>
               </div>
-  
+
               <div className="concept-box">
                 <p className="label fade-up delay-3">DEVELOPMENT</p>
-                <p className="concept-text fade-up delay-1">{project.concept.developmentText1}</p>
-                <p className="concept-text fade-up delay-2">{project.concept.developmentText2}</p>
-                <p className="concept-text fade-up delay-3">{project.concept.developmentText3}</p>
-                <p className="concept-text fade-up delay-3">{project.concept.developmentText4}</p>
+                <p className="concept-text fade-up delay-1">
+                  {project.concept.developmentText1}
+                </p>
+                <p className="concept-text fade-up delay-2">
+                  {project.concept.developmentText2}
+                </p>
+                <p className="concept-text fade-up delay-3">
+                  {project.concept.developmentText3}
+                </p>
+                <p className="concept-text fade-up delay-3">
+                  {project.concept.developmentText4}
+                </p>
               </div>
             </div>
           </div>
         </section>
+      )}
 
         {/* PROCESS */}
-        <section className="process fade-up">
-          <div className="container">
-            <h3>PROCESS</h3>
-            <div className="line"></div>
-            <div className="problem-text">
-              <p className="process-text fade-up delay-1">{project.process.problem}</p>
+        {project.process && (
+          <section className="process fade-up">
+            <div className="container">
+              <h3>PROCESS</h3>
+              <div className="line"></div>
+
+              <div className="problem-text">
+                <p className="process-text fade-up delay-1">
+                  {project.process.problem}
+                </p>
+              </div>
+
+              <div className="solve-text">
+                <img
+                  className="process-arrow fade-up delay-2"
+                  src={process_arrow}
+                  alt="process_arrow"
+                />
+                <p className="process-text fade-up delay-3">
+                  {project.process.solution}
+                </p>
+              </div>
             </div>
-            <div className="solve-text">
-              <img className="process-arrow fade-up delay-2" src={process_arrow} alt="process_arrow" />
-              <p className="process-text fade-up delay-3">{project.process.solution}</p>
-            </div>
-            </div>
-        </section>
+          </section>
+        )}
 
         {/* RESULT */}
-        <section className="result fade-up">
-          <div className="container">
-            <h3>RESULT</h3>
-            <div className="line"></div>
-            <p className="result-text">{project.result}</p>
-            <div className="result-box">
-              <p className="label fade-up delay-2">Future Improvements</p>
-              <ul className="result-list">
-                <li className="list fade-up delay-1">{project.Improvements1}</li>
-                <li className="list fade-up delay-2">{project.Improvements2}</li>
-                <li className="list fade-up delay-3">{project.Improvements3}</li>
-              </ul>
+        {project.result && (
+          <section className="result fade-up">
+            <div className="container">
+              <h3>RESULT</h3>
+              <div className="line"></div>
+
+              <p className="result-text">{project.result}</p>
+
+              <div className="result-box">
+                <p className="label fade-up delay-2">
+                  Future Improvements
+                </p>
+
+                <ul className="result-list">
+                  {project.Improvements1 && (
+                    <li className="list fade-up delay-1">
+                      {project.Improvements1}
+                    </li>
+                  )}
+                  {project.Improvements2 && (
+                    <li className="list fade-up delay-2">
+                      {project.Improvements2}
+                    </li>
+                  )}
+                  {project.Improvements3 && (
+                    <li className="list fade-up delay-3">
+                      {project.Improvements3}
+                    </li>
+                  )}
+                </ul>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* 하단 네비 */}
         <div className="detail-nav">
