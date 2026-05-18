@@ -168,6 +168,7 @@ function ProjectDetail() {
                   <div className="project-buttons">
                     <a
                       href={project.website}
+                      target="_blank"
                       className="project-btn website"
                     >
                       <span className="btn-icon">
@@ -177,6 +178,7 @@ function ProjectDetail() {
                     </a>
                     <a
                       href={project.github}
+                      target="_blank"
                       className="project-btn github"
                     >
                       <span className="btn-icon">
