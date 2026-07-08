@@ -158,12 +158,12 @@ export const projectsData = [
     ]
   },
 
-  /* {
+  {
     id: 7,
     title: "Project Title",
     category: "07 PROJECT",
     contribution: "100%",
-    duration: "3일",
+    duration: "1일",
     members: "1명",
     tools: "React",
     description: "현재 준비중인 프로젝트 입니다. 기대해주세요!",
@@ -172,7 +172,7 @@ export const projectsData = [
     website: "#",
     github: "#",
     toolsIcons: []
-  }, */
+  },
 
   /* {
     id: 8,
