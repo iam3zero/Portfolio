@@ -4,13 +4,14 @@ import Header from "./components/Header";
 import Intro from "./sections/Intro";
 import About from "./sections/About";
 import Strength from "./sections/Strength";
+import Design from "./sections/Design";
 import Projects from "./sections/Projects";
 import Contact from "./sections/Contact";
 import ProjectDetail from "./pages/ProjectDetail";
 import ScrollButtons from "./components/ScrollButtons";
 
 
-// 👉 메인 페이지 묶기
+//  메인 페이지 묶기
 function Main() {
   return (
     <>
@@ -18,6 +19,7 @@ function Main() {
       <Intro />
       <About />
       {/* <Strength /> */}
+      <Design />
       <Projects />
       <Contact />
       <ScrollButtons />

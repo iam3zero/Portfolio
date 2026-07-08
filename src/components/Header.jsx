@@ -60,7 +60,7 @@ function Header() {
 
       lastScrollY = currentScrollY;
 
-      // scroll progress (쓸거면 같이)
+      // scroll progress
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       const progress = (currentScrollY / docHeight) * 100;
       setScrollProgress(progress);
@@ -102,10 +102,10 @@ function Header() {
 
             <li>
               <button
-                className={active === "strength" ? "active" : ""}
-                onClick={() => handleClick("strength")}
+                className={active === "Design" ? "active" : ""}
+                onClick={() => handleClick("Design")}
               >
-                STRENGTH
+                DESIGN WORK
               </button>
             </li>
 
@@ -114,7 +114,7 @@ function Header() {
                 className={active === "projects" ? "active" : ""}
                 onClick={() => handleClick("projects")}
               >
-                PROJECT
+                WEB PROJECT
               </button>
             </li>
 

@@ -87,7 +87,7 @@ function Projects() {
 
         {/* section title */}
         <header className="projects-header">
-          <h2 className="projects-title">PROJECT</h2>
+          <h2 className="projects-title">WEB PROJECT</h2>
         </header>
 
         <div className="projects-swiper-wrap">
