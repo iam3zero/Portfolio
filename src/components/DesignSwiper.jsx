@@ -45,6 +45,9 @@ const DesignSwiper = ({ items }) => {
                 spaceBetween={30}
 
                 slidesPerView={4}
+                slidesPerGroup={4}
+
+                /* loop={true} */
 
                 navigation={{
                     prevEl: prevRef.current,
@@ -65,20 +68,22 @@ const DesignSwiper = ({ items }) => {
 
                     0:{
                         slidesPerView:1,
+                        slidesPerGroup: 1,
                     },
-
-                    480:{slidesPerView:2},
 
                     768:{
                         slidesPerView:2,
+                        slidesPerGroup: 2,
                     },
 
                     1024:{
                         slidesPerView:3,
+                        slidesPerGroup: 3,
                     },
 
                     1440:{
                         slidesPerView:4,
+                        slidesPerGroup: 4,
                     }
 
                 }}

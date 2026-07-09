@@ -38,6 +38,431 @@ const designData = [
     },
 
     {
+      id: 977,
+
+      category: "editorial",
+
+      title: "Coming Soon",
+
+      subtitle: "새로운 디자인 작업물을 준비하고 있습니다.",
+
+      type: "",
+
+      thumbnail: null,
+
+      images: [],
+
+      description: "",
+
+      tools: [],
+
+      duration: "",
+
+      year: "",
+
+      isComingSoon: true,
+  },
+    {
+      id: 978,
+
+      category: "editorial",
+
+      title: "Coming Soon",
+
+      subtitle: "새로운 디자인 작업물을 준비하고 있습니다.",
+
+      type: "",
+
+      thumbnail: null,
+
+      images: [],
+
+      description: "",
+
+      tools: [],
+
+      duration: "",
+
+      year: "",
+
+      isComingSoon: true,
+  },
+    {
+      id: 979,
+
+      category: "editorial",
+
+      title: "Coming Soon",
+
+      subtitle: "새로운 디자인 작업물을 준비하고 있습니다.",
+
+      type: "",
+
+      thumbnail: null,
+
+      images: [],
+
+      description: "",
+
+      tools: [],
+
+      duration: "",
+
+      year: "",
+
+      isComingSoon: true,
+  },
+    {
+      id: 980,
+
+      category: "editorial",
+
+      title: "Coming Soon",
+
+      subtitle: "새로운 디자인 작업물을 준비하고 있습니다.",
+
+      type: "",
+
+      thumbnail: null,
+
+      images: [],
+
+      description: "",
+
+      tools: [],
+
+      duration: "",
+
+      year: "",
+
+      isComingSoon: true,
+  },
+    {
+      id: 981,
+
+      category: "character",
+
+      title: "Coming Soon",
+
+      subtitle: "새로운 디자인 작업물을 준비하고 있습니다.",
+
+      type: "",
+
+      thumbnail: null,
+
+      images: [],
+
+      description: "",
+
+      tools: [],
+
+      duration: "",
+
+      year: "",
+
+      isComingSoon: true,
+  },
+    {
+      id: 982,
+
+      category: "character",
+
+      title: "Coming Soon",
+
+      subtitle: "새로운 디자인 작업물을 준비하고 있습니다.",
+
+      type: "",
+
+      thumbnail: null,
+
+      images: [],
+
+      description: "",
+
+      tools: [],
+
+      duration: "",
+
+      year: "",
+
+      isComingSoon: true,
+  },
+    {
+      id: 983,
+
+      category: "character",
+
+      title: "Coming Soon",
+
+      subtitle: "새로운 디자인 작업물을 준비하고 있습니다.",
+
+      type: "",
+
+      thumbnail: null,
+
+      images: [],
+
+      description: "",
+
+      tools: [],
+
+      duration: "",
+
+      year: "",
+
+      isComingSoon: true,
+  },
+    {
+      id: 984,
+
+      category: "character",
+
+      title: "Coming Soon",
+
+      subtitle: "새로운 디자인 작업물을 준비하고 있습니다.",
+
+      type: "",
+
+      thumbnail: null,
+
+      images: [],
+
+      description: "",
+
+      tools: [],
+
+      duration: "",
+
+      year: "",
+
+      isComingSoon: true,
+  },
+    {
+      id: 985,
+
+      category: "ui",
+
+      title: "Coming Soon",
+
+      subtitle: "새로운 디자인 작업물을 준비하고 있습니다.",
+
+      type: "",
+
+      thumbnail: null,
+
+      images: [],
+
+      description: "",
+
+      tools: [],
+
+      duration: "",
+
+      year: "",
+
+      isComingSoon: true,
+  },
+    {
+      id: 986,
+
+      category: "package",
+
+      title: "Coming Soon",
+
+      subtitle: "새로운 디자인 작업물을 준비하고 있습니다.",
+
+      type: "",
+
+      thumbnail: null,
+
+      images: [],
+
+      description: "",
+
+      tools: [],
+
+      duration: "",
+
+      year: "",
+
+      isComingSoon: true,
+  },
+    {
+      id: 987,
+
+      category: "package",
+
+      title: "Coming Soon",
+
+      subtitle: "새로운 디자인 작업물을 준비하고 있습니다.",
+
+      type: "",
+
+      thumbnail: null,
+
+      images: [],
+
+      description: "",
+
+      tools: [],
+
+      duration: "",
+
+      year: "",
+
+      isComingSoon: true,
+  },
+    {
+      id: 988,
+
+      category: "logo",
+
+      title: "Coming Soon",
+
+      subtitle: "새로운 디자인 작업물을 준비하고 있습니다.",
+
+      type: "",
+
+      thumbnail: null,
+
+      images: [],
+
+      description: "",
+
+      tools: [],
+
+      duration: "",
+
+      year: "",
+
+      isComingSoon: true,
+  },
+    {
+      id: 989,
+
+      category: "logo",
+
+      title: "Coming Soon",
+
+      subtitle: "새로운 디자인 작업물을 준비하고 있습니다.",
+
+      type: "",
+
+      thumbnail: null,
+
+      images: [],
+
+      description: "",
+
+      tools: [],
+
+      duration: "",
+
+      year: "",
+
+      isComingSoon: true,
+  },
+    {
+      id: 990,
+
+      category: "logo",
+
+      title: "Coming Soon",
+
+      subtitle: "새로운 디자인 작업물을 준비하고 있습니다.",
+
+      type: "",
+
+      thumbnail: null,
+
+      images: [],
+
+      description: "",
+
+      tools: [],
+
+      duration: "",
+
+      year: "",
+
+      isComingSoon: true,
+  },
+    {
+      id: 991,
+
+      category: "ui",
+
+      title: "Coming Soon",
+
+      subtitle: "새로운 디자인 작업물을 준비하고 있습니다.",
+
+      type: "",
+
+      thumbnail: null,
+
+      images: [],
+
+      description: "",
+
+      tools: [],
+
+      duration: "",
+
+      year: "",
+
+      isComingSoon: true,
+  },
+    {
+      id: 992,
+
+      category: "ui",
+
+      title: "Coming Soon",
+
+      subtitle: "새로운 디자인 작업물을 준비하고 있습니다.",
+
+      type: "",
+
+      thumbnail: null,
+
+      images: [],
+
+      description: "",
+
+      tools: [],
+
+      duration: "",
+
+      year: "",
+
+      isComingSoon: true,
+  },
+    {
+      id: 993,
+
+      category: "package",
+
+      title: "Coming Soon",
+
+      subtitle: "새로운 디자인 작업물을 준비하고 있습니다.",
+
+      type: "",
+
+      thumbnail: null,
+
+      images: [],
+
+      description: "",
+
+      tools: [],
+
+      duration: "",
+
+      year: "",
+
+      isComingSoon: true,
+  },
+    {
       id: 994,
 
       category: "package",
