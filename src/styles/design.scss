@@ -7,12 +7,13 @@ body {
   font-family: 'Pretendard', sans-serif;
 }
 
-
 .design-works {
     background: url(../assets/img/bg.jpg);
+    /* background: #E6F0F2; */
     width: 100%;
     min-height: 100vh;
     overflow: hidden;
+    padding: clamp(80px, 10vw, 120px) 0;
 }
 
 .design-inner {
@@ -33,7 +34,7 @@ body {
 
 .design-swiper-wrap {
     position: relative;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .design-navigation {
@@ -52,9 +53,9 @@ body {
 .design-arrow {
     width: 48px;
     height: 48px;
-    border: 1px solid #999;
+    border: 1px solid #ccc;
     border-radius: 50%;
-    background: #fff;
+    background: #ffffff;
     cursor: pointer;
     transition: .5s ease;
 }
@@ -62,4 +63,30 @@ body {
 .design-arrow:hover {
     background: #333;
     color: #fff;
+}
+
+
+/* 반응형 */
+@media (max-width: 480px) {
+
+  .design-title{
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .design-navigation{
+    margin-bottom: 10px;
+    gap: 5px;
+    justify-content: center;
+  }
+
+  .design-arrow{
+    width: 28px;
+    height: 28px;
+    
+  }
+
+  .design-navigation svg{
+    scale: calc(1);
+  }
 }

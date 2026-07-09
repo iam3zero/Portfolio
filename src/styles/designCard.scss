@@ -11,40 +11,30 @@ body {
 .design-card{
 
     position:relative;
-
     width: 100%;
-
     aspect-ratio:4/5;
-
     flex-shrink: 0;
-
-    border-radius:24px;
-
+    border-radius: 8px;
     overflow:hidden;
-
     cursor:pointer;
 
-}
-
-.design-card:hover{
-
-  img{transform:scale(1.08);
-      filter: grayscale(0);
-    }
 }
 
 
 .design-card img{
 
     width:100%;
-
     height:100%;
-
     object-fit:cover;
-
     transition: all .6s;
+    filter:brightness(.75) grayscale(.5);
 
-    filter:brightness(.75) grayscale(.25);
+}
+
+.design-card:hover img{
+
+    transform:scale(1.08);
+    filter:brightness(1) grayscale(0);
 
 }
 
@@ -52,15 +42,10 @@ body {
 .card-overlay{
 
     position:absolute;
-
     inset:0;
-
     display:flex;
-
     align-items:flex-end;
-
     padding:30px;
-
     background:
     linear-gradient(
     to top,
@@ -82,18 +67,20 @@ body {
 
 .card-info span{
 
-    font-size:13px;
+  font-size:13px;
+  letter-spacing:.15em;
+  text-transform:uppercase;
 
-    letter-spacing:.15em;
-
-    text-transform:uppercase;
+  display:inline-flex;
+  padding:6px 12px;
+  border:1px solid rgba(255,255,255,.3);
+  border-radius:999px;
+  backdrop-filter:blur(8px);
 
 }
 
 .card-info h3{
-
     font-size:28px;
-
     margin:10px 0;
 
 }
@@ -105,46 +92,30 @@ body {
 }
 
 .view-detail{
-
-    margin-top:24px;
-
-    opacity:0;
-
-    transform:translateY(15px);
-
-    transition:.35s;
+  margin-top:24px;
+  opacity:0;
+  transform:translateY(15px);
+  transition:.35s;
 
 }
 
-.design-card:hover img{
 
-    transform:scale(1.08);
-
-    filter:brightness(1) grayscale(0);
-
-}
 
 .design-card:hover .view-detail{
 
-    opacity:1;
-
-    transform:translateY(0);
+  opacity:1;
+  transform:translateY(0);
 
 }
 
 .coming-soon{
-
-    background:#8d8d8d50;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
+  background:#8d8d8d50;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family: $font-en;
 
 }
-
-
 
 .coming-overlay{
   text-align:center;
@@ -153,17 +124,18 @@ body {
 
 .plus{
 
-  font-size:70px;
-
+  font-size:60px;
   font-weight:200;
-
-  /* transform: translateX(0px) rotate(0deg); */
   transition: .6s ease;
-
   display: inline-block;
 }
 
 .coming-soon:hover .plus{
-  /* transform: translateX(0px) rotate(360deg); */
   color: #ffffffb0;
+}
+
+/* 반응형 */
+@media (max-width: 480px) {
+    
+  
 }

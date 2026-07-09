@@ -2,6 +2,10 @@ import React from 'react'
 
 import "../styles/designCard.scss";
 
+import { FiPlus } from "react-icons/fi";
+import { GoPlus } from "react-icons/go";
+import { PiPlus } from "react-icons/pi";
+
 const DesignCard = ({ item }) => {
 
     if (item.isComingSoon) {
@@ -10,7 +14,7 @@ const DesignCard = ({ item }) => {
 
                 <div className="coming-overlay">
 
-                    <span className="plus">+</span>
+                    <span className="plus"><PiPlus /></span>
 
                     <h3>Coming Soon</h3>
 

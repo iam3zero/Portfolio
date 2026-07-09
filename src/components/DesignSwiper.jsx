@@ -8,8 +8,8 @@ import "swiper/css/navigation";
 
 import DesignCard from "./DesignCard";
 
-import { GoArrowRight } from "react-icons/go";
-import { GoArrowLeft } from "react-icons/go";
+import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
+import { GoArrowRight, GoArrowLeft } from "react-icons/go";
 
 const DesignSwiper = ({ items }) => {
 
@@ -26,14 +26,14 @@ const DesignSwiper = ({ items }) => {
                     className="design-arrow prev"
                     ref={prevRef}
                 >
-                    <GoArrowLeft />
+                    <FiArrowLeft />
                 </button>
 
                 <button
                     className="design-arrow next"
                     ref={nextRef}
                 >
-                    <GoArrowRight />
+                    <FiArrowRight />
                 </button>
 
             </div>
