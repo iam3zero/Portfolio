@@ -67,6 +67,8 @@ const DesignSwiper = ({ items }) => {
                         slidesPerView:1,
                     },
 
+                    480:{slidesPerView:2},
+
                     768:{
                         slidesPerView:2,
                     },

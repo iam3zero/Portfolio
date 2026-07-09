@@ -5,6 +5,7 @@ import "../styles/designCard.scss";
 import { FiPlus } from "react-icons/fi";
 import { GoPlus } from "react-icons/go";
 import { PiPlus } from "react-icons/pi";
+import { GoArrowRight, GoArrowLeft } from "react-icons/go";
 
 const DesignCard = ({ item }) => {
 
@@ -49,7 +50,7 @@ const DesignCard = ({ item }) => {
 
                     <div className="view-detail">
 
-                        View Detail →
+                        View Project <div className='view-arrow'>< GoArrowRight/></div>
 
                     </div>
 
