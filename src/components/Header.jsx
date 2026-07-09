@@ -103,7 +103,7 @@ function Header() {
             <li>
               <button
                 className={active === "Design" ? "active" : ""}
-                onClick={() => handleClick("Design")}
+                onClick={() => handleClick("design")}
               >
                 DESIGN WORK
               </button>
