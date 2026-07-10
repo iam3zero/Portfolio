@@ -133,7 +133,7 @@ const projects = [
     members: "1명",
     tools: "HTML | CSS | JAVASCRIPT | API",
     designImage: designhotels_projectdetail,
-    description: "OpenWeather API 및 위치 데이터 활용하여 접속 즉시 '날씨 + 위치'를 반영해 최적화된 플레이리스트를 추천해주는 웹사이트를 REACT로 작업한 첫번째 팀 프로젝트입니다.",
+    description: "기존 디자인호텔스 웹사이트를 참고하여 메인페이지를 반응형 페이지로 리뉴얼하여 작업했습니다. 미디어쿼리를 사용하여 모든 기기에서 보기 편하도록 작업하였습니다.",
     concept: null,
 
     process: null,
@@ -161,7 +161,7 @@ const projects = [
     duration: "2달",
     members: "1명",
     tools: "Figma | SCSS | React | Vercel",
-    designImage: eclat_projectDetail,
+    designImage: null,
     description: "웹표준과 웹 접근성을 중시한 외교부 클론코딩 프로젝트입니다. HTML과 CSS를 사용하여 화면을 구성했으며, 반응형 및 Swiper 라이브러리를 사용하여 슬라이드를 구현했습니다.",
 
     concept: null,
