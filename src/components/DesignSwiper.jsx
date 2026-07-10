@@ -1,42 +1,24 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 
-import { useRef } from "react";
-
 import "swiper/css";
 import "swiper/css/navigation";
 
 import DesignCard from "./DesignCard";
 
-import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import { GoArrowRight, GoArrowLeft } from "react-icons/go";
 
-const DesignSwiper = ({ items }) => {
+const DesignSwiper = ({
+    items,
+    prevRef,
+    nextRef,
+    setCurrentPage
+}) => {
 
-    const prevRef = useRef(null);
-    const nextRef = useRef(null);
 
     return (
 
         <div className="design-swiper-wrap">
-
-            <div className="design-navigation">
-
-                <button
-                    className="design-arrow prev"
-                    ref={prevRef}
-                >
-                    <FiArrowLeft />
-                </button>
-
-                <button
-                    className="design-arrow next"
-                    ref={nextRef}
-                >
-                    <FiArrowRight />
-                </button>
-
-            </div>
 
             <Swiper
 
@@ -61,6 +43,19 @@ const DesignSwiper = ({ items }) => {
 
                     swiper.params.navigation.nextEl =
                         nextRef.current;
+
+                }}
+
+                onSlideChange={(swiper)=>{
+
+                    const group =
+                        swiper.params.slidesPerGroup || 1;
+
+                    setCurrentPage(
+                        Math.floor(
+                            swiper.activeIndex / group
+                        ) + 1
+                    );
 
                 }}
 
