@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import "../styles/projects.scss";
-/* import projects from "../data/projects"; */
 import projectsData from "../data/projectsData";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -12,6 +11,9 @@ import monitor from "../assets/img/projects_monitor.png";
 import github_btn from "../assets/icons/github_btn.png";
 import website_btn from "../assets/icons/website_btn.png";
 import project_arrow from "../assets/icons/project_arrow2.png";
+
+import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
+import { FiSearch } from "react-icons/fi";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -92,9 +94,13 @@ function Projects() {
 
         <div className="projects-swiper-wrap">
 
-            {/* custom arrows */}
-            <button className="projects-arrow prev" aria-label="이전 프로젝트"></button>
-            <button className="projects-arrow next" aria-label="다음 프로젝트"></button>
+            <div className="projects-controls">
+              {/* progressbar */}
+              <div className="projects-progressbar" />
+              {/* arrows */}
+              <button className="projects-arrow prev" aria-label="이전 프로젝트"><FiArrowLeft /></button>
+              <button className="projects-arrow next" aria-label="다음 프로젝트"><FiArrowRight /></button>
+            </div>
 
             <Swiper
                 modules={[Navigation, Pagination, Mousewheel, EffectCreative, EffectFade ]}
@@ -118,11 +124,12 @@ function Projects() {
                     }
                 }}
                 slidesPerView={1}
-                loop={true}
+                /* loop={true} */
                 loopAdditionalSlides={1}
                 speed={800}
-                grabCursor={true}
-                mousewheel={!isMobile}
+                grabCursor={false}
+                /* mousewheel={!isMobile} */
+                mousewheel={false}
                 preventClicks={false}
                 preventClicksPropagation={false}
                 touchStartPreventDefault={false}
@@ -133,7 +140,8 @@ function Projects() {
                         clickable: true,
                         type: "bullets"
                       }
-                    : {
+                    : { 
+                        el: ".projects-progressbar",
                         type: "progressbar",
                         clickable: true
                       }
@@ -233,6 +241,19 @@ function Projects() {
                   {/* buttons */}
 
                   <div className="project-buttons">
+
+                    <a
+                      onClick={(e) => {
+                          e.stopPropagation();
+                          navigate(`/projects/${project.id}`);
+                        }}
+                      className="project-btn detailpage"
+                    >
+                      <span className="btn-icon">
+                        <FiSearch />
+                      </span>
+                      EXPLORE
+                    </a>
 
                     <a
                       href={project.website}

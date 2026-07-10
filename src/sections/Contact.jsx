@@ -80,7 +80,7 @@ export default function Contact() {
               }}
               className="contact-btn"
             >
-              <img src={mail} alt="mail" />
+              <img className="contact-mail" src={mail} alt="mail" />
               <span>Email</span>
             </a>
 

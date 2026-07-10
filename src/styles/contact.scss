@@ -62,7 +62,7 @@
   /* description */
 
   .contact-desc {
-    font-size: clamp(16px, 2vw, 28px);
+    font-size: clamp(16px, 2vw, 26px);
     text-align: center;
     color: $color-sub;
     z-index: 99999;
@@ -94,27 +94,39 @@
 
 
   /* buttons */
-.contact-btn {
+
+
+.contact-buttons .contact-btn {
   margin-top: -40px;
-  /* padding: 10px 18px; */
   border-radius: 15px;
   border: none;
 
   font-size: clamp(10px, 1.5vw, 16px);
-  padding: clamp(8px, 1.5vw, 14px) clamp(14px, 2vw, 24px);
+  padding: clamp(8px, 1.5vw, 12px) clamp(14px, 2vw, 16px);
 
   cursor: pointer;
   color: $color-sub;
   font-family: $font-en;
+  
 
-  background: linear-gradient(45deg, rgb(169,210,232) 0%,rgb(204,226,238) 53%,rgb(255,255,255) 100%);
+  /* background: linear-gradient(45deg, rgb(169,210,232) 0%,rgb(204,226,238) 53%,rgb(255,255,255) 100%);
 
-  /* box-shadow: 0 4px 12px #0047819a; */
+  box-shadow: 0 4px 12px #0047816e; */
 
-  /* background: linear-gradient(30deg, rgb(49, 49, 49) 0%,rgb(83, 83, 83) 53%,rgb(155, 155, 155) 100%);
-  color: #fff; */
-  /* box-shadow: 0 4px 12px #5252529a; */
-  box-shadow: 0 4px 12px #0047816e;
+  border-radius: 13px;
+
+  /* background: rgba(223, 223, 223, 0.295); */
+  /* background: #d1e7fc49; */
+
+  background: linear-gradient(to bottom, #e4f1fd 50%,#d1e7fc 100%);
+  border: 1px solid #dddddd;
+  box-shadow: 0 4px 6px #b6b6b679;
+  /* border: 1px solid #e6e6e6; */
+  color: #3a3a3a;
+
+  box-shadow: 0 0px 3px rgba(126, 126, 126, 0.3);
+
+  transition: all .25s ease;
   
   
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -122,6 +134,8 @@
   display: flex;
   align-items: center;
   gap: 8px;
+
+  opacity: .8 !important;
 
   img{
     /* max-width: 24px; */
@@ -137,12 +151,17 @@
     font-weight: 500;
   }
 }
+.contact-btn .contact-mail{
+  width: clamp(16px, 2vw, 26px) !important;
+  height: clamp(16px, 2vw, 22px) !important;
+  scale: calc(.9);
+}
 
 .contact-btn:hover {
   transform: translateY(-5px);
-  box-shadow: 0 14px 22px #0047816e;
-  /* box-shadow: 0 14px 20px #5252529a; */
-  opacity: 1;
+  box-shadow: 0 5px 15px #cccccc56;
+  opacity: 1 !important;
+  
 }
   /* 아이콘 */
 .contact-btn:hover img {
@@ -160,11 +179,12 @@
 .contact-btn:hover span {
   transform: translateY(-2px);
   transition-delay: 0.05s;
+  font-weight: 600;
 }
 
   .contact-buttons {
     display: flex;
-    gap: 20px;
+    gap: 18px;
     margin-top: 10px;
     flex-wrap: wrap;
     justify-content: center;
@@ -172,7 +192,6 @@
     
   }
   .contact-buttons span{
-    font-size: 22px;
     font-family: $font-en;
   }
 }
@@ -265,8 +284,8 @@
   //background: #8FC7E8;
   background: radial-gradient(
     circle,
-    rgba(143,199,232,0.9) 0%,
-    rgba(143,199,232,0.4) 40%,
+    rgba(143, 199, 232, 0.74) 0%,
+    rgba(151, 186, 207, 0.4) 40%,
     transparent 100%
   );
 
@@ -377,7 +396,15 @@
       font-size: 14px !important;
     }
   }
+
+  .contact-buttons .contact-btn .contact-mail{
+    width: 13px !important;
+    height: 10px !important;
+  }
 }
+
+
+
 @media (max-width: 370px) {
 
   .contact-title{

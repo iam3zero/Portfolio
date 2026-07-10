@@ -15,6 +15,7 @@ body {
   align-items: center;
   justify-content: center;
   background: #FFFDF6;
+  /* background: url(../assets/img/bg.jpg); */
   position: relative;
   overflow: hidden;
 }
@@ -55,7 +56,7 @@ body {
 }
 
 .intro-desc {
-  font-size: clamp(12px, 2.2vw, 28px);
+  font-size: clamp(12px, 2.2vw, 26px);
   color: $color-sub;
   margin-bottom: 40px;
 
@@ -72,25 +73,28 @@ body {
 
 .intro-btn {
   padding: clamp(8px, 1.2vw, 10px) clamp(20px, 2vw, 28px);
-  border-radius: 15px;
+  border-radius: 30px;
   border: none;
 
-  background: #e5e5e5;
   font-size: clamp(12px, 1.2vw, 16px);
-  font-weight: 400;
-  opacity: .7;
+  font-weight: 500;
+  opacity: .8;
 
   cursor: pointer;
-  /* color: $color-sub; */
+  color: $color-sub;
   font-family: $font-en;
 
   /* background: linear-gradient(45deg, rgb(169,210,232) 0%,rgb(204,226,238) 53%,rgb(255,255,255) 100%); */
 
   /* box-shadow: 0 4px 12px #0047819a; */
 
-  background: linear-gradient(30deg, rgb(49, 49, 49) 0%,rgb(83, 83, 83) 53%,rgb(155, 155, 155) 100%);
-  color: #fff;
-  box-shadow: 0 4px 12px #5252529a;
+  /* background: linear-gradient(30deg, rgb(49, 49, 49) 0%,rgb(83, 83, 83) 53%,rgb(155, 155, 155) 100%);
+  color: #fff; */
+  /* background: #fff; */
+
+  background: linear-gradient(to bottom, #e4f1fd 50%,#d1e7fc 100%);
+  border: 1px solid #f2f8fd;
+  box-shadow: 0 4px 6px #b6b6b679;
   
   
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -99,7 +103,7 @@ body {
 .intro-btn:hover {
   transform: translateY(-5px);
   /* box-shadow: 0 14px 22px #0047816e; */
-  box-shadow: 0 14px 20px #5252529a;
+  box-shadow: 0 10px 10px #bbbbbb80;
   opacity: 1;
 }
 
