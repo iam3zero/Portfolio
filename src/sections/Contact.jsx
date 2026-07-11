@@ -46,76 +46,82 @@ export default function Contact() {
         {/* background blur */}
         <div className="contact-blur blur1"></div>
         <div className="contact-blur blur2"></div>
+      </div>
 
+      <div className="contact-inner">
         <div className="contact-content">
-          {toast && <div className="toast">이메일이 복사되었습니다!</div>}
-
-          {/* title */}
-          <h2 className="contact-title wave-text">
-            {text.split("").map((char, i) => (
-              <span key={i} style={{ animationDelay: `${i * 0.05}s` }}>
-                {char === " " ? "\u00A0" : char}
-              </span>
-            ))}
-          </h2>
-
-          {/* description */}
-          {/* <p className="contact-desc">
-            더 나은 웹 경험을 함께 만들어가고 싶습니다.
-          </p> */}
-
-          <div className="contact_arrow">
-          <FiChevronDown className="arrow first" />
-          <FiChevronDown className="arrow second" />
-          </div>
-
-          {/* buttons */}
-          <div className="contact-buttons">
-
-            <a
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                handleCopyEmail();
-              }}
-              className="contact-btn"
-            >
-              <img className="contact-mail" src={mail} alt="mail" />
-              <span>Email</span>
-            </a>
-
-            <a
-              href="https://github.com/iam3zero"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="contact-btn"
-              aria-label="Visit Github"
-            >
-              <img src={github} alt="github" />
-              <span>Github</span>
-            </a>
-
-            <a
-              href="tel:01012345678"
-              className="contact-btn"
-              aria-label="Call Phone"
-            >
-              <img src={phone} alt="phone" />
-              <span>Phone</span>
-            </a>
-
-          </div>
+            {toast && <div className="toast">이메일이 복사되었습니다!</div>}
+  
+            <div className="contact-text-box">
+              {/* title */}
+              <div className="contact-title-box">
+                <h2 className="contact-title wave-text">
+                  {text.split("").map((char, i) => (
+                    <span key={i} style={{ animationDelay: `${i * 0.05}s` }}>
+                      {char === " " ? "\u00A0" : char}
+                    </span>
+                  ))}
+                </h2>
+              </div>
+    
+              {/* description */}
+              {/* <p className="contact-desc">
+                더 나은 웹 경험을 함께 만들어가고 싶습니다.
+              </p> */}
+    
+              {/* <div className="contact_arrow">
+              <FiChevronDown className="arrow first" />
+              <FiChevronDown className="arrow second" />
+              </div> */}
+    
+              {/* buttons */}
+              <div className="contact-buttons">
+    
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleCopyEmail();
+                  }}
+                  className="contact-btn"
+                >
+                  <img className="contact-mail" src={mail} alt="mail" />
+                  <span>Email</span>
+                </a>
+    
+                <a
+                  href="https://github.com/iam3zero"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-btn"
+                  aria-label="Visit Github"
+                >
+                  <img src={github} alt="github" />
+                  <span>Github</span>
+                </a>
+    
+                <a
+                  href="tel:01012345678"
+                  className="contact-btn"
+                  aria-label="Call Phone"
+                >
+                  <img src={phone} alt="phone" />
+                  <span>Phone</span>
+                </a>
+    
+              </div>
+            </div>
         </div>
         <div className="contact-bottom">
-          <div>
             <ul>
               <li>PUBLISHER DESIGNER</li>
               <li>WORK 2026</li>
               <li>UX/UI WEB DESIGNER</li>
             </ul>
-          </div>
         </div>
       </div>
+      
+      
     </section>
   );
 }

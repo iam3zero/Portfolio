@@ -9,13 +9,13 @@
   justify-content: center;
   background: #FFFDF6;
   overflow: hidden;
+  
 
-  .contact-container {
+  .contact-inner{
     width: 100%;
-    max-width: 1200px;
-    padding: clamp(80px, 10vw, 140px) 20px;
-    text-align: center;
-    position: relative;
+    max-width: 1580px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 40px);
   }
 
   .contact-content {
@@ -27,20 +27,35 @@
 
   /* title */
 
+  .contact-text-box{
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    background: #ffffffde;
+    height: 280px;
+    width: 600px;
+    z-index: 9999999;
+    
+  }
+  .contact-title-box{
+    height: 70px;
+    margin-top: 80px;
+  }
   .contact-title {
-    font-size: clamp(26px, 6vw, 82px);
+    font-size: clamp(22px, 6vw, 36px);
     text-align: center;
-    font-weight: 800;
     letter-spacing: 2px;
+    font-weight: 800;
     font-family: $font-en;
-    color: $color-main;
+    color: #333333;
     z-index: 99999;
     text-shadow: 0 10px 12px #00000069;
+    
   }
 
   .wave-text span {
     display: inline-block;
     animation: waveBounce 1.5s ease-in-out infinite;
+    
   }
 
     @keyframes waveBounce {
@@ -95,14 +110,13 @@
 
   /* buttons */
 
-
+.contact-buttons{
+  
+}
 .contact-buttons .contact-btn {
-  margin-top: -40px;
   border-radius: 15px;
   border: none;
-
-  font-size: clamp(10px, 1.5vw, 16px);
-  padding: clamp(8px, 1.5vw, 12px) clamp(14px, 2vw, 16px);
+  padding: clamp(8px, 1.5vw, 10px) clamp(12px, 2vw, 14px);
 
   cursor: pointer;
   color: $color-sub;
@@ -113,12 +127,13 @@
 
   box-shadow: 0 4px 12px #0047816e; */
 
-  border-radius: 13px;
+  border-radius: 10px;
 
   /* background: rgba(223, 223, 223, 0.295); */
   /* background: #d1e7fc49; */
 
-  background: linear-gradient(to bottom, #e4f1fd 50%,#d1e7fc 100%);
+  /* background: linear-gradient(to bottom, #e4f1fd 50%,#d1e7fc 100%); */
+  background: #fff;
   border: 1px solid #dddddd;
   box-shadow: 0 4px 6px #b6b6b679;
   /* border: 1px solid #e6e6e6; */
@@ -139,21 +154,21 @@
 
   img{
     /* max-width: 24px; */
-    width: clamp(16px, 2vw, 22px);
-    height: clamp(16px, 2vw, 22px);
+    width: clamp(16px, 2vw, 20px);
+    height: clamp(16px, 2vw, 20px);
     
     transition: transform 0.3s ease;
   }
 
   span {
     transition: transform 0.3s ease;
-    font-size: 18px !important;
     font-weight: 500;
+    font-size: clamp(10px, 1.5vw, 14px);
   }
 }
 .contact-btn .contact-mail{
-  width: clamp(16px, 2vw, 26px) !important;
-  height: clamp(16px, 2vw, 22px) !important;
+  width: clamp(16px, 2vw, 24px) !important;
+  height: clamp(16px, 2vw, 20px) !important;
   scale: calc(.9);
 }
 
@@ -194,6 +209,27 @@
   .contact-buttons span{
     font-family: $font-en;
   }
+}
+.contact-bottom{
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  width: 1580px;
+  bottom: 50px;
+  
+  
+}
+.contact-bottom ul{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.contact-bottom ul li{
+  align-items: center;
+  color: $color-sub2;
+  font-family: $font-en;
+  font-size: 14px;
+  font-weight: 400;
 }
 
 /* SCSS 애니메이션 추가 */
@@ -263,12 +299,14 @@
   }
 }
 
+
+
 /* blur background */
 .contact-blur {
   position: absolute;
 
-  width: clamp(200px, 40vw, 500px);
-  height: clamp(200px, 40vw, 500px);
+  width: clamp(200px, 40vw, 600px);
+  height: clamp(200px, 40vw, 600px);
   filter: blur(100px);
 
   border-radius: 50%;
@@ -284,13 +322,13 @@
   //background: #8FC7E8;
   background: radial-gradient(
     circle,
-    rgba(143, 199, 232, 0.74) 0%,
-    rgba(151, 186, 207, 0.4) 40%,
-    transparent 100%
+    rgba(146, 210, 247, 0.384) 0%,
+    rgba(151, 186, 207, 0.61) 60%,
+    transparent 50%
   );
 
-  top: -10%;
-  left: -10%;
+  top: 100px;
+  left: 300px;
 
   animation: floatLeft 5s ease-in-out infinite;
 }
@@ -303,12 +341,12 @@
   background: radial-gradient(
     circle,
     rgba(204,226,238,0.9) 0%,
-    rgba(204,226,238,0.5) 40%,
-    transparent 70%
+    rgb(204, 226, 238) 60%,
+    transparent 60%
   );
 
-  bottom: -10%;
-  right: -10%;
+  bottom: 100px;
+  right: 300px;
 
   animation: floatRight 5s ease-in-out infinite;
 }

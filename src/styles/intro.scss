@@ -113,9 +113,9 @@ body {
   left: 50%;
   transform: translateX(-50%);
   font-family: $font-en;
-  font-weight: 500;
+  font-weight: 400;
 
-  font-size: clamp(12px, 1vw, 16px);
+  font-size: clamp(12px, 1vw, 14px);
   color: $color-sub2;
   letter-spacing: 1px;
 }
