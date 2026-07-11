@@ -1,8 +1,645 @@
-@use "./variables.scss" as *;
-@use './global.scss' as *;
+/* ===================================================
+   Overlay
+=================================================== */
 
-*{margin: 0;padding: 0; box-sizing: border-box;}
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
 
-body {
-  font-family: 'Pretendard', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px;
+
+    background: rgba(16, 23, 36, .45);
+    backdrop-filter: blur(16px);
+
+    animation: fadeIn .3s ease;
+}
+
+/* ===================================================
+   Modal
+=================================================== */
+
+.design-modal {
+
+    width: min(1380px, 95vw);
+    height: min(820px, 90vh);
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #fbfcff 100%
+    );
+
+    border: 1px solid rgba(207,214,225,.8);
+
+    border-radius: 26px;
+
+    box-shadow:
+        0 30px 80px rgba(17,27,45,.18);
+
+    animation: modalUp .35s ease;
+}
+
+/* ===================================================
+   Header
+=================================================== */
+
+.modal-header{
+
+    height:78px;
+
+    padding:0 36px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    border-bottom:1px solid #edf1f6;
+
+}
+
+.modal-label{
+
+    font-size:13px;
+
+    letter-spacing:.18em;
+
+    text-transform:uppercase;
+
+    color:#7c8696;
+
+    font-weight:600;
+
+}
+
+.modal-close{
+
+    width:42px;
+    height:42px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#f5f7fb;
+
+    color:#555;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    font-size:18px;
+
+}
+
+.modal-close:hover{
+
+    background:#e7edf7;
+
+    transform:rotate(90deg);
+
+}
+
+/* ===================================================
+   Body
+=================================================== */
+
+.modal-content{
+
+    flex:1;
+
+    display:grid;
+
+    grid-template-columns: 60% 40%;
+
+    overflow:hidden;
+
+}
+
+/* ===================================================
+   LEFT
+=================================================== */
+
+.modal-left{
+
+    display:grid;
+
+    grid-template-columns:90px 1fr;
+
+    gap:28px;
+
+    padding:36px;
+
+}
+
+/* ===================================================
+   Thumbnail
+=================================================== */
+
+.thumbnail-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+}
+
+.thumbnail-item{
+
+    width:90px;
+    height:90px;
+
+    border:none;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    background:#f7f8fb;
+
+    transition:.25s;
+
+    opacity:.55;
+
+}
+
+.thumbnail-item:hover{
+
+    opacity:1;
+
+    transform:translateY(-3px);
+
+}
+
+.thumbnail-item.active{
+
+    opacity:1;
+
+    border:2px solid #9fc0ef;
+
+    box-shadow:
+        0 12px 25px rgba(159,192,239,.25);
+
+}
+
+.thumbnail-item img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+/* ===================================================
+   Main Image
+=================================================== */
+
+.main-image{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+    background:#f7f8fc;
+
+    border:1px solid #edf1f5;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    cursor:zoom-in;
+
+}
+
+.main-image img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.35s;
+
+}
+
+.main-image:hover img{
+
+    transform:scale(1.02);
+
+}
+
+.zoom-text{
+
+    position:absolute;
+
+    left:24px;
+    bottom:22px;
+
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.9);
+
+    backdrop-filter:blur(10px);
+
+    font-size:12px;
+
+    color:#555;
+
+    letter-spacing:.04em;
+
+}
+
+
+/* ===================================================
+   RIGHT
+=================================================== */
+
+.modal-right{
+
+    padding:48px;
+
+    display:flex;
+    flex-direction:column;
+
+}
+
+.project-head{
+
+    padding-bottom:28px;
+
+    border-bottom:1px solid #edf1f6;
+
+}
+
+.category{
+
+    display:block;
+
+    margin-bottom:12px;
+
+    font-size:12px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.18em;
+
+    color:#8c96a8;
+
+    font-weight:600;
+
+}
+
+.project-title{
+
+    font-size:48px;
+
+    line-height:1.1;
+
+    font-weight:700;
+
+    color:#222;
+
+    margin-bottom:12px;
+
+}
+
+.project-subtitle{
+
+    font-size:18px;
+
+    color:#707782;
+
+}
+
+/* ===================================================
+   INFO
+=================================================== */
+
+.info-group{
+
+    padding:30px 0;
+
+}
+
+.info-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    gap:24px;
+
+    padding:18px 0;
+
+    border-bottom:1px solid #edf1f6;
+
+}
+
+.info-item:last-child{
+
+    border:none;
+
+}
+
+.info-item>span{
+
+    width:90px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    color:#808999;
+
+    text-transform:uppercase;
+
+    letter-spacing:.08em;
+
+}
+
+.info-item p{
+
+    flex:1;
+
+    font-size:16px;
+
+    color:#333;
+
+}
+
+/* ===================================================
+   TOOL
+=================================================== */
+
+.tool-list{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+}
+
+.tool{
+
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    background:#f5f8fc;
+
+    border:1px solid #e7edf5;
+
+    font-size:13px;
+
+    color:#444;
+
+    transition:.25s;
+
+}
+
+.tool:hover{
+
+    background:#d9ebff;
+
+}
+
+/* ===================================================
+   DESCRIPTION
+=================================================== */
+
+.project-description{
+
+    margin-top:12px;
+
+}
+
+.project-description h4{
+
+    font-size:13px;
+
+    letter-spacing:.15em;
+
+    text-transform:uppercase;
+
+    color:#8d97a5;
+
+    margin-bottom:18px;
+
+}
+
+.project-description p{
+
+    line-height:1.9;
+
+    color:#555;
+
+    font-size:16px;
+
+}
+
+/* ===================================================
+   BUTTON
+=================================================== */
+
+.modal-buttons{
+
+    margin-top: 50px;
+
+    padding-top:36px;
+
+}
+
+.pdf-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    text-decoration:none;
+
+    color:#222;
+
+    font-weight:600;
+
+    font-size:16px;
+
+    position:relative;
+
+}
+
+.pdf-btn::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:100%;
+
+    height:1px;
+
+    background:#222;
+
+    transition:.3s;
+
+}
+
+.pdf-btn:hover::after{
+
+    width:120%;
+
+}
+
+.pdf-btn:hover{
+
+    transform:translateX(4px);
+
+}
+
+
+/* ===================================================
+   LIGHTBOX
+=================================================== */
+
+.lightbox-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:10000;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(8,12,20,.88);
+
+    backdrop-filter:blur(10px);
+
+    animation:fadeIn .25s;
+
+}
+
+.lightbox-overlay img{
+
+    max-width:90vw;
+
+    max-height:90vh;
+
+    border-radius:18px;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.35);
+
+    animation:modalUp .3s;
+
+}
+
+.lightbox-close{
+
+    position:absolute;
+
+    top:36px;
+
+    right:36px;
+
+    width:52px;
+
+    height:52px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.15);
+
+    color:#fff;
+
+    cursor:pointer;
+
+    font-size:22px;
+
+    transition:.25s;
+
+}
+
+.lightbox-close:hover{
+
+    background:rgba(255,255,255,.28);
+
+    transform:rotate(90deg);
+
+}
+
+
+/* ===================================================
+   Animation
+=================================================== */
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes modalUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
 }

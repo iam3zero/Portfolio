@@ -1,13 +1,19 @@
-import React from 'react'
+import React from "react";
 
 import "../styles/designCard.scss";
 
-import { FiPlus } from "react-icons/fi";
-import { GoPlus } from "react-icons/go";
 import { PiPlus } from "react-icons/pi";
-import { GoArrowRight, GoArrowLeft } from "react-icons/go";
+import { GoArrowRight } from "react-icons/go";
 
-const DesignCard = ({ item }) => {
+const DesignCard = ({ item, onClick }) => {
+
+    const handleClick = () => {
+
+        if (item.isComingSoon) return;
+
+        onClick(item);
+
+    };
 
     if (item.isComingSoon) {
         return (
@@ -15,7 +21,9 @@ const DesignCard = ({ item }) => {
 
                 <div className="coming-overlay">
 
-                    <span className="plus"><PiPlus /></span>
+                    <span className="plus">
+                        <PiPlus />
+                    </span>
 
                     <h3>Coming Soon</h3>
 
@@ -31,7 +39,10 @@ const DesignCard = ({ item }) => {
     }
 
     return (
-        <article className="design-card">
+        <article
+            className="design-card"
+            onClick={handleClick}
+        >
 
             <img
                 src={item.thumbnail}
@@ -50,7 +61,11 @@ const DesignCard = ({ item }) => {
 
                     <div className="view-detail">
 
-                        View Project <div className='view-arrow'>< GoArrowRight/></div>
+                        View Project
+
+                        <div className="view-arrow">
+                            <GoArrowRight />
+                        </div>
 
                     </div>
 

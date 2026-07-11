@@ -6,6 +6,7 @@ import designData from "../data/designData";
 
 import DesignFilter from "../components/DesignFilter";
 import DesignSwiper from "../components/DesignSwiper";
+import DesignModal from "../components/DesignModal";
 
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 
@@ -13,6 +14,8 @@ const Design = () => {
 
     const [activeCategory, setActiveCategory] = useState("all");
     const [currentPage, setCurrentPage] = useState(1);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedProject, setSelectedProject] = useState(null);
     const [totalPages, setTotalPages] = useState(1);
 
     const prevRef = useRef(null);
@@ -24,6 +27,16 @@ const Design = () => {
             : designData.filter(
                   item => item.category === activeCategory
               );
+
+    const openModal = (project) => {
+        setSelectedProject(project);
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+        setSelectedProject(null);
+    };
 
     const getSlidesPerGroup = () => {
 
@@ -109,9 +122,16 @@ const Design = () => {
                     prevRef={prevRef}
                     nextRef={nextRef}
                     setCurrentPage={setCurrentPage}
+                    onCardClick={openModal}
                 />
 
             </div>
+
+            <DesignModal
+                isOpen={isModalOpen}
+                onClose={closeModal}
+                project={selectedProject}
+            />
 
         </section>
 

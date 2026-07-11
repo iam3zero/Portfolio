@@ -12,7 +12,8 @@ const DesignSwiper = ({
     items,
     prevRef,
     nextRef,
-    setCurrentPage
+    setCurrentPage,
+    onCardClick
 }) => {
 
 
@@ -95,6 +96,7 @@ const DesignSwiper = ({
 
                             <DesignCard
                                 item={item}
+                                onClick={onCardClick}
                             />
 
                         </SwiperSlide>

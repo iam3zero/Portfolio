@@ -19,7 +19,7 @@ const designData = [
         thumbnail: eclatThumb,
 
         images: [
-            eclat01,
+            eclatThumb,
             eclat02
         ],
 
@@ -34,7 +34,14 @@ const designData = [
 
         duration: "2 Days",
 
-        year: "2026"
+        year: "2026",
+
+
+        overview: "브랜드 아이덴티티를 유지하면서 향수를 쉽고 직관적으로 탐색할 수 있도록 UI를 디자인하였습니다.",
+
+        member: "Personal",
+
+        pdf: null,
     },
 
     {
