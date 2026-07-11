@@ -60,9 +60,9 @@ export default function Contact() {
           </h2>
 
           {/* description */}
-          <p className="contact-desc">
+          {/* <p className="contact-desc">
             더 나은 웹 경험을 함께 만들어가고 싶습니다.
-          </p>
+          </p> */}
 
           <div className="contact_arrow">
           <FiChevronDown className="arrow first" />
@@ -104,6 +104,15 @@ export default function Contact() {
               <span>Phone</span>
             </a>
 
+          </div>
+        </div>
+        <div className="contact-bottom">
+          <div>
+            <ul>
+              <li>PUBLISHER DESIGNER</li>
+              <li>WORK 2026</li>
+              <li>UX/UI WEB DESIGNER</li>
+            </ul>
           </div>
         </div>
       </div>

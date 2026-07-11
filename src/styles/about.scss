@@ -10,7 +10,8 @@ body {
 
 
 .about {
-  background: #ffffff;
+  /* background: #ffffff; */
+  background: linear-gradient(to bottom, #fffdf6 0%,#ffffff 100%);
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
@@ -23,6 +24,15 @@ body {
   padding: 0 clamp(20px, 5vw, 40px);
 }
 
+.about-box{
+  border: 1px solid #f1f1f1;
+  border-radius: 10px;
+  background: #ffffff;
+  padding: 40px;
+  position: relative;
+  z-index: 9999;
+}
+
 /* section title */
 
 .about-title {
@@ -30,6 +40,7 @@ body {
   margin-bottom: 30px;
   font-weight: 700;
   font-family: $font-en;
+  margin-left: 10px;
 }
 
 /* top area */
@@ -38,10 +49,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(40px, 12vw, 220px);
-
-  margin-bottom: 60px;
-  padding: 0;
+  gap: clamp(40px, 12vw, 200px);
+  margin-bottom: 40px;
+  padding-top: 0;
+  margin-left: 100px;
 }
 
 /* photo */
@@ -53,35 +64,65 @@ body {
 
 
 .photo-placeholder {
-  width: 250px;
-  height: 253px;
-  background: url(../assets/img/about_profile.png) no-repeat;
+  width: 230px;
+  height: 230px;
+  /* background: url(../assets/img/about_profile.png) no-repeat; */
+  /* background: url(../assets/img/about_profile_box.png) no-repeat; */
   background-size: cover;
   background-position: center;
   cursor: pointer;
   transition: all 0.4s ease;
+  position: relative;
 }
 .photo-placeholder:hover{
   transform: scale(1.05);
-  filter: brightness(0.7);
+  filter: brightness(0.8);
 }
+.photo-placeholder:hover img{
+  filter: blur(0);
+}
+
+.profile{
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  overflow: hidden;
+}
+.profile img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity .6s ease;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
 .resume-icon{
   position: absolute;
   bottom: 5px;
-  right: -40px;
+  right: -70px;
   transition: all 0.3s ease;
   opacity: .5;
 }
 .resume-link {
   display: block;
   margin-top: 5px;
-  font-size: 14px;
+  font-size: 12px;
   color: #31769F;
   position: absolute;
   bottom: 0;
-  right: -50px;
+  right: -100px;
   transition: all 0.3s ease;
   opacity: .5;
+  font-family: $font-en;
 }
 
 .about-photo:hover .resume-icon {
@@ -101,7 +142,7 @@ body {
 }
 
 .about-role {
-  font-size: 14px;
+  font-size: 12px;
   letter-spacing: 1px;
   color: #31769F;
   font-family: $font-en;
@@ -109,7 +150,7 @@ body {
 }
 
 .about-headline {
-  font-size: 34px;
+  font-size: 30px;
   margin: 10px 0px 20px;
   display: flex;
 }
@@ -143,7 +184,7 @@ body {
 .about-desc {
   line-height: 1.7;
   color: $color-sub;
-  font-size: 20px;
+  font-size: 16px;
   font-family: pretendard, sans-serif;
 }
 
@@ -151,13 +192,14 @@ body {
 
 .about-bottom {
   display: flex;
-  border-top: 1px solid #ddd;
+  justify-content: center;
 }
 
 /* info */
 
 .about-info {
-  width: 50%;
+  width: 40%;
+  border-top: 1px solid #ddd;
 
 }
 
@@ -176,9 +218,9 @@ body {
 }
 
 .info-title {
-  width: 30%;
+  width: 25%;
   font-weight: 700;
-  font-size: 24px;
+  font-size: 18px;
   font-family: $font-en;
   letter-spacing: 1px;
 }
@@ -190,47 +232,55 @@ body {
   font-family: $font-en;
 }
 .info-content p{
-  font-size: 20px;
+  font-size: 16px;
   color: $color-main;
   margin-bottom: 5px;
   font-family: $font-en;
 }
 .license-box li{
-  font-size: 16px;
+  font-size: 14px;
   font-family: $font-en;
   line-height: 1.5;
+  list-style-type: disc;
+  margin-left: 15px;
 }
+li::marker{
+  color: #adacac;
+}
+
 .license-box li span{
-  font-size: 14px;
+  font-size: 12px;
+  margin-left: 3px;
 }
 .contact-box{
   font-family: $font-en;
 }
 .name-box .name-en{
   margin-left: 5px;
-  margin-top: 9px;
-  font-size: 14px;
+  margin-top: 8px;
+  font-size: 12px;
   font-weight: 400;
   font-family: $font-en;
   color: $color-sub;
 }
 .info-content span {
   color: $color-sub2;
-  font-size: 16px;
+  font-size: 14px;
   font-family: $font-en;
 }
 
 /* skill */
 
 .about-skill {
-  width: 60%;
+  width: 40%;
   padding: 20px 40px;
   border-left: 1px solid #e5e5e5;
+  border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
 }
 
 .skill-title {
-  font-size: 28px;
+  font-size: 20px;
   margin-bottom: 20px;
   font-family: $font-en;
   letter-spacing: 1px;
@@ -273,8 +323,8 @@ body {
 .group-title {
   min-width: 110px;
   font-size: 14px;
-  font-weight: 600;
-  color: #333;
+  font-weight: 500;
+  color: #5a5a5a;
   font-family: $font-en;
 }
 
@@ -287,7 +337,7 @@ body {
 
 .group-items span {
   cursor: pointer;
-  font-size: 16px;
+  font-size: 14px;
   transition: all 0.3s ease;
   font-family: $font-en;
   color: #333;
@@ -304,7 +354,7 @@ body {
 
 .skill-icons {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(28px, 1fr));
   gap: 30px;
   margin-top: 20px;
 }
@@ -319,8 +369,8 @@ body {
 .skill-icons .icon-box img {
   opacity: .8;
   transition: all 0.3s ease;
-  width: 45px;
-  height: 45px;
+  width: 36px;
+  height: 36px;
 }
 
 .skill-icons .icon-box.active img {
@@ -354,6 +404,7 @@ body {
   opacity: 1;
 
   will-change: transform;
+
 }
 
 /* 왼쪽 원 */
@@ -507,84 +558,169 @@ body {
 .skill-icons .icon-box:nth-child(15){ transition-delay: 0.75s; }
 .skill-icons .icon-box:nth-child(16){ transition-delay: 0.8s; }
 
-/* 반응형 768px */
-/* @media (max-width: 768px) {
-  .fade-left,
-  .fade-right {
-    transform: translateY(20px); // 좌우 대신 위아래로
-  }
+
+/* blur background */
+.about-circle {
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  border-radius: 50%;
+
+  filter: blur(100px);
+  opacity: 0.7;
+
+  z-index: 0;
+
+  will-change: transform;
+}
+
+/* 왼쪽 원 */
+
+.about-container{
+  position: relative;
+}
+
+.about-circle.left {
+  //background: #8FC7E8;
+  background: radial-gradient(
+    circle,
+    rgba(143,199,232,0.9) 0%,
+    rgba(143, 199, 232, 0.699) 50%,
+    transparent 50%
+  );
+
+  top: 300px;
+  left: -100px;
+
+  /* animation: floatLeft 18s ease-in-out infinite; */
+}
 
 
-  .skill-group {
-    flex-direction: column;
-    gap: 5px;
+/* 오른쪽 원 */
+
+.about-circle.right {
+  //background: #CCE2EE;
+  background: radial-gradient(
+    circle,
+    rgba(204,226,238,0.9) 0%,
+    rgba(204, 226, 238, 0.603) 80%,
+    transparent 90%
+  );
+
+  top: 80px;
+  right: -50px;
+
+  /* animation: floatRight 22s ease-in-out infinite; */
+}
+
+/* blur circle → slow floating 애니메이션 */
+/* @keyframes floatLeft {
+
+  0% {
+    transform: translate(0,0);
   }
 
-  .group-title {
-    min-width: auto;
+  50% {
+    transform: translate(120px,-80px);
   }
 
-  .group-items{
-    margin-left: 10px;
+  100% {
+    transform: translate(0,0);
   }
+
+}
+
+@keyframes floatRight {
+
+  0% {
+    transform: translate(0,0);
+  }
+
+  50% {
+    transform: translate(-150px,100px);
+  }
+
+  100% {
+    transform: translate(0,0);
+  }
+
 } */
+
+
 
 
 @media (max-width: 1024px) {
   .about-top {
     gap: 40px;
     width: 100%;
+    margin-left: 0;
   }
   .about-photo{
     width: 40%;
   }
   .photo-placeholder{
-    width: 200px;
-    height: 203px;
     margin: 0 auto;
   }
   .contact-box p{
     font-size: 16px;
   }
   .resume-icon{
-    right: 40px;
+    right: 0px;
   }
   .resume-link{
-    right: 0;
+    right: -40px;
+  }
+
+  .about-info{
+    width: 50%;
+  }
+  .about-skill{
+    width: 50%;
   }
 
   .about-intro {
     max-width: 60%;
   }
   .about-role{
-    font-size: 12px;
+    font-size: 10px;
   }
   .about-headline {
-    font-size: 26px;
+    font-size: 24px;
   }
 
   .about-desc {
-    font-size: 16px;
+    font-size: 12px;
   }
 
   .info-title{
     width: 40%;
-    font-size: 20px;
+    font-size: 16px;
+  }
+  .license-box li{
+    font-size: 12px;
   }
   .skill-title{
-    font-size: 22px;
+    font-size: 20px;
+  }
+  .group-title{
+    font-size: 12px;
+  }
+  .group-items span{
+    font-size: 12px;
   }
   .group-items span.active{
     letter-spacing: 0.2px;
   }
   .skill-icons{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(25px, 1fr));
+    gap: 18px;
   }
   .skill-icons .icon-box img{
-    width: 38px;
-    height: 38px;
+    width: 32px;
+    height: 32px;
   }
   .skill-icons .icon-box.active img {
     transform: translateY(-2px) scale(1.1);
@@ -614,10 +750,10 @@ body {
     flex-wrap: wrap;
   }
   .resume-icon{
-    right: 0;
+    right: -60px;
   }
   .resume-link{
-    right: -30px;
+    right: -90px;
   }
   .about-intro .line{
     margin: 20px auto;
@@ -630,6 +766,7 @@ body {
   /* bottom */
   .about-bottom {
     flex-direction: column;
+    
   }
 
   .about-info,
@@ -756,8 +893,22 @@ body {
 
   .photo-placeholder {
     width: 180px;
-    height: 183px;
+    height: 180px;
+    
   }
+
+  .profile{
+    width: 160px;
+    height: 160px;
+    top: 10px;
+    left: 10px;
+  }
+
+  .resume-icon{
+    display: none;
+  }
+  .resume-link{
+    display: none;}
 
   .group-items span{
     font-size: 12px;
