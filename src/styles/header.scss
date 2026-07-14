@@ -13,7 +13,7 @@
   background: transparent;
 
   transition: all 0.3s ease;
-  z-index: 100;
+  z-index: 999999;
 }
 
 /* 기본 상태 */
@@ -24,6 +24,13 @@
 /* 숨김 상태 */
 .header.hide {
   transform: translateY(-100%);
+}
+
+/* 모달 창 열릴 시 헤더 숨김 */
+body.modal-open .header{
+    transform: translateY(-120%);
+    opacity: 0;
+    pointer-events: none;
 }
 
 /* 스크롤 시 glass effect */

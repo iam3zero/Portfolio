@@ -245,7 +245,7 @@ body {
   margin-left: 15px;
 }
 li::marker{
-  color: #adacac;
+  color: #cecece;
 }
 
 .license-box li span{
@@ -808,6 +808,10 @@ li::marker{
 
 @media (max-width: 480px) {
 
+  .about-box{
+    padding: 40px 20px;
+  }
+
   .about-title {
     font-size: 28px;
   }
@@ -839,7 +843,6 @@ li::marker{
 
   .about-desc {
     font-size: 12px;
-    padding: 0px 18px 0px 18px;
   }
   .about-intro .line {
     margin: 15px auto;
@@ -911,6 +914,10 @@ li::marker{
   .resume-link{
     display: none;}
 
+  .group-items{
+    gap: 6px 6px;
+  }
+
   .group-items span{
     font-size: 12px;
   }
@@ -922,13 +929,13 @@ li::marker{
   }
   .skill-icons {
     grid-template-columns: repeat(8, 1fr);
-    gap: 10px;
+    gap: 2px;
     justify-items: center;
   }
 
   .skill-icons .icon-box img {
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
   }
 }
 @media (max-width: 393px) {

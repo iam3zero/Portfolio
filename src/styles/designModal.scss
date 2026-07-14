@@ -5,7 +5,7 @@
 .modal-overlay {
     position: fixed;
     inset: 0;
-    z-index: 9999;
+    z-index: 99999;
 
     display: flex;
     justify-content: center;
@@ -118,11 +118,13 @@
 
     flex:1;
 
+    overflow-y:auto;
+
     display:grid;
 
     grid-template-columns: 60% 40%;
 
-    overflow:hidden;
+    overscroll-behavior: contain;
 
 }
 
@@ -138,7 +140,7 @@
 
     gap:28px;
 
-    padding:36px;
+    padding:36px 36px 70px 36px;
 
 }
 
@@ -227,14 +229,23 @@
 
     cursor:zoom-in;
 
+    padding:28px;
+
+    background:#f6f8fb;
+
 }
 
 .main-image img{
 
-    width:100%;
-    height:100%;
+    max-width:100%;
 
-    object-fit:cover;
+    max-height:100%;
+
+    width:auto;
+
+    height:auto;
+
+    object-fit:contain;
 
     transition:.35s;
 
@@ -276,7 +287,7 @@
 
 .modal-right{
 
-    padding:48px;
+    padding:40px 40px 40px 20px;
 
     display:flex;
     flex-direction:column;
@@ -604,6 +615,49 @@
 }
 
 
+.lightbox-content{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:32px;
+
+}
+
+.lightbox-arrow{
+
+    width:56px;
+
+    height:56px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.15);
+
+    color:#fff;
+
+    font-size:34px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    backdrop-filter:blur(8px);
+
+}
+
+.lightbox-arrow:hover{
+
+    background:rgba(255,255,255,.28);
+
+    transform:scale(1.08);
+
+}
+
+
 /* ===================================================
    Animation
 =================================================== */
@@ -639,6 +693,390 @@
         opacity:1;
 
         transform:translateY(0);
+
+    }
+
+}
+
+
+
+
+
+/* ===================================================
+   Responsive
+=================================================== */
+
+/* ===========================
+   1024px
+=========================== */
+
+@media (max-width:1024px){
+
+    .modal-overlay{
+
+        padding:24px;
+
+    }
+
+    .design-modal{
+
+        width:95vw;
+        height:88vh;
+
+    }
+
+    .modal-content{
+
+        grid-template-columns:54% 46%;
+
+    }
+
+    .modal-left{
+
+        grid-template-columns:72px 1fr;
+
+        gap:20px;
+
+        padding:28px;
+
+    }
+
+    .thumbnail-item{
+
+        width:72px;
+        height:72px;
+
+        border-radius:14px;
+
+    }
+
+    .modal-right{
+
+        padding:32px;
+
+    }
+
+    .project-title{
+
+        font-size:38px;
+
+    }
+
+    .project-subtitle{
+
+        font-size:16px;
+
+    }
+
+    .project-description p{
+
+        font-size:15px;
+
+    }
+
+}
+
+/* ===========================
+   768px
+=========================== */
+
+@media (max-width:768px){
+
+    .modal-overlay{
+
+        padding:18px;
+
+        align-items:center;
+
+    }
+
+    .design-modal{
+
+        width:100%;
+
+        max-width:680px;
+
+        height:92vh;
+
+        border-radius:22px;
+
+        overflow-y:auto;
+
+    }
+
+    .modal-content{
+
+        display:flex;
+
+        flex-direction:column;
+
+    }
+
+    .modal-left{
+
+        display:flex;
+
+        flex-direction:column;
+
+        padding:24px;
+
+        gap:20px;
+
+    }
+
+    .main-image{
+
+        order:1;
+
+        height:340px;
+
+    }
+
+    .thumbnail-list{
+
+        order:2;
+
+        flex-direction:row;
+
+        justify-content:center;
+
+        flex-wrap:wrap;
+
+        gap:12px;
+
+    }
+
+    .thumbnail-item{
+
+        width:76px;
+        height:76px;
+
+    }
+
+    .modal-right{
+
+        padding:28px;
+
+    }
+
+    .project-title{
+
+        font-size:34px;
+
+    }
+
+    .project-subtitle{
+
+        font-size:16px;
+
+    }
+
+    .info-item{
+
+        flex-direction:column;
+
+        gap:8px;
+
+    }
+
+    .info-item>span{
+
+        width:auto;
+
+    }
+
+    .modal-buttons{
+
+        margin-top:36px;
+
+    }
+
+    .pdf-btn{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+}
+
+/* ===========================
+   480px
+=========================== */
+
+@media (max-width:480px){
+
+    .modal-overlay{
+
+        padding:10px;
+
+    }
+
+    .design-modal{
+
+        width:100%;
+
+        height:96vh;
+
+        border-radius:18px;
+
+    }
+
+    .modal-header{
+
+        height:64px;
+
+        padding:0 18px;
+
+    }
+
+    .modal-label{
+
+        font-size:11px;
+
+    }
+
+    .modal-close{
+
+        width:38px;
+        height:38px;
+
+        font-size:16px;
+
+    }
+
+    .modal-left{
+
+        padding:18px;
+
+    }
+
+    .main-image{
+
+        height:250px;
+
+        border-radius:18px;
+
+    }
+
+    .thumbnail-list{
+
+        gap:10px;
+
+    }
+
+    .thumbnail-item{
+
+        width:62px;
+        height:62px;
+
+        border-radius:12px;
+
+    }
+
+    .modal-right{
+
+        padding:20px;
+
+    }
+
+    .category{
+
+        font-size:11px;
+
+    }
+
+    .project-title{
+
+        font-size:28px;
+
+        line-height:1.2;
+
+    }
+
+    .project-subtitle{
+
+        font-size:15px;
+
+    }
+
+    .info-group{
+
+        padding:20px 0;
+
+    }
+
+    .info-item{
+
+        padding:14px 0;
+
+    }
+
+    .project-description h4{
+
+        font-size:12px;
+
+    }
+
+    .project-description p{
+
+        font-size:14px;
+
+        line-height:1.8;
+
+    }
+
+    .tool{
+
+        font-size:12px;
+
+        padding:6px 12px;
+
+    }
+
+    .modal-buttons{
+
+        padding-top:28px;
+
+    }
+
+    .pdf-btn{
+
+        font-size:15px;
+
+    }
+
+    .zoom-text{
+
+        display:none;
+
+    }
+
+    .lightbox-content{
+
+        gap:12px;
+
+    }
+
+    .lightbox-arrow{
+
+        width:44px;
+        height:44px;
+
+        font-size:28px;
+
+    }
+
+    .lightbox-close{
+
+        width:44px;
+        height:44px;
+
+        top:18px;
+        right:18px;
+
+        font-size:18px;
 
     }
 

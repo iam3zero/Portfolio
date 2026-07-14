@@ -60,7 +60,7 @@ body {
 .design-pagination{
 
     font-size:15px;
-    color:#666;
+    color:#888;
     letter-spacing:.08em;
 
 }
@@ -109,7 +109,16 @@ body {
     font-size: 32px;
     text-align: center;
   }
-
+  .design-filter-wrap .design-filter{
+    justify-content: space-between;
+    gap: 6px;
+  }
+  .design-filter-wrap .design-filter button{
+    font-size: 12px;
+  }
+  .design-pagination{
+    font-size: 12px;
+  }
   .design-navigation{
     gap: 5px;
     justify-content: center;
@@ -124,5 +133,13 @@ body {
 
   .design-navigation svg{
     scale: calc(1);
+  }
+}
+
+@media (max-width: 393px) {
+
+  .design-filter-wrap .design-filter{
+    justify-content: center;
+    gap: 8px;
   }
 }

@@ -46,6 +46,8 @@ function Header() {
     let lastScrollY = window.scrollY;
 
     const handleScroll = () => {
+      if (document.body.classList.contains("modal-open")) return;
+
       const currentScrollY = window.scrollY;
 
       // glass 효과
@@ -70,8 +72,15 @@ function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+
   return (
-    <header className={`header ${scrolled ? "scrolled" : ""} ${showHeader ? "show" : "hide"}`}>
+    <header
+      className={`header ${
+        scrolled ? "scrolled" : ""
+    } ${
+        showHeader ? "show" : "hide"
+    }`}
+    >
       <div className="header-inner">
         
         {/* logo */}

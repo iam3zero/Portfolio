@@ -4,15 +4,57 @@ import "../styles/designModal.scss";
 
 const DesignModal = ({ isOpen, onClose, project }) => {
 const [selectedImage, setSelectedImage] = useState("");
+const [currentIndex, setCurrentIndex] = useState(0);
 const [lightboxOpen, setLightboxOpen] = useState(false);
+
+
+const handlePrev = () => {
+
+    const newIndex =
+        currentIndex === 0
+            ? project.images.length - 1
+            : currentIndex - 1;
+
+    setCurrentIndex(newIndex);
+
+    setSelectedImage(project.images[newIndex]);
+
+};
+
+const handleNext = () => {
+
+    const newIndex =
+        currentIndex === project.images.length - 1
+            ? 0
+            : currentIndex + 1;
+
+    setCurrentIndex(newIndex);
+
+    setSelectedImage(project.images[newIndex]);
+
+};
 
 useEffect(() => {
 
-    const handleEsc = (e) => {
+    const handleKeyDown = (e) => {
 
-        if(e.key==="Escape"){
+        if (!lightboxOpen) return;
+
+        if (e.key === "Escape") {
 
             setLightboxOpen(false);
+
+        }
+
+        if (e.key === "ArrowLeft") {
+
+            handlePrev();
+
+        }
+
+        if (e.key === "ArrowRight") {
+
+            handleNext();
 
         }
 
@@ -20,23 +62,49 @@ useEffect(() => {
 
     window.addEventListener(
         "keydown",
-        handleEsc
+        handleKeyDown
     );
 
-    return ()=>{
+    return () => {
 
         window.removeEventListener(
             "keydown",
-            handleEsc
+            handleKeyDown
         );
 
     };
 
-}, []);
+}, [lightboxOpen, currentIndex]);
+
+
+useEffect(() => {
+
+    if (isOpen) {
+
+        document.body.style.overflow = "hidden";
+        document.body.classList.add("modal-open");
+
+    } else {
+
+        document.body.style.overflow = "";
+        document.body.classList.remove("modal-open");
+
+    }
+
+    return () => {
+
+        document.body.style.overflow = "";
+        document.body.classList.remove("modal-open");
+
+    };
+
+}, [isOpen]);
 
 useEffect(() => {
 
     if (project?.images?.length) {
+
+        setCurrentIndex(0);
 
         setSelectedImage(project.images[0]);
 
@@ -90,7 +158,12 @@ useEffect(() => {
                                     className={`thumbnail-item ${
                                         selectedImage === image ? "active" : ""
                                     }`}
-                                    onClick={() => setSelectedImage(image)}
+                                    onClick={() => {
+
+                                        setCurrentIndex(index);
+                                        setSelectedImage(image);
+
+                                    }}
                                 >
 
                                     <img
@@ -232,11 +305,31 @@ useEffect(() => {
                         ✕
                     </button>
 
-                    <img
-                        src={selectedImage}
-                        alt={project.title}
+                    <div
+                        className="lightbox-content"
                         onClick={(e)=>e.stopPropagation()}
-                    />
+                    >
+
+                        <button
+                            className="lightbox-arrow prev"
+                            onClick={handlePrev}
+                        >
+                            ‹
+                        </button>
+
+                        <img
+                            src={selectedImage}
+                            alt={project.title}
+                        />
+
+                        <button
+                            className="lightbox-arrow next"
+                            onClick={handleNext}
+                        >
+                            ›
+                        </button>
+
+                    </div>
 
                 </div>
 
