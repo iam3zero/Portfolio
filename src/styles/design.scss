@@ -60,9 +60,7 @@ body {
 .design-pagination{
 
     font-size:15px;
-
     color:#666;
-
     letter-spacing:.08em;
 
 }
@@ -95,6 +93,7 @@ body {
     background: none;
     cursor: pointer;
     transition: .5s ease;
+    color: #333
 }
 
 .design-arrow:hover {
@@ -112,9 +111,9 @@ body {
   }
 
   .design-navigation{
-    margin-bottom: 10px;
     gap: 5px;
     justify-content: center;
+    color: #333;
   }
 
   .design-arrow{
