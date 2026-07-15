@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
 
 import "../styles/designModal.scss";
+import designCategories from '../data/designCategories';
+
+import { GoArrowRight, GoArrowLeft } from "react-icons/go";
+import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 
 const DesignModal = ({ isOpen, onClose, project }) => {
 const [selectedImage, setSelectedImage] = useState("");
 const [currentIndex, setCurrentIndex] = useState(0);
 const [lightboxOpen, setLightboxOpen] = useState(false);
-
 
 const handlePrev = () => {
 
@@ -114,6 +117,11 @@ useEffect(() => {
 
     if (!isOpen || !project) return null;
 
+    const categoryLabel =
+    designCategories.find(
+        (item) => item.id === project.category
+    )?.label || project.category;
+
     return (
         <div className="modal-overlay">
 
@@ -188,7 +196,7 @@ useEffect(() => {
                             />
 
                             <span className="zoom-text">
-                                Click image to enlarge
+                                🔍 Click to enlarge
                             </span>
 
                         </div>
@@ -200,18 +208,26 @@ useEffect(() => {
                     <div className="modal-right">
 
                         <div className="project-head">
+                            
 
-                            <span className="category">
-                                {project.category}
-                            </span>
+                            <div className="category-area">
+                                <span className="category">
+                                    {categoryLabel}
+                                </span>
+                                <span className="category">
+                                    {project.type}
+                                </span>
+                            </div>
 
                             <h2 className="project-title">
                                 {project.title}
                             </h2>
 
-                            <p className="project-subtitle">
+                            <div className="line"></div>
+
+                            {/* <p className="project-subtitle">
                                 {project.subtitle}
-                            </p>
+                            </p> */}
 
                         </div>
 
@@ -219,7 +235,7 @@ useEffect(() => {
 
                             <div className="info-item">
 
-                                <span>Duration</span>
+                                <span>Date</span>
 
                                 <p>{project.duration}</p>
 
@@ -227,9 +243,22 @@ useEffect(() => {
 
                             <div className="info-item">
 
-                                <span>Member</span>
+                                <span>TAG</span>
 
-                                <p>{project.member}</p>
+                                <div className="tag-list">
+
+                                    {project.tag?.map((tag, index) => (
+
+                                        <span
+                                            className="tag"
+                                            key={index}
+                                        >
+                                            {tag}
+                                        </span>
+
+                                    ))}
+
+                                </div>
 
                             </div>
 
@@ -253,7 +282,26 @@ useEffect(() => {
                                 </div>
 
                             </div>
+                            <div className="info-item">
+                                <span>Contribution</span>
 
+                                <div className="progress-wrap">
+
+                                    <div className="progress-bar">
+                                        <div
+                                            className="progress"
+                                            style={{
+                                                width: `${project.contribution}%`
+                                            }}
+                                        />
+                                    </div>
+
+                                    <strong>
+                                        {project.contribution}%
+                                    </strong>
+
+                                </div>
+                            </div>
                         </div>
 
                         <div className="project-description">
@@ -280,7 +328,17 @@ useEffect(() => {
                                 className="pdf-btn"
                             >
 
-                                Project View →
+                                Project View <GoArrowRight />
+
+                            </a>
+                            <a
+                                onClick={onClose}
+                                aria-label="Close"
+                                rel="noopener noreferrer"
+                                className="close-btn"
+                            >
+
+                                Close
 
                             </a>
 
@@ -314,7 +372,7 @@ useEffect(() => {
                             className="lightbox-arrow prev"
                             onClick={handlePrev}
                         >
-                            ‹
+                            <IoIosArrowBack />
                         </button>
 
                         <img
@@ -326,7 +384,7 @@ useEffect(() => {
                             className="lightbox-arrow next"
                             onClick={handleNext}
                         >
-                            ›
+                            <IoIosArrowForward />
                         </button>
 
                     </div>

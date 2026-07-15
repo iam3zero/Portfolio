@@ -3,24 +3,36 @@ import React from 'react'
 import eclatThumb from "../assets/design/ui/eclat_thumb.png";
 import eclat01 from "../assets/design/ui/eclat_01.png";
 import eclat02 from "../assets/design/ui/eclat_02.png";
+import eclat03 from "../assets/design/ui/eclat_03.png";
+import eclat04 from "../assets/design/ui/eclat_04.png";
+import eclat05 from "../assets/design/ui/eclat_05.png";
 
 const designData = [
     {
         id: 1,
 
-        category: "ui",
+        category: "Package",
 
-        title: "ÉCLAT Mobile UI",
+        title: "ÉCLAT Package Design",
 
-        subtitle: "Mobile App Design",
+        subtitle: "Package Design",
+
+        tag: ["#APP Design", "#UX/UI", "#Package Design"],
 
         type: "Original",
 
         thumbnail: eclatThumb,
 
         images: [
-            eclatThumb,
-            eclat02
+            eclat05,
+            eclat01,
+            eclat02,
+            eclat03,
+            eclat04,
+        ],
+
+        contribution: [
+          "100"
         ],
 
         description:
@@ -32,7 +44,54 @@ const designData = [
             "Figma"
         ],
 
-        duration: "2 Days",
+        duration: "2026.07",
+
+        year: "2026",
+
+
+        overview: "브랜드 아이덴티티를 유지하면서 향수를 쉽고 직관적으로 탐색할 수 있도록 UI를 디자인하였습니다.",
+
+        member: "Personal",
+
+        pdf: null,
+    },
+    {
+        id: 2,
+
+        category: "Package",
+
+        title: "ÉCLAT Package Design",
+
+        subtitle: "Package Design",
+
+        tag: ["#APP Design", "#UX/UI", "#Package Design"],
+
+        type: "Redesign",
+
+        thumbnail: eclatThumb,
+
+        images: [
+            eclat05,
+            eclat01,
+            eclat02,
+            eclat03,
+            eclat04,
+        ],
+
+        contribution: [
+          "100"
+        ],
+
+        description:
+            "향수 브랜드 ÉCLAT의 모바일 메인 UI를 제작하였습니다.",
+
+        tools: [
+            "Photoshop",
+            "Illustrator",
+            "Figma"
+        ],
+
+        duration: "2026.07",
 
         year: "2026",
 
