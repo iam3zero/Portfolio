@@ -324,9 +324,10 @@ body {
 
     border-radius: 6px;
 
-    background:#EFEFF0;
+    
 
-    color:#7B94B8;
+    background:#EDF6FF;
+    color:#5B9DF9;
 
     font-size: 12px;
     font-weight: 500;
@@ -334,6 +335,10 @@ body {
     font-family: $font-en;
     text-transform:uppercase;
 
+}
+.category.sec{
+    background:#EFEFF0;
+    color:#7B94B8;
 }
 
 .project-head .project-title{
@@ -348,7 +353,7 @@ body {
 
     font-family: $font-en;
 
-    letter-spacing: -0.2px;
+    letter-spacing: -0.9px;
 
 }
 
@@ -379,7 +384,7 @@ body {
 
     display:grid;
 
-    grid-template-columns: 140px 1fr;
+    grid-template-columns: 150px 1fr;
 
     align-items:center;
 
@@ -450,7 +455,7 @@ body {
     display:flex;
     align-items:center;
     gap:12px;
-    margin-right: 18px;
+    margin-right: 30px;
 
 }
 
@@ -567,11 +572,13 @@ body {
 
 .project-description p{
 
-    line-height:1.6;
+    line-height:1.8;
 
     color:#555;
 
     font-size:16px;
+
+    margin-right: 20px;
 
 }
 
@@ -767,9 +774,9 @@ body {
 
 .lightbox-arrow{
 
-    width:56px;
+    width:75px;
 
-    height:56px;
+    height:60px;
 
     border:none;
 
@@ -779,7 +786,7 @@ body {
 
     color:#fff;
 
-    font-size:34px;
+    font-size: 30px;
 
     cursor:pointer;
 
@@ -787,6 +794,14 @@ body {
 
     backdrop-filter:blur(8px);
 
+}
+
+.lightbox-arrow svg{
+    margin-top: 5px;
+    margin-right: 5px;
+}
+.lightbox-arrow.next svg{
+    margin-left: 8px;
 }
 
 .lightbox-arrow:hover{
@@ -858,6 +873,19 @@ body {
 
     }
 
+    .modal-header{
+        height: 50px;
+    }
+    .modal-label {
+        font-size: 12px;
+    }
+    .modal-close{
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+    }
+
+
     .design-modal{
 
         width:95vw;
@@ -881,6 +909,11 @@ body {
 
     }
 
+    .main-image{
+        width: auto;
+        height: auto;
+    }
+
     .thumbnail-item{
 
         width:72px;
@@ -892,14 +925,26 @@ body {
 
     .modal-right{
 
-        padding:32px;
+        padding:32px 20px;
 
+    }
+
+    .category {
+        padding: 4px 8px;
+        font-size: 10px;
     }
 
     .project-title{
 
         font-size:38px;
 
+    }
+    .project-head .line{
+        margin-top: 20px;
+    }
+
+    .project-head .project-title{
+        font-size: 24px;
     }
 
     .project-subtitle{
@@ -908,12 +953,51 @@ body {
 
     }
 
-    .project-description p{
-
-        font-size:15px;
-
+    .info-item{
+        grid-template-columns: 120px 1fr;
+        padding: 14px 0;
     }
 
+    .info-item > span{
+        font-size: 12px;
+    }
+
+    .info-item p {
+        font-size: 12px;
+    }
+
+    .tag{
+        font-size: 12px;
+    }
+    .tool{
+        font-size: 12px;
+        padding: 4px 10px;
+    }
+
+    .project-description p{
+
+        font-size:14px;
+    }
+
+    .project-description h4 {
+        font-size: 10px;
+    }
+
+    .project-description {
+        margin-top: 18px;
+    }
+
+    .modal-buttons{
+        margin-top: 20px;
+    }
+    .pdf-btn{
+        height: 34px;
+        font-size: 12px;
+    }
+    .close-btn {
+        height: 34px;
+        font-size: 12px;
+    }
 }
 
 /* ===========================

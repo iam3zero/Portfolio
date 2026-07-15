@@ -214,7 +214,7 @@ useEffect(() => {
                                 <span className="category">
                                     {categoryLabel}
                                 </span>
-                                <span className="category">
+                                <span className="category sec">
                                     {project.type}
                                 </span>
                             </div>
