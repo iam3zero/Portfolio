@@ -1,17 +1,29 @@
 import React from 'react'
 
-import eclatThumb from "../assets/design/ui/eclat_thumb.png";
-import eclat01 from "../assets/design/ui/eclat_01.png";
-import eclat02 from "../assets/design/ui/eclat_02.png";
-import eclat03 from "../assets/design/ui/eclat_03.png";
-import eclat04 from "../assets/design/ui/eclat_04.png";
-import eclat05 from "../assets/design/ui/eclat_05.png";
+import eclatThumb from "../assets/design/package/eclat_thumb.png";
+import eclat01 from "../assets/design/package/eclat_01.png";
+import eclat02 from "../assets/design/package/eclat_02.png";
+import eclat03 from "../assets/design/package/eclat_03.png";
+import eclat04 from "../assets/design/package/eclat_04.png";
+import eclat05 from "../assets/design/package/eclat_05.png";
+
+import theventiThumb from "../assets/design/ui/theventi_thumb.png";
+import theventi01 from "../assets/design/ui/theventi_01.png";
+import theventi02 from "../assets/design/ui/theventi_02.png";
+import theventi03 from "../assets/design/ui/theventi_03.png";
+import theventi04 from "../assets/design/ui/theventi_04.png";
+import theventi05 from "../assets/design/ui/theventi_05.png";
+import theventi06 from "../assets/design/ui/theventi_06.png";
+
+import srtThumb from "../assets/design/ui/srt_thumb.png";
+import srt01 from "../assets/design/ui/srt_01.png";
+import srt02 from "../assets/design/ui/srt_02.png";
 
 const designData = [
     {
         id: 1,
 
-        category: "Package",
+        category: "package",
 
         title: "ÉCLAT Package Design",
 
@@ -44,7 +56,7 @@ const designData = [
             "Figma"
         ],
 
-        duration: "2026.07",
+        duration: "2026.04",
 
         year: "2026",
 
@@ -58,24 +70,25 @@ const designData = [
     {
         id: 2,
 
-        category: "Package",
+        category: "ui",
 
-        title: "ÉCLAT Package Design",
+        title: "theVenti UI/UX Design",
 
-        subtitle: "Package Design",
+        subtitle: "UI/UX Design",
 
-        tag: ["#APP Design", "#UX/UI", "#Package Design"],
+        tag: ["#APP Design", "#UX/UI"],
 
         type: "Redesign",
 
-        thumbnail: eclatThumb,
+        thumbnail: theventiThumb,
 
         images: [
-            eclat05,
-            eclat01,
-            eclat02,
-            eclat03,
-            eclat04,
+            theventi01,
+            theventi02,
+            theventi03,
+            theventi04,
+            theventi05,
+            theventi06
         ],
 
         contribution: [
@@ -86,8 +99,6 @@ const designData = [
             "향수 브랜드 ÉCLAT의 모바일 메인 UI를 제작하였습니다.",
 
         tools: [
-            "Photoshop",
-            "Illustrator",
             "Figma"
         ],
 
@@ -96,7 +107,49 @@ const designData = [
         year: "2026",
 
 
-        overview: "브랜드 아이덴티티를 유지하면서 향수를 쉽고 직관적으로 탐색할 수 있도록 UI를 디자인하였습니다.",
+        overview: "커피 프랜차이즈 THE VENTI의 모바일 메인 및 메뉴 UI를 개선하여 리디자인하였습니다. (추가 작업중입니다.)",
+
+        member: "Personal",
+
+        pdf: null,
+    },
+    {
+        id: 3,
+
+        category: "ui",
+
+        title: "SRT UI/UX Design",
+
+        subtitle: "UI/UX Design",
+
+        tag: ["#APP Design", "#UX/UI"],
+
+        type: "Redesign",
+
+        thumbnail: srtThumb,
+
+        images: [
+            srt01,
+            srt02
+        ],
+
+        contribution: [
+          "100"
+        ],
+
+        description:
+            "향수 브랜드 ÉCLAT의 모바일 메인 UI를 제작하였습니다.",
+
+        tools: [
+            "Figma"
+        ],
+
+        duration: "2026.06",
+
+        year: "2026",
+
+
+        overview: "수서고속철도 SRT 모바일 메인 및 출발일시 UI를 개선하여 리디자인하였습니다. (추가 작업중입니다.)",
 
         member: "Personal",
 

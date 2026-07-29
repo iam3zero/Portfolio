@@ -19,8 +19,8 @@ function Main() {
       <Intro />
       <About />
       {/* <Strength /> */}
-      <Design />
       <Projects />
+      <Design />
       <Contact />
       <ScrollButtons />
     </>

@@ -5,6 +5,7 @@ import Moodscape from "../assets/img/moodscape_fullpage.png";
 import DesignHotels from "../assets/img/designhotels_fullpage.png";
 import passport from "../assets/img/passport_fullpage.png";
 import bluebottle from "../assets/img/bluebottle_fullpage.png";
+import mytrip from "../assets/img/mytrip_fullpage.png";
 import shootingGame from "../assets/img/shootinggame_fullpage.png";
 
 import monitorImg from "../assets/img/projects_monitor.png";
@@ -136,12 +137,31 @@ export const projectsData = [
       Javascript,
     ]
   },
-
   {
     id: 6,
+    title: "MY TRIP 여행지 검색 사이트",
+    image: mytrip,
+    category: "06 PROJECT",
+    contribution: "100%",
+    duration: "1주",
+    members: "1명",
+    tools: "SCSS | React | Github",
+    description: "React 기반으로 제작한 국내 여행 플랫폼 프로젝트입니다. Geoapify API를 활용하여 여행지 검색 및 정보를 제공하고, Firebase Authentication과 Firestore를 연동하여 회원가입, 로그인, 찜 기능을 구현했습니다. 컴포넌트 기반 구조와 React Router를 활용한 SPA로 개발하여 사용자 경험과 유지보수성을 높였습니다.",
+    monitor: monitorImg,
+    website: "https://iam3zero.github.io/Bluebottle/",
+    github: "https://github.com/iam3zero/Bluebottle",
+    toolsIcons: [
+      HTML,
+      SCSS,
+      Javascript,
+    ]
+  },
+
+  {
+    id: 7,
     title: "2D MARIO 슈팅게임",
     image: shootingGame,
-    category: "06 PROJECT",
+    category: "07 PROJECT",
     contribution: "100%",
     duration: "2시간",
     members: "1명",

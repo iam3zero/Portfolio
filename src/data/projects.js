@@ -4,8 +4,9 @@ import eclatImg from "../assets/img/eclat_fullpage.png";
 import Moodscape from "../assets/img/moodscape_fullpage.png";
 import DesignHotels from "../assets/img/designhotels_fullpage.png";
 import passport from "../assets/img/passport_fullpage.png";
-/* import bluebottle from "../assets/img/bluebottle_fullpage.png";
-import shootingGame from "../assets/img/shootinggame_fullpage.png"; */
+import bluebottle from "../assets/img/bluebottle_fullpage.png";
+import mytrip from "../assets/img/mytrip_fullpage.png";
+import shootinggame from "../assets/img/shootinggame_fullpage.png";
 
 import eclat_projectDetail from "../assets/img/eclat_projectdetail.png";
 import moodscape_projectDetail from "../assets/img/moodscape_projectdetail.png";
@@ -26,6 +27,9 @@ import eclat_bg from "../assets/img/eclat_bg.png";
 import moodscape_bg from "../assets/img/moodscape_bg.png";
 import designhotels_bg from "../assets/img/designhotels_bg.png";
 import passport_bg from "../assets/img/passport_bg.png";
+import bluebottle_bg from "../assets/img/bluebottle_bg.png";
+import mytrip_bg from "../assets/img/mytrip_bg.png";
+import shootinggame_bg from "../assets/img/shootinggame_bg.png";
 
 
 
@@ -181,7 +185,96 @@ const projects = [
           React,
           Vercel,
         ]
-  }
+  },
+  {
+    id: 5,
+    title: "BLUE BOTTLE 클론코딩",
+    image: bluebottle,
+    bg: bluebottle_bg,
+    subtitle: "PROJECT 05",
+    contribution: "100%",
+    duration: "1주",
+    members: "1명",
+    tools: "SCSS | React | Github",
+    designImage: null,
+    description: "웹표준과 웹 접근성을 중시한 외교부 클론코딩 프로젝트입니다. HTML과 CSS를 사용하여 화면을 구성했으며, 반응형 및 Swiper 라이브러리를 사용하여 슬라이드를 구현했습니다.",
+
+    concept: null,
+
+    process: null,
+
+    result: null,
+
+    monitor: monitorImg,
+
+    website: "https://iam3zero.github.io/Bluebottle/",
+    github: "https://github.com/iam3zero/Bluebottle",
+
+    toolsIcons: [
+          SCSS,
+          React,
+          Vercel
+        ]
+  },
+  {
+    id: 6,
+    title: "MY TRIP 여행지 검색 사이트",
+    image: mytrip,
+    bg: mytrip_bg,
+    subtitle: "PROJECT 06",
+    contribution: "100%",
+    duration: "1주",
+    members: "1명",
+    tools: "SCSS | React | Github | Firebase",
+    designImage: null,
+    description: "React 기반으로 제작한 국내 여행 플랫폼 프로젝트입니다. Geoapify API를 활용하여 여행지 검색 및 정보를 제공하고, Firebase Authentication과 Firestore를 연동하여 회원가입, 로그인, 찜 기능을 구현했습니다. 컴포넌트 기반 구조와 React Router를 활용한 SPA로 개발하여 사용자 경험과 유지보수성을 높였습니다.",
+
+    concept: null,
+
+    process: null,
+
+    result: null,
+
+    monitor: monitorImg,
+
+    website: "https://iam3zero.github.io/mytrip/",
+    github: "https://github.com/iam3zero/mytrip",
+
+    toolsIcons: [
+          SCSS,
+          React
+        ]
+  },
+  {
+    id: 7,
+    title: "2D MARIO 슈팅게임",
+    image: shootinggame,
+    bg: shootinggame_bg,
+    subtitle: "PROJECT 07",
+    contribution: "100%",
+    duration: "2시간",
+    members: "1명",
+    tools: "HTML CANVAS | JAVASCRIPT | CSS",
+    designImage: null,
+    description: "HTML5 <canvas> 태그와 JavaScript를 활용하여 브라우저에서 실행되는 2D 슈팅게임을 제작하였습니다.",
+
+    concept: null,
+
+    process: null,
+
+    result: null,
+
+    monitor: monitorImg,
+
+    website: "https://iam3zero.github.io/shooting-game/",
+    github: "https://github.com/iam3zero/shooting-game",
+
+    toolsIcons: [
+          HTML,
+          CSS,
+          Javascript,
+        ]
+  },
 ];
 
 export default projects;
