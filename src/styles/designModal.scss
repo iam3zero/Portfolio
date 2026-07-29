@@ -1199,6 +1199,18 @@ body {
 
     }
 
+    .category-area{
+        justify-content: center;
+    }
+    
+    .project-head .project-title{
+        text-align: center;
+    }
+    .project-head .line {
+        justify-content: center;
+        width: 100%;
+    }
+
     .modal-right{
 
         padding:20px;
@@ -1283,13 +1295,18 @@ body {
 
     }
 
+    .lightbox-overlay img{
+        max-width: 80vw;
+        max-height: 80vh;
+    }
+
     .lightbox-arrow{
-
-        width:44px;
-        height:44px;
-
-        font-size:28px;
-
+        width: 0px;
+        height: 0px;
+        font-size: 18px;
+        position: relative;
+        top: 0;
+        left: -13px;
     }
 
     .lightbox-close{
