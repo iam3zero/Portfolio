@@ -8,6 +8,10 @@ const designCategories = [
         label: "UI Design"
     },
     {
+        id: "graphic",
+        label: "Graphic"
+    },
+    {
         id: "package",
         label: "Package"
     },
@@ -18,10 +22,6 @@ const designCategories = [
     {
         id: "character",
         label: "Character"
-    },
-    {
-        id: "editorial",
-        label: "Editorial"
     }
 ];
 

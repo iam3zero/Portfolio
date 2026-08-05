@@ -6,6 +6,11 @@ import designCategories from '../data/designCategories';
 import { GoArrowRight, GoArrowLeft } from "react-icons/go";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 
+import {
+    TransformWrapper,
+    TransformComponent
+} from "react-zoom-pan-pinch";
+
 const DesignModal = ({ isOpen, onClose, project }) => {
 const [selectedImage, setSelectedImage] = useState("");
 const [currentIndex, setCurrentIndex] = useState(0);
@@ -365,7 +370,7 @@ useEffect(() => {
 
                     <div
                         className="lightbox-content"
-                        onClick={(e)=>e.stopPropagation()}
+                        onClick={(e) => e.stopPropagation()}
                     >
 
                         <button
@@ -375,10 +380,49 @@ useEffect(() => {
                             <IoIosArrowBack />
                         </button>
 
-                        <img
-                            src={selectedImage}
-                            alt={project.title}
-                        />
+                        <TransformWrapper
+                            key={selectedImage}
+                            initialScale={1}
+                            minScale={1}
+                            maxScale={3.5}
+
+                            centerOnInit={true}
+                            centerZoomedOut={true}
+                            limitToBounds={true}
+
+                            wheel={{
+                                step: 0.01,
+                                smoothStep: 0.002
+                            }}
+
+                            doubleClick={{
+                                mode: "reset"
+                            }}
+
+                            alignmentAnimation={{
+                                sizeX: 0,
+                                sizeY: 0,
+                                velocityAlignmentTime: 200
+                            }}
+
+                            velocityAnimation={{
+                                disabled: true
+                            }}
+                        >
+                            {({ resetTransform, state }) => (
+                                <TransformComponent
+                                    wrapperClass="zoom-wrapper"
+                                    contentClass="zoom-content"
+                                >
+                                    <img
+                                        src={selectedImage}
+                                        alt={project.title}
+                                        className="lightbox-image"
+                                        draggable="false"
+                                    />
+                                </TransformComponent>
+                            )}
+                        </TransformWrapper>
 
                         <button
                             className="lightbox-arrow next"

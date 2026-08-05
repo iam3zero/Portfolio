@@ -19,6 +19,10 @@ import srtThumb from "../assets/design/ui/srt_thumb.png";
 import srt01 from "../assets/design/ui/srt_01.png";
 import srt02 from "../assets/design/ui/srt_02.png";
 
+import twosomethumb from "../assets/design/graphic/twosome-thumb.png";
+import twosomebefore from "../assets/design/graphic/twosome-before.jpg";
+import twosomeafter from "../assets/design/graphic/twosome-after.png";
+
 const designData = [
     {
         id: 1,
@@ -155,11 +159,50 @@ const designData = [
 
         pdf: null,
     },
+    {
+        id: 4,
+
+        category: "graphic",
+
+        title: "TWOSOME PLACE 시즌 프로모션 ",
+
+        subtitle: "Season Promotion Design",
+
+        tag: ["#graphic", "#Promotion"],
+
+        type: "Redesign",
+
+        thumbnail: twosomethumb,
+
+        images: [
+            twosomeafter,
+            twosomethumb,
+            twosomebefore,
+        ],
+
+        contribution: [
+          "100"
+        ],
+
+        tools: [
+            "Figma",
+            "Photoshop"
+        ],
+
+        duration: "2026.08",
+
+
+        overview: "프리미엄 카페 브랜드의 시즌 프로모션을 목표로, 여름 휴양지의 분위기를 담은 비주얼과 제품 중심의 레이아웃으로 리디자인하였습니다.",
+
+        member: "Personal",
+
+        pdf: null,
+    },
 
     {
       id: 977,
 
-      category: "editorial",
+      category: "graphic",
 
       title: "Coming Soon",
 
@@ -184,7 +227,7 @@ const designData = [
     {
       id: 978,
 
-      category: "editorial",
+      category: "graphic",
 
       title: "Coming Soon",
 
@@ -209,7 +252,7 @@ const designData = [
     {
       id: 979,
 
-      category: "editorial",
+      category: "graphic",
 
       title: "Coming Soon",
 
@@ -234,7 +277,7 @@ const designData = [
     {
       id: 980,
 
-      category: "editorial",
+      category: "graphic",
 
       title: "Coming Soon",
 
@@ -659,7 +702,7 @@ const designData = [
     {
       id: 997,
 
-      category: "editorial",
+      category: "graphic",
 
       title: "Coming Soon",
 

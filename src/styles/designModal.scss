@@ -774,15 +774,16 @@ body {
 
 .lightbox-arrow{
 
-    width:75px;
+    position: relative;
 
-    height:60px;
+    top: 0;
+    left: -16px;
+
+    width:0px;
+
+    height:0px;
 
     border:none;
-
-    border-radius:50%;
-
-    background:rgba(255,255,255,.15);
 
     color:#fff;
 
@@ -794,22 +795,57 @@ body {
 
     backdrop-filter:blur(8px);
 
+    opacity: 1;
+
 }
 
-.lightbox-arrow svg{
-    margin-top: 5px;
-    margin-right: 5px;
-}
-.lightbox-arrow.next svg{
-    margin-left: 8px;
-}
+
 
 .lightbox-arrow:hover{
+    opacity: 0.5;
 
-    background:rgba(255,255,255,.28);
+}
 
-    transform:scale(1.08);
 
+
+.zoom-wrapper{
+    width:80vw;
+    height:80vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor: grab;
+}
+
+.zoom-wrapper:active {
+    cursor: grabbing;
+}
+
+.zoom-content{
+    width:100%;
+    height:100%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.lightbox-image{
+
+    width: auto;
+    height: auto;
+
+    max-width:auto;
+    max-height:auto;
+
+    user-select:none;
+
+    cursor:grab;
+}
+
+.lightbox-image:active{
+    cursor:grabbing;
 }
 
 
