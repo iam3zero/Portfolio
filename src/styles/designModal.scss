@@ -230,7 +230,7 @@ body {
 
     cursor:zoom-in;
 
-    padding: 30px;
+    padding: 20px;
 
     background:#f6f8fb;
 
@@ -343,7 +343,7 @@ body {
 
 .project-head .project-title{
 
-    font-size:42px;
+    font-size:38px;
 
     font-weight:700;
 
@@ -580,6 +580,93 @@ body {
 
     margin-right: 20px;
 
+}
+
+/* ===================================================
+   toolbar 
+=================================================== */
+
+.lightbox-toolbar{
+
+    position:absolute;
+
+    left:50%;
+    bottom:32px;
+
+    transform:translateX(-50%);
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    padding:10px 14px;
+
+    border-radius:999px;
+
+    background:rgba(255, 255, 255, 0.459);
+
+    backdrop-filter:blur(14px);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.15);
+
+    z-index:100;
+}
+
+.lightbox-toolbar button{
+
+    width:38px;
+    height:38px;
+
+    border:none;
+
+    border-radius:50%;
+
+    color:#333;
+
+    background: #fffefe96;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.lightbox-toolbar button:hover{
+
+    background:#7D98B7;
+
+    color:#fff;
+}
+
+.zoom-percent{
+
+    width:56px;
+
+    text-align:center;
+
+    font-size:14px;
+    font-weight:600;
+
+    color:#333;
+
+    font-family: $font-en;
+}
+
+.reset-btn{
+
+    width:auto !important;
+
+    padding:0 18px;
+
+    border-radius:999px !important;
+
+    background: #fff;
+
+    font-size: 18pxp;
+    font-weight:500;
+    font-family: $font-en;
 }
 
 /* ===================================================

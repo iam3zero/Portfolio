@@ -33,7 +33,7 @@ const designData = [
 
         subtitle: "Package Design",
 
-        tag: ["#APP Design", "#UX/UI", "#Package Design"],
+        tag: ["#Brand", "#Package Design"],
 
         type: "Original",
 

@@ -16,6 +16,8 @@ const [selectedImage, setSelectedImage] = useState("");
 const [currentIndex, setCurrentIndex] = useState(0);
 const [lightboxOpen, setLightboxOpen] = useState(false);
 
+const [zoom, setZoom] = useState(100);
+
 const handlePrev = () => {
 
     const newIndex =
@@ -386,9 +388,17 @@ useEffect(() => {
                             minScale={1}
                             maxScale={3.5}
 
-                            centerOnInit={true}
-                            centerZoomedOut={true}
-                            limitToBounds={true}
+                            onTransformed={(ref) => {
+                                setZoom(
+                                    Math.round(
+                                        ref.state.scale * 100
+                                    )
+                                );
+                            }}
+
+                            centerOnInit
+                            centerZoomedOut
+                            limitToBounds
 
                             wheel={{
                                 step: 0.01,
@@ -409,18 +419,65 @@ useEffect(() => {
                                 disabled: true
                             }}
                         >
-                            {({ resetTransform, state }) => (
-                                <TransformComponent
-                                    wrapperClass="zoom-wrapper"
-                                    contentClass="zoom-content"
-                                >
-                                    <img
-                                        src={selectedImage}
-                                        alt={project.title}
-                                        className="lightbox-image"
-                                        draggable="false"
-                                    />
-                                </TransformComponent>
+                            {({
+                                zoomIn,
+                                zoomOut,
+                                resetTransform,
+                                state
+                            }) => (
+                                <>
+                                    <TransformComponent
+                                        wrapperClass="zoom-wrapper"
+                                        contentClass="zoom-content"
+                                    >
+                                        <img
+                                            src={selectedImage}
+                                            alt={project.title}
+                                            className="lightbox-image"
+                                            draggable="false"
+                                        />
+                                    </TransformComponent>
+
+                                    {/* ===== Toolbar ===== */}
+
+                                    <div className="lightbox-toolbar">
+
+                                        <button
+                                            type="button"
+                                            onClick={() => zoomOut()}
+                                            title="Zoom Out"
+                                        >
+                                            −
+                                        </button>
+
+                                        <span className="zoom-percent">
+                                            {zoom}%
+                                        </span>
+
+                                        <button
+                                            type="button"
+                                            onClick={() => zoomIn()}
+                                            title="Zoom In"
+                                        >
+                                            +
+                                        </button>
+
+                                        <button
+                                            className="reset-btn"
+                                            onClick={() => {
+
+                                                resetTransform();
+
+                                                setZoom(100);
+
+                                            }}
+                                        >
+                                            Reset
+                                        </button>
+
+                                    </div>
+
+                                </>
                             )}
                         </TransformWrapper>
 
