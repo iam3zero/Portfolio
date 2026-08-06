@@ -152,15 +152,15 @@ body {
 }
 
 /* blur background */
-.blur-circle {
+.intro .blur-circle {
   position: absolute;
 
   width: 500px;
   height: 500px;
 
-  border-radius: 50%;
+  border-radius: 100%;
 
-  filter: blur(100px);
+  filter: blur(50px);
   opacity: 0.7;
 
   z-index: 0;
@@ -170,13 +170,13 @@ body {
 
 /* 왼쪽 원 */
 
-.blur-circle.left {
+.intro .blur-circle.left {
   //background: #8FC7E8;
   background: radial-gradient(
     circle,
     rgba(143,199,232,0.9) 0%,
-    rgba(143,199,232,0.4) 40%,
-    transparent 70%
+    rgba(143,199,232,0.4) 50%,
+    transparent 80%
   );
 
   top: 100px;
@@ -188,16 +188,16 @@ body {
 
 /* 오른쪽 원 */
 
-.blur-circle.right {
+.intro .blur-circle.right {
   //background: #CCE2EE;
   background: radial-gradient(
     circle,
     rgba(204,226,238,0.9) 0%,
-    rgba(204,226,238,0.5) 40%,
-    transparent 70%
+    rgba(204,226,238,0.5) 80%,
+    transparent 80%
   );
 
-  top: 300px;
+  top: 250px;
   right: clamp(-100px, 10vw, 200px);
 
   animation: floatRight 22s ease-in-out infinite;

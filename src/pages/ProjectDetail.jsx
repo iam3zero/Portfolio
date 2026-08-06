@@ -52,7 +52,7 @@ function ProjectDetail() {
     window.scrollTo(0, 0);
     }, [id]);
 
-  /* 스크린 속 이미지 자동 높이 지정 */
+
   useEffect(() => {
     const screens = document.querySelectorAll(".detail-screen");
 
@@ -68,7 +68,7 @@ function ProjectDetail() {
         img.style.setProperty("--scroll-distance", `${move}px`);
       };
 
-      // 🔥 이미 로드된 경우
+
       if (img.complete) {
         setScroll();
       } else {
@@ -80,7 +80,6 @@ function ProjectDetail() {
   useEffect(() => {
     const elements = document.querySelectorAll(".fade-up");
 
-    // 🔥 기존 show 제거 (핵심)
     elements.forEach((el) => el.classList.remove("show"));
 
     const observer = new IntersectionObserver(
@@ -97,12 +96,12 @@ function ProjectDetail() {
     elements.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
-  }, [id]); // ⭐ 중요
+  }, [id]);
 
   useEffect(() => {
     const section = document.querySelector(".project-detail");
 
-    section?.classList.remove("show"); // 🔥 초기화
+    section?.classList.remove("show");
 
     setTimeout(() => {
       section?.classList.add("show");
@@ -114,9 +113,37 @@ function ProjectDetail() {
     <section className="project-detail">
       <div className="project-detail-inner">
         <div className="container">
-          <div className="project-detail-name fade-up">PROJECT DETAIL PAGE</div>
-          <div className="project-detail-line fade-up delay-1"></div>
-        </div>
+            {/* 하단 네비 */}
+          <div className="detail-nav-top">
+            <button
+              disabled={!prevProject}
+              onClick={() => navigate(`/projects/${prevProject.id}`)}
+            >
+              ← PREV PROJECT
+            </button>
+
+            <button
+              onClick={() => {
+                navigate("/");
+                setTimeout(() => {
+                  const section = document.getElementById("projects");
+                  section?.scrollIntoView({ behavior: "smooth" });
+                }, 100);
+              }}
+            >
+              BACK TO PROJECT
+            </button>
+
+            <button
+              disabled={!nextProject}
+              onClick={() => navigate(`/projects/${nextProject.id}`)}
+            >
+              NEXT PROJECT →
+            </button>
+          </div>
+            <div className="project-detail-name fade-up">PROJECT DETAIL PAGE</div>
+            <div className="project-detail-line fade-up delay-1"></div>
+          </div>
 
         {/* 🔹 상단 */}
         <div className="container">

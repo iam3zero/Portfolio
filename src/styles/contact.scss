@@ -302,12 +302,12 @@
 
 
 /* blur background */
-.contact-blur {
+.contact .contact-blur {
   position: absolute;
 
   width: clamp(200px, 40vw, 600px);
   height: clamp(200px, 40vw, 600px);
-  filter: blur(100px);
+  filter: blur(50px);
 
   border-radius: 50%;
 
@@ -323,7 +323,7 @@
   background: radial-gradient(
     circle,
     rgba(146, 210, 247, 0.384) 0%,
-    rgba(151, 186, 207, 0.61) 60%,
+    rgba(151, 186, 207, 0.61) 50%,
     transparent 50%
   );
 
@@ -340,8 +340,10 @@
   //background: #CCE2EE;
   background: radial-gradient(
     circle,
+    /* rgb(240, 252, 211) 0%,
+    rgb(240, 252, 211) 40%, */
     rgba(204,226,238,0.9) 0%,
-    rgb(204, 226, 238) 60%,
+    rgba(204,226,238,0.5) 40%,
     transparent 60%
   );
 
@@ -416,12 +418,43 @@
 
 @media (max-width: 768px) {
   .contact-blur {
-    filter: blur(50px);
-    opacity: 0.8;
+    filter: blur(80px);
+  }
+
+  /* 왼쪽 원 */
+
+  .contact-blur.blur1 {
+    top: 200px;
+    left: 300px;
+  }
+
+
+  /* 오른쪽 원 */
+
+  .contact-blur.blur2 {
+    bottom: 200px;
+    right: 300px;
   }
 }
 
 @media (max-width: 480px) {
+
+  .contact-blur {
+    filter: blur(30px);
+  }
+
+  /* 왼쪽 원 */
+  .contact-blur.blur1 {
+    top: 100px;
+    left: 50px;
+  }
+
+  /* 오른쪽 원 */
+
+  .contact-blur.blur2 {
+    bottom: 100px;
+    right: 50px;
+  }
 
   
   .contact .contact-content {
@@ -465,9 +498,27 @@
 
 
 
-@media (max-width: 370px) {
+@media (max-width: 393px) {
 
-  .contact-title{
-    font-size: 24px !important;
+  .contact-blur {
+    filter: blur(40px);
+  }
+
+  /* 왼쪽 원 */
+  .contact-blur.blur1 {
+    top: 250px;
+    left: 50px;
+  }
+
+  /* 오른쪽 원 */
+
+  .contact-blur.blur2 {
+    bottom: 250px;
+    right: 50px;
+  }
+
+  .contact.show .contact-title {
+
+    font-size: 20px;
   }
 }
