@@ -24,53 +24,46 @@ import twosomebefore from "../assets/design/graphic/twosome-before.jpg";
 import twosomeafter from "../assets/design/graphic/twosome-after.png";
 
 const designData = [
-    {
+  {
         id: 1,
 
-        category: "package",
+        category: "graphic",
 
-        title: "ÉCLAT Package Design",
+        title: "TWOSOME PLACE 시즌 프로모션 ",
 
-        subtitle: "Package Design",
+        subtitle: "Season Promotion Design",
 
-        tag: ["#Brand", "#Package Design"],
+        tag: ["#graphic", "#Promotion"],
 
-        type: "Original",
+        type: "Redesign",
 
-        thumbnail: eclatThumb,
+        thumbnail: twosomethumb,
 
         images: [
-            eclat05,
-            eclat01,
-            eclat02,
-            eclat03,
-            eclat04,
+            twosomeafter,
+            twosomethumb,
+            twosomebefore,
         ],
 
         contribution: [
           "100"
         ],
 
-        description:
-            "향수 브랜드 ÉCLAT의 모바일 메인 UI를 제작하였습니다.",
-
         tools: [
-            "Photoshop",
-            "Illustrator",
-            "Figma"
+            "Figma",
+            "Photoshop"
         ],
 
-        duration: "2026.04",
-
-        year: "2026",
+        duration: "2026.08",
 
 
-        overview: "브랜드 아이덴티티를 유지하면서 향수를 쉽고 직관적으로 탐색할 수 있도록 UI를 디자인하였습니다.",
+        overview: "프리미엄 카페 브랜드의 시즌 프로모션을 목표로, 여름 휴양지의 분위기를 담은 비주얼과 제품 중심의 레이아웃으로 리디자인하였습니다.",
 
         member: "Personal",
 
         pdf: null,
     },
+    
     {
         id: 2,
 
@@ -162,43 +155,50 @@ const designData = [
     {
         id: 4,
 
-        category: "graphic",
+        category: "package",
 
-        title: "TWOSOME PLACE 시즌 프로모션 ",
+        title: "ÉCLAT Package Design",
 
-        subtitle: "Season Promotion Design",
+        subtitle: "Package Design",
 
-        tag: ["#graphic", "#Promotion"],
+        tag: ["#Brand", "#Package Design"],
 
-        type: "Redesign",
+        type: "Original",
 
-        thumbnail: twosomethumb,
+        thumbnail: eclatThumb,
 
         images: [
-            twosomeafter,
-            twosomethumb,
-            twosomebefore,
+            eclat05,
+            eclat01,
+            eclat02,
+            eclat03,
+            eclat04,
         ],
 
         contribution: [
           "100"
         ],
 
+        description:
+            "향수 브랜드 ÉCLAT의 모바일 메인 UI를 제작하였습니다.",
+
         tools: [
-            "Figma",
-            "Photoshop"
+            "Photoshop",
+            "Illustrator",
+            "Figma"
         ],
 
-        duration: "2026.08",
+        duration: "2026.04",
+
+        year: "2026",
 
 
-        overview: "프리미엄 카페 브랜드의 시즌 프로모션을 목표로, 여름 휴양지의 분위기를 담은 비주얼과 제품 중심의 레이아웃으로 리디자인하였습니다.",
+        overview: "브랜드 아이덴티티를 유지하면서 향수를 쉽고 직관적으로 탐색할 수 있도록 UI를 디자인하였습니다.",
 
         member: "Personal",
 
         pdf: null,
     },
-
     {
       id: 977,
 

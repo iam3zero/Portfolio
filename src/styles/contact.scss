@@ -28,9 +28,10 @@
   /* title */
 
   .contact-text-box{
-    border: 1px solid #ddd;
-    border-radius: 15px;
-    background: #ffffffde;
+    border: 1px solid #fffbfb;
+    box-shadow: 0 5px 10px #c7c7c76e;
+    border-radius: 50px;
+    background: #ffffffcc;
     height: 280px;
     width: 600px;
     z-index: 9999999;
@@ -439,19 +440,19 @@
 
 @media (max-width: 480px) {
 
-  .contact-blur {
+  .contact .contact-blur {
     filter: blur(30px);
   }
 
   /* 왼쪽 원 */
-  .contact-blur.blur1 {
+  .contact .contact-blur.blur1 {
     top: 100px;
     left: 50px;
   }
 
   /* 오른쪽 원 */
 
-  .contact-blur.blur2 {
+  .contact .contact-blur.blur2 {
     bottom: 100px;
     right: 50px;
   }
@@ -500,19 +501,19 @@
 
 @media (max-width: 393px) {
 
-  .contact-blur {
-    filter: blur(40px);
+  .contact .contact-blur {
+    filter: blur(30px);
   }
 
   /* 왼쪽 원 */
-  .contact-blur.blur1 {
+  .contact .contact-blur.blur1 {
     top: 250px;
     left: 50px;
   }
 
   /* 오른쪽 원 */
 
-  .contact-blur.blur2 {
+  .contact .contact-blur.blur2 {
     bottom: 250px;
     right: 50px;
   }

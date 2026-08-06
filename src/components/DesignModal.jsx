@@ -5,6 +5,7 @@ import designCategories from '../data/designCategories';
 
 import { GoArrowRight, GoArrowLeft } from "react-icons/go";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
+import { createPortal } from "react-dom";
 
 import {
     TransformWrapper,
@@ -15,6 +16,8 @@ const DesignModal = ({ isOpen, onClose, project }) => {
 const [selectedImage, setSelectedImage] = useState("");
 const [currentIndex, setCurrentIndex] = useState(0);
 const [lightboxOpen, setLightboxOpen] = useState(false);
+
+const [progress,setProgress] = useState(0);
 
 const handlePrev = () => {
 
@@ -120,6 +123,22 @@ useEffect(() => {
 
 }, [project]);
 
+useEffect(()=>{
+
+    if(!project) return;
+
+    setProgress(0);
+
+    const timer = setTimeout(()=>{
+
+        setProgress(project.contribution);
+
+    },250);
+
+    return ()=>clearTimeout(timer);
+
+},[project]);
+
     if (!isOpen || !project) return null;
 
     const categoryLabel =
@@ -127,7 +146,7 @@ useEffect(() => {
         (item) => item.id === project.category
     )?.label || project.category;
 
-    return (
+    return createPortal(
         <div className="modal-overlay">
 
             <div className="design-modal">
@@ -278,6 +297,9 @@ useEffect(() => {
                                         <span
                                             className="tool"
                                             key={index}
+                                            style={{
+                                                animationDelay: `${index * 0.12}s`
+                                            }}
                                         >
                                             {tool}
                                         </span>
@@ -296,7 +318,7 @@ useEffect(() => {
                                         <div
                                             className="progress"
                                             style={{
-                                                width: `${project.contribution}%`
+                                                width:`${progress}%`
                                             }}
                                         />
                                     </div>
@@ -482,7 +504,8 @@ useEffect(() => {
 
             )
         }
-        </div>
+        </div>,
+        document.body
     );
 };
 

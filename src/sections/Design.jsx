@@ -18,6 +18,41 @@ const Design = () => {
     const [selectedProject, setSelectedProject] = useState(null);
     const [totalPages, setTotalPages] = useState(1);
 
+    const [visible, setVisible] = useState(false);
+    const sectionRef = useRef(null);
+
+    useEffect(() => {
+
+        const observer = new IntersectionObserver(
+
+            ([entry]) => {
+
+                if(entry.isIntersecting){
+
+                    setVisible(true);
+
+                }
+
+            },
+
+            {
+
+                threshold:0.2
+
+            }
+
+        );
+
+        if(sectionRef.current){
+
+            observer.observe(sectionRef.current);
+
+        }
+
+        return ()=>observer.disconnect();
+
+    },[]);
+
     const prevRef = useRef(null);
     const nextRef = useRef(null);
 
@@ -66,17 +101,18 @@ const Design = () => {
     return (
 
         <section
-            className="design-works"
+            ref={sectionRef}
+            className={`design-works ${visible ? "show" : ""}`}
             id="design"
         >
 
             <div className="design-inner">
 
-                <h2 className="design-title">
+                <h2 className="design-title fade-item">
                     Design Works
                 </h2>
 
-                <div className="design-filter-wrap">
+                <div className="design-filter-wrap fade-item">
 
                     <DesignFilter
                         activeCategory={activeCategory}
@@ -85,7 +121,7 @@ const Design = () => {
 
                 </div>
 
-                <div className="design-controller">
+                <div className="design-controller fade-item">
 
                     <div className="design-controls">
 

@@ -19,7 +19,7 @@ const DesignSwiper = ({
 
     return (
 
-        <div className="design-swiper-wrap">
+        <div className="design-swiper-wrap fade-item">
 
             <Swiper
 

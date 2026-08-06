@@ -102,6 +102,58 @@ body {
 }
 
 
+
+
+/* fade */
+.fade-item{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
+
+}
+
+.design-works.show{
+
+    .fade-item{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+    .design-title{
+
+        transition-delay:.1s;
+
+    }
+
+    .design-filter-wrap{
+
+        transition-delay:.25s;
+
+    }
+
+    .design-controller{
+
+        transition-delay:.4s;
+
+    }
+
+    .design-swiper-wrap{
+
+        transition-delay:.55s;
+
+    }
+
+}
+
+
 /* 반응형 */
 @media (max-width: 480px) {
 
