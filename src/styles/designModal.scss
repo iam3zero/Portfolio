@@ -599,7 +599,7 @@ body {
     align-items:center;
     gap:10px;
 
-    padding:10px 14px;
+    padding:8px 14px;
 
     border-radius:999px;
 
@@ -635,7 +635,7 @@ body {
 
 .lightbox-toolbar button:hover{
 
-    background:#7D98B7;
+    background:#7d98b7b7;
 
     color:#fff;
 }
@@ -647,14 +647,14 @@ body {
     text-align:center;
 
     font-size:14px;
-    font-weight:600;
+    font-weight:500;
 
     color:#333;
 
     font-family: $font-en;
 }
 
-.reset-btn{
+.lightbox-toolbar .reset-btn{
 
     width:auto !important;
 
@@ -664,7 +664,7 @@ body {
 
     background: #fff;
 
-    font-size: 18pxp;
+    font-size: 14px;
     font-weight:500;
     font-family: $font-en;
 }
@@ -1442,6 +1442,22 @@ body {
 
         font-size:18px;
 
+    }
+
+    .lightbox-toolbar{
+        padding:8px 14px;
+    }
+    .lightbox-toolbar button{
+        width:30px;
+        height:30px;
+    }
+
+    .zoom-percent{
+        font-size: 12px;
+    }
+
+    .lightbox-toolbar .reset-btn{
+        font-size: 12px;
     }
 
 }

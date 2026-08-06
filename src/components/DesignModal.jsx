@@ -16,8 +16,6 @@ const [selectedImage, setSelectedImage] = useState("");
 const [currentIndex, setCurrentIndex] = useState(0);
 const [lightboxOpen, setLightboxOpen] = useState(false);
 
-const [zoom, setZoom] = useState(100);
-
 const handlePrev = () => {
 
     const newIndex =
@@ -388,14 +386,6 @@ useEffect(() => {
                             minScale={1}
                             maxScale={3.5}
 
-                            onTransformed={(ref) => {
-                                setZoom(
-                                    Math.round(
-                                        ref.state.scale * 100
-                                    )
-                                );
-                            }}
-
                             centerOnInit
                             centerZoomedOut
                             limitToBounds
@@ -423,7 +413,7 @@ useEffect(() => {
                                 zoomIn,
                                 zoomOut,
                                 resetTransform,
-                                state
+                                instance
                             }) => (
                                 <>
                                     <TransformComponent
@@ -451,7 +441,7 @@ useEffect(() => {
                                         </button>
 
                                         <span className="zoom-percent">
-                                            {zoom}%
+                                            Zoom
                                         </span>
 
                                         <button
@@ -467,8 +457,6 @@ useEffect(() => {
                                             onClick={() => {
 
                                                 resetTransform();
-
-                                                setZoom(100);
 
                                             }}
                                         >
