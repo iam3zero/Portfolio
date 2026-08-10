@@ -23,6 +23,24 @@ import twosomethumb from "../assets/design/graphic/twosome-thumb.png";
 import twosomebefore from "../assets/design/graphic/twosome-before.jpg";
 import twosomeafter from "../assets/design/graphic/twosome-after.png";
 
+import mitposterthumb from "../assets/design/graphic/mitposter-thumb.png";
+import mitposter1_1 from "../assets/design/graphic/mitposter-1-1.png";
+import mitposter1_2 from "../assets/design/graphic/mitposter-1-2.png";
+import mitposter1_3 from "../assets/design/graphic/mitposter-1-3.png";
+import mitposter1_4 from "../assets/design/graphic/mitposter-1-4.png";
+import mitposter2_1 from "../assets/design/graphic/mitposter-2-1.png";
+import mitposter2_2 from "../assets/design/graphic/mitposter-2-2.png";
+import mitposter2_3 from "../assets/design/graphic/mitposter-2-3.png";
+import mitposter3 from "../assets/design/graphic/mitposter-3.png";
+import mitposter4 from "../assets/design/graphic/mitposter-4.png";
+
+import mit_tickethumb from "../assets/design/graphic/mit-ticket-thumb.png";
+import mit_ticket_1 from "../assets/design/graphic/mit-ticket-1.png";
+import mit_ticket_2 from "../assets/design/graphic/mit-ticket-2.png";
+import mit_ticket_3 from "../assets/design/graphic/mit-ticket-3.png";
+import mit_ticket_4 from "../assets/design/graphic/mit-ticket-4.png";
+import mit_ticket_5 from "../assets/design/graphic/mit-ticket-5.png";
+
 const designData = [
   {
         id: 1,
@@ -63,9 +81,94 @@ const designData = [
 
         pdf: null,
     },
+  {
+        id: 2,
+
+        category: "graphic",
+
+        title: "MEN I TRUST— Concert Poster ",
+
+        subtitle: "Fictional Concert Branding",
+
+        tag: ["#graphic", "#Promotion"],
+
+        type: "Original",
+
+        thumbnail: mitposter2_1,
+
+        images: [
+            mitposter1_1,
+            mitposter1_2,
+            mitposter1_3,
+            mitposter1_4,
+            mitposter2_1,
+            mitposter2_2,
+            mitposter2_3,
+            mitposter3,
+            mitposter4,
+        ],
+
+        contribution: [
+          "100"
+        ],
+
+        tools: [
+            "Photoshop"
+        ],
+
+        duration: "2026.08",
+
+
+        overview: "Men I Trust의 음악에서 느껴지는 늦여름 밤의 고요함과 푸른빛의 잔상을 시각적으로 표현한 가상의 공연 브랜딩 프로젝트입니다. 바다를 바라보며 느끼는 몽환적인 분위기에서 영감을 받아, 관객이 서울에서 출발해 한밤중의 바다로 떠나는 듯한 하나의 여정을 설정했습니다.",
+
+        member: "Personal",
+
+        pdf: null,
+    },
+  {
+        id: 3,
+
+        category: "graphic",
+
+        title: "MEN I TRUST— Concert Ticket ",
+
+        subtitle: "Fictional Concert Branding",
+
+        tag: ["#graphic", "#Promotion"],
+
+        type: "Original",
+
+        thumbnail: mit_ticket_5,
+
+        images: [
+            mit_ticket_1,
+            mit_ticket_2,
+            mit_ticket_3,
+            mit_ticket_4,
+            mit_ticket_5,
+        ],
+
+        contribution: [
+          "100"
+        ],
+
+        tools: [
+            "Photoshop",
+            "Figma"
+        ],
+
+        duration: "2026.08",
+
+
+        overview: "Men I Trust의 음악에서 느껴지는 늦여름 밤의 고요함과 푸른빛의 잔상을 시각적으로 표현한 가상의 공연 브랜딩 프로젝트입니다.  공연 포스터를 시작으로 티켓을 '공연에 입장하는 승차권'이 아닌 'MIDNIGHT로 떠나는 승선권'으로 재해석하여, 하나의 공연이 시각적인 이미지에서 끝나지 않고 다양한 접점에서 이어지는 경험이 되도록 디자인했습니다.",
+
+        member: "Personal",
+
+        pdf: null,
+    },
     
     {
-        id: 2,
+        id: 4,
 
         category: "ui",
 
@@ -111,7 +214,7 @@ const designData = [
         pdf: null,
     },
     {
-        id: 3,
+        id: 5,
 
         category: "ui",
 
@@ -153,7 +256,7 @@ const designData = [
         pdf: null,
     },
     {
-        id: 4,
+        id: 6,
 
         category: "package",
 

@@ -151,16 +151,22 @@ body {
 =================================================== */
 
 .thumbnail-list{
+    display: flex;
+    flex-direction: column;
 
-    display:flex;
+    width: 100px;
 
-    flex-direction:column;
+    gap: 15px;
 
-    gap:14px;
+    /* 썸네일 약 5~6개 정도만 보이도록 */
+    max-height: 470px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
 
 }
 
-.thumbnail-item{
+/* .thumbnail-item{
 
     width:80px;
     height:80px;
@@ -179,6 +185,29 @@ body {
 
     opacity:.5;
 
+} */
+
+.thumbnail-item {
+    flex: 0 0 75px;
+
+    width: 80px;
+    height: 80px;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    opacity: .5;
+
+    transition:
+        border-color .25s ease,
+        transform .25s ease,
+        opacity .25s ease;
 }
 
 .thumbnail-item:hover{
@@ -193,10 +222,10 @@ body {
 
     opacity:1;
 
-    border: 2px solid #bfccdf;
+    border: 1px solid #bfccdf;
 
     box-shadow:
-        0 12px 25px rgba(159,192,239,.25);
+        0 3px 3px rgba(212, 212, 212, 0.705);
     
 
 }
@@ -208,6 +237,26 @@ body {
 
     object-fit:cover;
 
+    display: block;
+
+}
+
+
+.thumbnail-list::-webkit-scrollbar {
+    width: 4px;
+}
+
+.thumbnail-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.thumbnail-list::-webkit-scrollbar-thumb {
+    background: #d8dee8;
+    border-radius: 999px;
+}
+
+.thumbnail-list::-webkit-scrollbar-thumb:hover {
+    background: #b8c1cf;
 }
 
 /* ===================================================
