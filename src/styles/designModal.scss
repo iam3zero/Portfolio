@@ -166,27 +166,6 @@ body {
 
 }
 
-/* .thumbnail-item{
-
-    width:80px;
-    height:80px;
-
-    border:none;
-
-    border-radius:12px;
-
-    overflow:hidden;
-
-    cursor:pointer;
-
-    background:#f7f8fb;
-
-    transition:.25s;
-
-    opacity:.5;
-
-} */
-
 .thumbnail-item {
     flex: 0 0 75px;
 
@@ -1127,10 +1106,28 @@ body {
 
     .thumbnail-item{
 
-        width:72px;
-        height:72px;
+        width:62px;
+        height:62px;
+
+        flex: 0 0 60px;
 
         border-radius:14px;
+
+    }
+
+    .thumbnail-list{
+        display: flex;
+        flex-direction: column;
+
+        width: 80px;
+
+        gap: 15px;
+
+        /* 썸네일 약 5~6개 정도만 보이도록 */
+        max-height: 330px;
+
+        overflow-y: auto;
+        overflow-x: hidden;
 
     }
 
@@ -1267,7 +1264,7 @@ body {
 
     }
 
-    .thumbnail-list{
+    /* .thumbnail-list{
 
         order:2;
 
@@ -1279,14 +1276,50 @@ body {
 
         gap:12px;
 
+    } */
+
+    .thumbnail-list {
+
+        order:2;
+        flex-direction: row;
+
+        width: 100%;
+        max-height: none;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        padding-right: 0;
+        padding-bottom: 6px;
+
+        gap: 10px;
     }
 
-    .thumbnail-item{
+    .thumbnail-item {
+        flex: 0 0 70px;
 
-        width:76px;
-        height:76px;
-
+        width: 70px;
+        height: 70px;
     }
+
+    .thumbnail-list::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+    }
+
+    .thumbnail-list::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .thumbnail-list::-webkit-scrollbar-thumb {
+        background: #d8dee8;
+        border-radius: 999px;
+    }
+
+    .thumbnail-list::-webkit-scrollbar-thumb:hover {
+        background: #b8c1cf;
+    }
+
 
     .modal-right{
 
@@ -1304,6 +1337,10 @@ body {
 
         font-size:16px;
 
+    }
+
+    .project-description p{
+        margin-right: 0;
     }
 
     .info-item{
@@ -1395,19 +1432,17 @@ body {
 
     }
 
-    .thumbnail-list{
-
-        gap:10px;
-
+    .thumbnail-list {
+        gap: 10px;
     }
 
-    .thumbnail-item{
+    .thumbnail-item {
+        flex: 0 0 65px;
 
-        width:62px;
-        height:62px;
+        width: 62px;
+        height: 62px;
 
         border-radius:12px;
-
     }
 
     .category-area{
